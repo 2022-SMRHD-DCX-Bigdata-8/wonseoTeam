@@ -1,5 +1,12 @@
 package com.smhrd.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class sns_userDTO {
 	private String userId; // 사용자아이디
 	private String userPw; // 사용자비밀번호
