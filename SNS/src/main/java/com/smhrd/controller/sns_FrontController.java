@@ -40,7 +40,6 @@ public class sns_FrontController extends HttpServlet {
 		handler.put("/join.do", new sns_joinCon());
 		handler.put("/goLogin.do", new sns_goLoginCon());
 		handler.put("/login.do", new sns_loginCon());
-		handler.put("/goLogout.do", new sns_GoLogoutCon());
 		handler.put("/logout.do", new sns_logoutCon());
 	}
 
