@@ -26,7 +26,7 @@
 	<!-- 2. Mapper태그를 추가해서 xml파일 경로를 알려주어야 한다. -->
 	<!-- Mapper 파일을 만들 때마다 추가해야한다. -->
 	<mappers>
-		<mapper resource="com/smhrd/dao/MemberMapper.xml" />
-		<mapper resource="com/smhrd/dao/BoardMapper.xml" />
+		<mapper resource="com/smhrd/dao/sns_MusicMapper.xml" />
+		<mapper resource="com/smhrd/dao/sns_UserMapper.xml" />
 	</mappers>
 </configuration>

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +7,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<h1>로그인</h1>
 
+	<form action="login.do" method="post">
+		ID : <input type="text" name="id"><br> PW : <input
+			type="password" name="pw"><br> <input type="submit"
+			value="로그인">
+	</form>
+	<a href="goJoin.do">회원가입하시겠습니까?</a>
 </body>
 </html>

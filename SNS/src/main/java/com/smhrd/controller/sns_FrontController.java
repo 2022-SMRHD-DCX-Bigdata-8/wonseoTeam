@@ -32,7 +32,16 @@ public class sns_FrontController extends HttpServlet {
 		// HashMap에 데이터 넣기
 
 		// 만약에 사용자가 goMain.do라는 요청을 했다면 main.jsp를 응답
-		handler.put("/goMain.do", new goMainCon());
+		handler.put("/goMain.do", new sns_goMainCon());
+		handler.put("/main.do", new sns_mainCon());
+		handler.put("/goWrite.do", new sns_goWriteCon());
+		handler.put("/write.do", new sns_writeCon());
+		handler.put("/goJoin.do", new sns_goJoinCon());
+		handler.put("/join.do", new sns_joinCon());
+		handler.put("/goLogin.do", new sns_goLoginCon());
+		handler.put("/login.do", new sns_loginCon());
+		handler.put("/goLogout.do", new sns_GoLogoutCon());
+		handler.put("/logout.do", new sns_logoutCon());
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

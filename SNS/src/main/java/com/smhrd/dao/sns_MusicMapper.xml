@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.dao.sns_MusicDAO">
+
+	<insert id="write" parameterType="com.smhrd.entity.sns_musicDTO">
+		insert into TB_MUSIC 
+		(musicSeq, musicTitle, musicPhoto, userId, musicDate, musicLikes, musicFile 
+		)values(
+		tb_music_seq.nextval, #{musicTitle}, #{musicPhoto}, #{userId}, sysdate, 0, #{musicFile})
+	</insert>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

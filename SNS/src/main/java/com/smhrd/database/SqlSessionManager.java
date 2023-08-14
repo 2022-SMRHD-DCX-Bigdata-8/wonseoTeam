@@ -34,8 +34,10 @@ public class SqlSessionManager {
 			String resource = "com/smhrd/database/config.xml";
 			InputStream inputStream = Resources.getResourceAsStream(resource);
 			sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
+			System.out.println("DB성공");
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("DB실패");
 		}
 	}
 
