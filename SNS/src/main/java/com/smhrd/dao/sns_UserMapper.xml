@@ -3,7 +3,8 @@
 <mapper namespace="com.smhrd.dao.sns_UserDAO">
 
 	<insert id="join" parameterType="com.smhrd.entity.sns_userDTO">
-		insert into TB_USER(USERID,	USERPW,	USERNAME,USERTEL,USEREMAIL,USERDATE)
+		insert into TB_USER(USERID,
+		USERPW, USERNAME,USERTEL,USEREMAIL,USERDATE)
 		values(
 		#{userId},
 		#{userPw},
@@ -18,7 +19,15 @@
 		resultType="com.smhrd.entity.sns_userDTO">
 		select * from TB_USER
 		where userId = #{userId}
-		and userPw = #{userPw}
+		and userPw =
+		#{userPw}
+	</select>
+
+	<select id="check" resultType="com.smhrd.entity.sns_userDTO">
+		select * from TB_USER
+		where
+		userId =
+		#{userId}
 	</select>
 
 

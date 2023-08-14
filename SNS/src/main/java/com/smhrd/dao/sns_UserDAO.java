@@ -44,4 +44,11 @@ public class sns_UserDAO {
 		// 4. 실행 결과 리턴
 		return result;
 	}
+
+	public sns_userDTO check(String id) {
+		SqlSession session = factory.openSession(true);
+		sns_userDTO list = session.selectOne("check", id);
+		session.close();
+		return list;
+	}
 }
