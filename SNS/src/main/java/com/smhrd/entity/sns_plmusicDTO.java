@@ -1,5 +1,12 @@
 package com.smhrd.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class sns_plmusicDTO {
 
 	private int plmSeq; //플리노래순번

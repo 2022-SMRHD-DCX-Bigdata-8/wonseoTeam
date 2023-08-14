@@ -1,6 +1,12 @@
 package com.smhrd.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class sns_chatDTO {
 	private int chatSeq;   //채팅순번
 	private String chatter;//발화자

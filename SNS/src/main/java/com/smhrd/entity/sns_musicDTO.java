@@ -1,5 +1,12 @@
 package com.smhrd.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@AllArgsConstructor
+@NoArgsConstructor
+@Data
 public class sns_musicDTO {
 	private int musicSeq;  //음원순번
 	private String musicTitle;//음원제목
