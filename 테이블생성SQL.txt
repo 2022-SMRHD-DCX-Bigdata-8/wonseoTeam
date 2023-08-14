@@ -1,0 +1,412 @@
+-- 테이블 순서는 관계를 고려하여 한 번에 실행해도 에러가 발생하지 않게 정렬되었습니다.
+
+-- TB_USER Table Create SQL
+-- 테이블 생성 SQL - TB_USER
+CREATE TABLE TB_USER
+(
+    userId       VARCHAR2(30)     NOT NULL, 
+    userPw       VARCHAR2(30)     NOT NULL, 
+    userName     VARCHAR2(30)     NOT NULL, 
+    userTel      VARCHAR2(20)     NOT NULL, 
+    userEmail    VARCHAR2(50)     NOT NULL, 
+    userDate     DATE             NOT NULL, 
+    userType     CHAR(1)          NOT NULL, 
+    userTag      VARCHAR2(50)     NULL, 
+    userPhoto    VARCHAR2(600)    NOT NULL, 
+     PRIMARY KEY (userId)
+);
+
+-- 테이블 Comment 설정 SQL - TB_USER
+COMMENT ON TABLE TB_USER IS '사용자';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userId
+COMMENT ON COLUMN TB_USER.userId IS '사용자 아이디';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userPw
+COMMENT ON COLUMN TB_USER.userPw IS '사용자 비밀번호';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userName
+COMMENT ON COLUMN TB_USER.userName IS '사용자 이름';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userTel
+COMMENT ON COLUMN TB_USER.userTel IS '사용자 전화번호';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userEmail
+COMMENT ON COLUMN TB_USER.userEmail IS '사용자 이메일';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userDate
+COMMENT ON COLUMN TB_USER.userDate IS '사용자 가입일자';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userType
+COMMENT ON COLUMN TB_USER.userType IS '사용자 유형';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userTag
+COMMENT ON COLUMN TB_USER.userTag IS '프로필 태그';
+
+-- 컬럼 Comment 설정 SQL - TB_USER.userPhoto
+COMMENT ON COLUMN TB_USER.userPhoto IS '프로필 사진';
+
+
+-- TB_MUSIC Table Create SQL
+-- 테이블 생성 SQL - TB_MUSIC
+CREATE TABLE TB_MUSIC
+(
+    musicSeq      NUMBER(15, 0)    NOT NULL, 
+    musicTitle    VARCHAR2(600)    NOT NULL, 
+    musicPhoto    VARCHAR2(600)    NOT NULL, 
+    userId        VARCHAR2(30)     NOT NULL, 
+    musicGenre    VARCHAR2(50)     NOT NULL, 
+    musicDate     DATE             NOT NULL, 
+    musicLikes    NUMBER(15, 0)    DEFAULT 0 NOT NULL, 
+    musicFile     VARCHAR2(600)    NOT NULL, 
+     PRIMARY KEY (musicSeq)
+);
+
+-- Auto Increment를 위한 Sequence 추가 SQL - TB_MUSIC.musicSeq
+CREATE SEQUENCE TB_MUSIC_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- Auto Increment를 위한 Trigger 추가 SQL - TB_MUSIC.musicSeq
+CREATE OR REPLACE TRIGGER TB_MUSIC_AI_TRG
+BEFORE INSERT ON TB_MUSIC 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT TB_MUSIC_SEQ.NEXTVAL
+    INTO :NEW.musicSeq
+    FROM DUAL;
+END;
+
+-- DROP TRIGGER TB_MUSIC_AI_TRG; 
+
+-- DROP SEQUENCE TB_MUSIC_SEQ; 
+
+-- 테이블 Comment 설정 SQL - TB_MUSIC
+COMMENT ON TABLE TB_MUSIC IS '음원';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.musicSeq
+COMMENT ON COLUMN TB_MUSIC.musicSeq IS '음원 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.musicTitle
+COMMENT ON COLUMN TB_MUSIC.musicTitle IS '음원 제목';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.musicPhoto
+COMMENT ON COLUMN TB_MUSIC.musicPhoto IS '음원 사진';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.userId
+COMMENT ON COLUMN TB_MUSIC.userId IS '사용자 아이디';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.musicGenre
+COMMENT ON COLUMN TB_MUSIC.musicGenre IS '음원 장르';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.musicDate
+COMMENT ON COLUMN TB_MUSIC.musicDate IS '음원 업로드 일자';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.musicLikes
+COMMENT ON COLUMN TB_MUSIC.musicLikes IS '음원 좋아요수';
+
+-- 컬럼 Comment 설정 SQL - TB_MUSIC.musicFile
+COMMENT ON COLUMN TB_MUSIC.musicFile IS '음원 파일';
+
+-- Foreign Key 설정 SQL - TB_MUSIC(userId) -> TB_USER(userId)
+ALTER TABLE TB_MUSIC
+    ADD CONSTRAINT FK_TB_MUSIC_userId_TB_USER_use FOREIGN KEY (userId)
+        REFERENCES TB_USER (userId) ;
+
+-- Foreign Key 삭제 SQL - TB_MUSIC(userId)
+-- ALTER TABLE TB_MUSIC
+-- DROP CONSTRAINT FK_TB_MUSIC_userId_TB_USER_use;
+
+
+-- TB_PLAYLIST Table Create SQL
+-- 테이블 생성 SQL - TB_PLAYLIST
+CREATE TABLE TB_PLAYLIST
+(
+    plSeq      NUMBER(15, 0)    NOT NULL, 
+    plTitle    VARCHAR2(600)    NOT NULL, 
+    plDate     DATE             NOT NULL, 
+    userId     VARCHAR2(30)     NOT NULL, 
+     PRIMARY KEY (plSeq)
+);
+
+-- Auto Increment를 위한 Sequence 추가 SQL - TB_PLAYLIST.plSeq
+CREATE SEQUENCE TB_PLAYLIST_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- Auto Increment를 위한 Trigger 추가 SQL - TB_PLAYLIST.plSeq
+CREATE OR REPLACE TRIGGER TB_PLAYLIST_AI_TRG
+BEFORE INSERT ON TB_PLAYLIST 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT TB_PLAYLIST_SEQ.NEXTVAL
+    INTO :NEW.plSeq
+    FROM DUAL;
+END;
+
+-- DROP TRIGGER TB_PLAYLIST_AI_TRG; 
+
+-- DROP SEQUENCE TB_PLAYLIST_SEQ; 
+
+-- 테이블 Comment 설정 SQL - TB_PLAYLIST
+COMMENT ON TABLE TB_PLAYLIST IS '플레이리스트';
+
+-- 컬럼 Comment 설정 SQL - TB_PLAYLIST.plSeq
+COMMENT ON COLUMN TB_PLAYLIST.plSeq IS '플리 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_PLAYLIST.plTitle
+COMMENT ON COLUMN TB_PLAYLIST.plTitle IS '플리 제목';
+
+-- 컬럼 Comment 설정 SQL - TB_PLAYLIST.plDate
+COMMENT ON COLUMN TB_PLAYLIST.plDate IS '플리 작성 일자';
+
+-- 컬럼 Comment 설정 SQL - TB_PLAYLIST.userId
+COMMENT ON COLUMN TB_PLAYLIST.userId IS '사용자 아이디';
+
+-- Foreign Key 설정 SQL - TB_PLAYLIST(userId) -> TB_USER(userId)
+ALTER TABLE TB_PLAYLIST
+    ADD CONSTRAINT FK_TB_PLAYLIST_userId_TB_USER_ FOREIGN KEY (userId)
+        REFERENCES TB_USER (userId) ;
+
+-- Foreign Key 삭제 SQL - TB_PLAYLIST(userId)
+-- ALTER TABLE TB_PLAYLIST
+-- DROP CONSTRAINT FK_TB_PLAYLIST_userId_TB_USER_;
+
+
+-- TB_PLMUSIC Table Create SQL
+-- 테이블 생성 SQL - TB_PLMUSIC
+CREATE TABLE TB_PLMUSIC
+(
+    plmSeq      NUMBER(15, 0)    NOT NULL, 
+    musicSeq    NUMBER(15, 0)    NOT NULL, 
+    plSeq       NUMBER(15, 0)    NOT NULL, 
+     PRIMARY KEY (plmSeq)
+);
+
+-- Auto Increment를 위한 Sequence 추가 SQL - TB_PLMUSIC.plmSeq
+CREATE SEQUENCE TB_PLMUSIC_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- Auto Increment를 위한 Trigger 추가 SQL - TB_PLMUSIC.plmSeq
+CREATE OR REPLACE TRIGGER TB_PLMUSIC_AI_TRG
+BEFORE INSERT ON TB_PLMUSIC 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT TB_PLMUSIC_SEQ.NEXTVAL
+    INTO :NEW.plmSeq
+    FROM DUAL;
+END;
+
+-- DROP TRIGGER TB_PLMUSIC_AI_TRG; 
+
+-- DROP SEQUENCE TB_PLMUSIC_SEQ; 
+
+-- 컬럼 Comment 설정 SQL - TB_PLMUSIC.plmSeq
+COMMENT ON COLUMN TB_PLMUSIC.plmSeq IS '플리노래 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_PLMUSIC.musicSeq
+COMMENT ON COLUMN TB_PLMUSIC.musicSeq IS '음원 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_PLMUSIC.plSeq
+COMMENT ON COLUMN TB_PLMUSIC.plSeq IS '플리 순번';
+
+-- Foreign Key 설정 SQL - TB_PLMUSIC(musicSeq) -> TB_MUSIC(musicSeq)
+ALTER TABLE TB_PLMUSIC
+    ADD CONSTRAINT FK_TB_PLMUSIC_musicSeq_TB_MUSI FOREIGN KEY (musicSeq)
+        REFERENCES TB_MUSIC (musicSeq) ;
+
+-- Foreign Key 삭제 SQL - TB_PLMUSIC(musicSeq)
+-- ALTER TABLE TB_PLMUSIC
+-- DROP CONSTRAINT FK_TB_PLMUSIC_musicSeq_TB_MUSI;
+
+-- Foreign Key 설정 SQL - TB_PLMUSIC(plSeq) -> TB_PLAYLIST(plSeq)
+ALTER TABLE TB_PLMUSIC
+    ADD CONSTRAINT FK_TB_PLMUSIC_plSeq_TB_PLAYLIS FOREIGN KEY (plSeq)
+        REFERENCES TB_PLAYLIST (plSeq) ;
+
+-- Foreign Key 삭제 SQL - TB_PLMUSIC(plSeq)
+-- ALTER TABLE TB_PLMUSIC
+-- DROP CONSTRAINT FK_TB_PLMUSIC_plSeq_TB_PLAYLIS;
+
+
+-- TB_COMMENT Table Create SQL
+-- 테이블 생성 SQL - TB_COMMENT
+CREATE TABLE TB_COMMENT
+(
+    cmtSeq        NUMBER(15, 0)    NOT NULL, 
+    musicSeq      NUMBER(15, 0)    NOT NULL, 
+    cmtType       CHAR(1)          NOT NULL, 
+    cmtContent    VARCHAR2(600)    NOT NULL, 
+    cmtDate       DATE             NOT NULL, 
+    userId        VARCHAR2(30)     NOT NULL, 
+     PRIMARY KEY (cmtSeq)
+);
+
+-- Auto Increment를 위한 Sequence 추가 SQL - TB_COMMENT.cmtSeq
+CREATE SEQUENCE TB_COMMENT_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- Auto Increment를 위한 Trigger 추가 SQL - TB_COMMENT.cmtSeq
+CREATE OR REPLACE TRIGGER TB_COMMENT_AI_TRG
+BEFORE INSERT ON TB_COMMENT 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT TB_COMMENT_SEQ.NEXTVAL
+    INTO :NEW.cmtSeq
+    FROM DUAL;
+END;
+
+-- DROP TRIGGER TB_COMMENT_AI_TRG; 
+
+-- DROP SEQUENCE TB_COMMENT_SEQ; 
+
+-- 테이블 Comment 설정 SQL - TB_COMMENT
+COMMENT ON TABLE TB_COMMENT IS '댓글';
+
+-- 컬럼 Comment 설정 SQL - TB_COMMENT.cmtSeq
+COMMENT ON COLUMN TB_COMMENT.cmtSeq IS '댓글 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_COMMENT.musicSeq
+COMMENT ON COLUMN TB_COMMENT.musicSeq IS '원글 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_COMMENT.cmtType
+COMMENT ON COLUMN TB_COMMENT.cmtType IS '댓글 유형';
+
+-- 컬럼 Comment 설정 SQL - TB_COMMENT.cmtContent
+COMMENT ON COLUMN TB_COMMENT.cmtContent IS '댓글 내용';
+
+-- 컬럼 Comment 설정 SQL - TB_COMMENT.cmtDate
+COMMENT ON COLUMN TB_COMMENT.cmtDate IS '댓글 작성일자';
+
+-- 컬럼 Comment 설정 SQL - TB_COMMENT.userId
+COMMENT ON COLUMN TB_COMMENT.userId IS '댓글 작성자';
+
+-- Foreign Key 설정 SQL - TB_COMMENT(musicSeq) -> TB_MUSIC(musicSeq)
+ALTER TABLE TB_COMMENT
+    ADD CONSTRAINT FK_TB_COMMENT_musicSeq_TB_MUSI FOREIGN KEY (musicSeq)
+        REFERENCES TB_MUSIC (musicSeq) ;
+
+-- Foreign Key 삭제 SQL - TB_COMMENT(musicSeq)
+-- ALTER TABLE TB_COMMENT
+-- DROP CONSTRAINT FK_TB_COMMENT_musicSeq_TB_MUSI;
+
+-- Foreign Key 설정 SQL - TB_COMMENT(userId) -> TB_USER(userId)
+ALTER TABLE TB_COMMENT
+    ADD CONSTRAINT FK_TB_COMMENT_userId_TB_USER_u FOREIGN KEY (userId)
+        REFERENCES TB_USER (userId) ;
+
+-- Foreign Key 삭제 SQL - TB_COMMENT(userId)
+-- ALTER TABLE TB_COMMENT
+-- DROP CONSTRAINT FK_TB_COMMENT_userId_TB_USER_u;
+
+-- 테이블 생성 SQL - TB_ROOM
+CREATE TABLE TB_ROOM
+(
+    roomSeq      NUMBER(15, 0)    NOT NULL, 
+    userId       VARCHAR2(30)     NOT NULL, 
+    roomDate     DATE             NOT NULL, 
+    roomState    CHAR(1)          NOT NULL, 
+     PRIMARY KEY (roomSeq)
+);
+
+-- Auto Increment를 위한 Sequence 추가 SQL - TB_ROOM.roomSeq
+CREATE SEQUENCE TB_ROOM_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- Auto Increment를 위한 Trigger 추가 SQL - TB_ROOM.roomSeq
+CREATE OR REPLACE TRIGGER TB_ROOM_AI_TRG
+BEFORE INSERT ON TB_ROOM 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT TB_ROOM_SEQ.NEXTVAL
+    INTO :NEW.roomSeq
+    FROM DUAL;
+END;
+
+-- DROP TRIGGER TB_ROOM_AI_TRG; 
+
+-- DROP SEQUENCE TB_ROOM_SEQ; 
+
+-- 테이블 Comment 설정 SQL - TB_ROOM
+COMMENT ON TABLE TB_ROOM IS '채팅방. 채팅방';
+
+-- 컬럼 Comment 설정 SQL - TB_ROOM.roomSeq
+COMMENT ON COLUMN TB_ROOM.roomSeq IS '방 순번. 방 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_ROOM.userId
+COMMENT ON COLUMN TB_ROOM.userId IS '방 개설자. 방 개설자';
+
+-- 컬럼 Comment 설정 SQL - TB_ROOM.roomDate
+COMMENT ON COLUMN TB_ROOM.roomDate IS '방 개설일자. 방 개설일자';
+
+-- 컬럼 Comment 설정 SQL - TB_ROOM.roomState
+COMMENT ON COLUMN TB_ROOM.roomState IS '방 상태. 방 상태';
+
+-- Foreign Key 설정 SQL - TB_ROOM(userId) -> tb_user(userId)
+ALTER TABLE TB_ROOM
+    ADD CONSTRAINT FK_TB_ROOM_userId_tb_user_user FOREIGN KEY (userId)
+        REFERENCES tb_user (userId) ;
+
+-- Foreign Key 삭제 SQL - TB_ROOM(userId)
+-- ALTER TABLE TB_ROOM
+-- DROP CONSTRAINT FK_TB_ROOM_userId_tb_user_user;
+
+-- 테이블 생성 SQL - TB_CHAT
+CREATE TABLE TB_CHAT
+(
+    chatSeq     NUMBER(15, 0)     NOT NULL, 
+    chatter     VARCHAR2(30)      NOT NULL, 
+    chat        VARCHAR2(4000)    NOT NULL, 
+    chatDate    DATE              NOT NULL, 
+    roomSeq     NUMBER(15, 0)     NOT NULL, 
+     PRIMARY KEY (chatSeq)
+);
+
+-- Auto Increment를 위한 Sequence 추가 SQL - TB_CHAT.chatSeq
+CREATE SEQUENCE TB_CHAT_SEQ
+START WITH 1
+INCREMENT BY 1;
+
+-- Auto Increment를 위한 Trigger 추가 SQL - TB_CHAT.chatSeq
+CREATE OR REPLACE TRIGGER TB_CHAT_AI_TRG
+BEFORE INSERT ON TB_CHAT 
+REFERENCING NEW AS NEW FOR EACH ROW 
+BEGIN 
+    SELECT TB_CHAT_SEQ.NEXTVAL
+    INTO :NEW.chatSeq
+    FROM DUAL;
+END;
+
+-- DROP TRIGGER TB_CHAT_AI_TRG; 
+
+-- DROP SEQUENCE TB_CHAT_SEQ; 
+
+-- 테이블 Comment 설정 SQL - TB_CHAT
+COMMENT ON TABLE TB_CHAT IS '채팅 내용. 채팅 내용';
+
+-- 컬럼 Comment 설정 SQL - TB_CHAT.chatSeq
+COMMENT ON COLUMN TB_CHAT.chatSeq IS '채팅 순번. 채팅 순번';
+
+-- 컬럼 Comment 설정 SQL - TB_CHAT.chatter
+COMMENT ON COLUMN TB_CHAT.chatter IS '발화자. 발화자';
+
+-- 컬럼 Comment 설정 SQL - TB_CHAT.chat
+COMMENT ON COLUMN TB_CHAT.chat IS '발화 내용. 발화 내용';
+
+-- 컬럼 Comment 설정 SQL - TB_CHAT.chatDate
+COMMENT ON COLUMN TB_CHAT.chatDate IS '발화 시간. 발화 시간';
+
+-- 컬럼 Comment 설정 SQL - TB_CHAT.roomSeq
+COMMENT ON COLUMN TB_CHAT.roomSeq IS '방 순번. 방 순번';
+
+-- Foreign Key 설정 SQL - TB_CHAT(roomSeq) -> TB_ROOM(roomSeq)
+ALTER TABLE TB_CHAT
+    ADD CONSTRAINT FK_TB_CHAT_roomSeq_TB_ROOM_roo FOREIGN KEY (roomSeq)
+        REFERENCES TB_ROOM (roomSeq) ;
+
+-- Foreign Key 삭제 SQL - TB_CHAT(roomSeq)
+-- ALTER TABLE TB_CHAT
+-- DROP CONSTRAINT FK_TB_CHAT_roomSeq_TB_ROOM_roo;
