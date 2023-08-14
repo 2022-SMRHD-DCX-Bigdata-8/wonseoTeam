@@ -42,6 +42,9 @@ public class sns_FrontController extends HttpServlet {
 		handler.put("/login.do", new sns_loginCon());
 		handler.put("/logout.do", new sns_logoutCon());
 		handler.put("/idCheck.do", new sns_idCheckCon());
+		handler.put("/goSearch.do", new sns_goSearchCon());
+		handler.put("/search.do", new sns_searchCon());
+		
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

@@ -20,10 +20,6 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	<script type="text/javascript">
-		// 이메일에 대하여 중복 여부 체크 기능!
-		// -> input 태그에 내용이 입력되자마자 판단!
-
-		// 페이지 실행과 동시에 해당 기능이 실행되도록 연결!
 		$(document).ready(function() {
 			var input = $('#checkInput')
 			input.on('input', idCheck);

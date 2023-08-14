@@ -3,12 +3,19 @@
 <mapper namespace="com.smhrd.dao.sns_MusicDAO">
 
 	<insert id="write" parameterType="com.smhrd.entity.sns_musicDTO">
-		insert into TB_MUSIC 
-		(musicSeq, musicTitle, musicPhoto, userId, musicDate, musicLikes, musicFile 
+		insert into TB_MUSIC
+		(musicSeq,
+		musicTitle, musicPhoto, userId, musicDate, musicLikes, musicFile
 		)values(
-		tb_music_seq.nextval, #{musicTitle}, #{musicPhoto}, #{userId}, sysdate, 0, #{musicFile})
+		tb_music_seq.nextval, #{musicTitle}, #{musicPhoto}, #{userId},
+		sysdate, 0, #{musicFile})
 	</insert>
 
+	<select id="searchTitle" resultType="com.smhrd.entity.sns_musicDTO">
+		select * from TB_MUSIC
+		where
+		musicTitle like '%'||#{search}||'%'
+	</select>
 
 
 

@@ -1,5 +1,7 @@
 package com.smhrd.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -51,4 +53,12 @@ public class sns_UserDAO {
 		session.close();
 		return list;
 	}
+
+	public List<sns_userDTO> searchId(String search) {
+		SqlSession session = factory.openSession(true);
+		List<sns_userDTO> list = session.selectList("searchId", search);
+		session.close();
+		return list;
+	}
+
 }

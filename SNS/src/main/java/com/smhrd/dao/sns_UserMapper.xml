@@ -30,5 +30,12 @@
 		#{userId}
 	</select>
 
+	<select id="searchId" resultType="com.smhrd.entity.sns_userDTO">
+		select * from TB_USER
+		where
+		userId like '%'||#{search}||'%'
+	</select>
+	
+	
 
 </mapper>
