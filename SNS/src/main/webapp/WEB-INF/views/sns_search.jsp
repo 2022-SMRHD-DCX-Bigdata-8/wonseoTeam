@@ -11,7 +11,7 @@
 <body>
 	<div id="search">
 		<h1>검색</h1>
-		<table id="list">
+		<table id="list" border="1">
 			<thead>
 				<tr>
 					<td><select name="searchSelects" id="searchSelects">
@@ -29,12 +29,15 @@
 				<%--예시) --%>
 				<c:forEach var="user" items="${list}">
 					<tr>
-						<td><a
-							href="goProfile.do?idx=<c:choose>
-                                <c:when test="${selectedOption eq 'userId'}">${user.userId}</c:when>
-                                <c:when test="${selectedOption eq 'musicTitle'}">${user.musicTitle}</c:when>
-                            </c:choose>">${user.userId}</a>
-						</td>
+						<c:choose>
+								<c:when test="${selectedOption} == 'userId'">
+									<td><a href="goProfile.do?idx=${user.userId}">${user.userId }</a></td>
+									
+								</c:when>
+								<c:otherwise>
+									<td><a href="goProfile.do?idx=${user.musicTitle}">${user.musicTitle }</a></td>
+								</c:otherwise>
+							</c:choose>
 					</tr>
 				</c:forEach>
 			</tbody>

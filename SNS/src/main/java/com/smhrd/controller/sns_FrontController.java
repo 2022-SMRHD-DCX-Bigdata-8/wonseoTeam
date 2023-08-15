@@ -33,7 +33,6 @@ public class sns_FrontController extends HttpServlet {
 
 		// 만약에 사용자가 goMain.do라는 요청을 했다면 main.jsp를 응답
 		handler.put("/goMain.do", new sns_goMainCon());
-		handler.put("/main.do", new sns_mainCon());
 		handler.put("/goWrite.do", new sns_goWriteCon());
 		handler.put("/write.do", new sns_writeCon());
 		handler.put("/goJoin.do", new sns_goJoinCon());
@@ -44,6 +43,7 @@ public class sns_FrontController extends HttpServlet {
 		handler.put("/idCheck.do", new sns_idCheckCon());
 		handler.put("/goSearch.do", new sns_goSearchCon());
 		handler.put("/search.do", new sns_searchCon());
+		handler.put("/post.do", new sns_postCon());
 		
 	}
 

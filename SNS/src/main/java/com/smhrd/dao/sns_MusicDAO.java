@@ -26,4 +26,11 @@ public class sns_MusicDAO {
 		return list;
 	}
 
+	public List<sns_musicDTO> post() {
+		SqlSession session = factory.openSession(true);
+		List<sns_musicDTO> list = session.selectList("post");
+		session.close();
+		return list;
+	}
+
 }

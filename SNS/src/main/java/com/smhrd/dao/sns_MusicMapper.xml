@@ -17,7 +17,9 @@
 		musicTitle like '%'||#{search}||'%'
 	</select>
 
-
+	<select id="post" resultType="com.smhrd.entity.sns_musicDTO">
+		select * from TB_MUSIC
+	</select>
 
 
 

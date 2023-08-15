@@ -1,3 +1,4 @@
+<%@page import="com.smhrd.entity.sns_userDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
@@ -18,7 +19,8 @@
 		데이터 전송시 인코딩으로 인하여 제대로된 파일 전송이 불가능하기 때문에
 		이를 해결하기 위한 enctype속성을 사용해야 한다!	
 		-->
-
+		<%
+		%>
 		<form action="write.do" method="post" enctype="multipart/form-data">
 			<table id="list">
 				<tr>
@@ -27,7 +29,7 @@
 				</tr>
 				<tr>
 					<td>ID</td>
-					<td><input name="id" type="text"><td>
+					<td><input name="id" type="text" value="${user.userId }" readonly></td>
 				</tr>
 				<tr>
 					<td>앨범사진</td>

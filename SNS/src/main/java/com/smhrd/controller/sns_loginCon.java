@@ -31,7 +31,7 @@ public class sns_loginCon implements sns_Controller {
 			System.out.println("로그인 성공!");
 
 			HttpSession session = request.getSession();
-			session.setAttribute("user", session);
+			session.setAttribute("user", result);
 		} else {
 			System.out.println("로그인 실패!");
 		}
