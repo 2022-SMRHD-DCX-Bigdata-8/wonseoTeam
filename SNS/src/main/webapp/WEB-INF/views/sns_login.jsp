@@ -5,15 +5,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/sns_login_join.css">
 </head>
 <body>
-	<h1>로그인</h1>
+	<div class="wrapper">
+		<div class="container" text-align:right>
+			<h1 align="center">로그인</h1>
+			<form action="login.do" method="post">
 
-	<form action="login.do" method="post">
-		ID : <input type="text" name="id"><br> PW : <input
-			type="password" name="pw"><br> <input type="submit"
-			value="로그인">
-	</form>
-	<a href="goJoin.do">회원가입하시겠습니까?</a>
+				<input type="text" name="id" id="checkInput" placeholder="ID">
+				<input type="password" name="pw" placeholder="PW"><br>
+
+				<button class="form_btn">로그인</button>
+			</form>
+
+			<a href="goJoin.do"
+				style="text-decoration: none; font-weight: bold; background: #efefef; color: red;">회원가입하시겠습니까?</a>
+		</div>
+	</div>
 </body>
 </html>
