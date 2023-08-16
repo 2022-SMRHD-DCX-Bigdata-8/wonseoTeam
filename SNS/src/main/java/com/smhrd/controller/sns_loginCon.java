@@ -27,16 +27,19 @@ public class sns_loginCon implements sns_Controller {
 		sns_UserDAO dao = new sns_UserDAO();
 		sns_userDTO result = dao.login(user);
 
+		String url = "";
 		if (result != null) {
 			System.out.println("로그인 성공!");
 
 			HttpSession session = request.getSession();
-			session.setAttribute("user", result);
+			session.setAttribute("sessionUser", result);
+			url = "redirect:/goMain.do";
 		} else {
 			System.out.println("로그인 실패!");
+			url = "redirect:/goLogin.do";
 		}
 
-		return "redirect:/goMain.do";
+		return url;
 
 	}
 

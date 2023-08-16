@@ -47,8 +47,10 @@ public class sns_FrontController extends HttpServlet {
 		handler.put("/goViewUser.do", new sns_goViewUserCon());
 		handler.put("/goViewMusic.do", new sns_goViewMusicCon());
 		handler.put("/goProfile.do", new sns_goProfileCon());
-		
-		
+		handler.put("/count.do", new sns_countCon());
+		handler.put("/follow.do", new sns_followCon());
+		handler.put("/followCheck.do", new sns_followCheckCon());
+
 	}
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)

@@ -29,7 +29,7 @@
 				</tr>
 				<tr>
 					<td>ID</td>
-					<td><input name="id" type="text" value="${user.userId }" readonly></td>
+					<td><input name="id" type="text" value="${sessionUser.userId }" readonly></td>
 				</tr>
 				<tr>
 					<td>앨범사진</td>
