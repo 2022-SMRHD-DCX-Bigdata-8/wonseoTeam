@@ -61,4 +61,11 @@ public class sns_UserDAO {
 		return list;
 	}
 
+	public sns_userDTO viewUser(String idx) {
+		SqlSession session = factory.openSession(true);
+		sns_userDTO user = session.selectOne("viewUser", idx);
+		session.close();
+		return user;
+	}
+
 }

@@ -27,19 +27,6 @@
 			<tbody id="tbd">
 				<%--Ex10.게시글 목록을 출력해봅시다. --%>
 				<%--예시) --%>
-				<c:forEach var="user" items="${list}">
-					<tr>
-						<c:choose>
-							<c:when test="${selectedOption} == 'userId'">
-								<td><a href="goProfile.do?idx=${user.userId}">${user.userId }</a></td>
-
-							</c:when>
-							<c:otherwise>
-								<td><a href="goProfile.do?idx=${user.musicTitle}">${user.musicTitle }</a></td>
-							</c:otherwise>
-						</c:choose>
-					</tr>
-				</c:forEach>
 			</tbody>
 
 		</table>
@@ -73,14 +60,18 @@
 					for (let i = 0; i < res.length; i++) {
 						tr = "<tr>";
 						if (searchSelect === 'userId') {
-							tr += "<td><a href=\"goView.do?idx="
+							tr += "<td><a href=\"goViewUser.do?idx="
 									+ res[i].userId + "\">" + res[i].userId
 									+ "</a></td>";
+							tr += "<td><img src=\"save/" + res[i].userPhoto
+									+ "\"</td>";
 							tr += "</tr>";
 						} else {
-							tr += "<td><a href=\"goView.do?idx="
+							tr += "<td><a href=\"goViewMusic.do?titlex="
 									+ res[i].musicTitle + "\">"
 									+ res[i].musicTitle + "</a></td>";
+							tr += "<td><img src=\"save/" + res[i].musicPhoto
+									+ "\"</td>";
 							tr += "</tr>";
 						}
 

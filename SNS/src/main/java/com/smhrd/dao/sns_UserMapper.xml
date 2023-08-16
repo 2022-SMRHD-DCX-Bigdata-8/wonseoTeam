@@ -4,14 +4,15 @@
 
 	<insert id="join" parameterType="com.smhrd.entity.sns_userDTO">
 		insert into TB_USER(USERID,
-		USERPW, USERNAME,USERTEL,USEREMAIL,USERDATE)
+		USERPW, USERNAME,USERTEL,USEREMAIL,USERDATE,USERPhoto)
 		values(
 		#{userId},
 		#{userPw},
 		#{userName},
 		#{userTel},
 		#{userEmail},
-		sysdate
+		sysdate,
+		#{userPhoto}
 		)
 	</insert>
 
@@ -34,6 +35,12 @@
 		select * from TB_USER
 		where
 		userId like '%'||#{search}||'%'
+	</select>
+	
+	<select id="viewUser" resultType="com.smhrd.entity.sns_userDTO">
+		select * from TB_USER
+		where
+		userId=#{idx}
 	</select>
 	
 	

@@ -11,18 +11,23 @@
 		sysdate, 0, #{musicFile})
 	</insert>
 
-	<select id="searchTitle" resultType="com.smhrd.entity.sns_musicDTO">
+	<select id="searchTitle"
+		resultType="com.smhrd.entity.sns_musicDTO">
 		select * from TB_MUSIC
 		where
-		musicTitle like '%'||#{search}||'%'
+		musicTitle like
+		'%'||#{search}||'%'
 	</select>
 
 	<select id="post" resultType="com.smhrd.entity.sns_musicDTO">
 		select * from TB_MUSIC
 	</select>
 
-
-
+<select id="viewMusic" resultType="com.smhrd.entity.sns_musicDTO">
+		select * from TB_MUSIC
+		where
+		musicTitle=#{titlex}
+	</select>
 
 
 

@@ -7,7 +7,6 @@ import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.smhrd.database.SqlSessionManager;
 import com.smhrd.entity.sns_musicDTO;
-import com.smhrd.entity.sns_userDTO;
 
 public class sns_MusicDAO {
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
@@ -32,5 +31,13 @@ public class sns_MusicDAO {
 		session.close();
 		return list;
 	}
+
+	public sns_musicDTO viewMusic(String titlex) {
+		SqlSession session = factory.openSession(true);
+		sns_musicDTO music = session.selectOne("viewMusic", titlex);
+		session.close();
+		return music;
+	}
+
 
 }
