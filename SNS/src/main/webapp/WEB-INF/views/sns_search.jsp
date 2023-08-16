@@ -30,14 +30,14 @@
 				<c:forEach var="user" items="${list}">
 					<tr>
 						<c:choose>
-								<c:when test="${selectedOption} == 'userId'">
-									<td><a href="goProfile.do?idx=${user.userId}">${user.userId }</a></td>
-									
-								</c:when>
-								<c:otherwise>
-									<td><a href="goProfile.do?idx=${user.musicTitle}">${user.musicTitle }</a></td>
-								</c:otherwise>
-							</c:choose>
+							<c:when test="${selectedOption} == 'userId'">
+								<td><a href="goProfile.do?idx=${user.userId}">${user.userId }</a></td>
+
+							</c:when>
+							<c:otherwise>
+								<td><a href="goProfile.do?idx=${user.musicTitle}">${user.musicTitle }</a></td>
+							</c:otherwise>
+						</c:choose>
 					</tr>
 				</c:forEach>
 			</tbody>
@@ -72,9 +72,17 @@
 
 					for (let i = 0; i < res.length; i++) {
 						tr = "<tr>";
-						tr += "<td><a href=\"goView.do?idx=" + res[i].userId
-								+ "\">" + res[i].userId + "</a></td>";
-						tr += "</tr>";
+						if (searchSelect === 'userId') {
+							tr += "<td><a href=\"goView.do?idx="
+									+ res[i].userId + "\">" + res[i].userId
+									+ "</a></td>";
+							tr += "</tr>";
+						} else {
+							tr += "<td><a href=\"goView.do?idx="
+									+ res[i].musicTitle + "\">"
+									+ res[i].musicTitle + "</a></td>";
+							tr += "</tr>";
+						}
 
 						// html('code') : 덮어쓰기
 						// after('code') : 닫는 태그 바로 뒤에 추가

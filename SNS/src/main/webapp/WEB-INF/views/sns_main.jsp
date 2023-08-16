@@ -15,6 +15,7 @@
 		<li><a href="goProfile.do">프로필</a></li>
 		<li><a href="goWrite.do">게시물올리기</a></li>
 		<li><a href="goPlaylist.do">플리</a></li>
+		<li><a href="goMessage.do">플리</a></li>
 		<li><a href="logout.do" onclick="return logout_confirm()">로그아웃</a></li>
 	</ul>
 
