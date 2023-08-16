@@ -18,31 +18,26 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
-	<script>
-		$(document).ready(function() {
-			count();
-		});
-
-		function count() {
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
 			$.ajax({
-				url : 'count.do',
 				type : 'get',
+				url : 'count.do',
 				data : {
-					"id" : ${user.userId}
+					"id" : ${sessionUser.userId}
 				},
-				dataType : 'json',
 				success : function(res){
 					let fCount = $('#followerCount');
 					fCount.html('');
 					fCount.append(res);
-					
 				},
-				error : fuction(e) {
-					console.log('요청실패');
+				error : function(e){
+					console.log("실패");
 				}
 			});
-		}
+		})
 	</script>
+
 </body>
 </html>

@@ -13,7 +13,7 @@ public class sns_FollowDAO {
 		SqlSession session = factory.openSession(true);
 
 		int cnt = session.selectOne("count", id);
-
+		System.out.println(cnt);
 		session.close();
 		return cnt;
 	}
