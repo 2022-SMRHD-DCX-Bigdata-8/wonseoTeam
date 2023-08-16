@@ -62,8 +62,10 @@
 						tr += "<td>" + res[i].musicTitle + "<td>";
 						tr += "</tr>";
 
-						tr += "<tr><td>음악파일";
-						tr += "</td></tr>";
+						tr += "<tr>";
+						tr += "<td><img src=\"save/" + res[i].musicPhoto
+								+ "\"</td>";
+						tr += "</tr>";
 
 						tr += "<tr>";
 						tr += "<td>" + res[i].musicFile + "<td>";

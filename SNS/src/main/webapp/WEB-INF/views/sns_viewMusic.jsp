@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${user.musicTitle}</h1>
+<h1>${music.musicTitle }</h1>
 </body>
 </html>

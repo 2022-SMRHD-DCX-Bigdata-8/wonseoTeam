@@ -67,6 +67,9 @@
 									+ "\"</td>";
 							tr += "</tr>";
 						} else {
+							tr += "<td>"
+								+ res[i].userId;
+								+ "</td>";
 							tr += "<td><a href=\"goViewMusic.do?titlex="
 									+ res[i].musicTitle + "\">"
 									+ res[i].musicTitle + "</a></td>";

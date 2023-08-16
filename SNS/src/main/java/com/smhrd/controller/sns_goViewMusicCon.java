@@ -23,7 +23,7 @@ public class sns_goViewMusicCon implements sns_Controller {
 		// 이동할 페이지에 전달
 		request.setAttribute("music", music);
 
-		return "sns_viewUser";
+		return "sns_viewMusic";
 	}
 
 }
