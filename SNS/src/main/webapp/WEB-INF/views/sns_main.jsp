@@ -19,9 +19,14 @@
 		<li><a href="logout.do" onclick="return logout_confirm()">로그아웃</a></li>
 	</ul>
 
+	<div id="ranking"></div>
+
 	<!-- 게시글 보여주기 -->
 	<div id="board"></div>
-
+	
+	
+	
+	
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -34,7 +39,8 @@
 			}
 		}
 	</script>
-
+	
+	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			loadPost();
