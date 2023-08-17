@@ -11,8 +11,8 @@
 
 	<select id="followCheck"
 		parameterType="com.smhrd.entity.sns_followDTO"
-		resultType="com.smhrd.entity.sns_followDTO">
-		select * from TB_FOLLOW
+		resultType="int">
+		select count(*) from TB_FOLLOW
 		where
 		FOLLOWERID =
 		#{followerId}

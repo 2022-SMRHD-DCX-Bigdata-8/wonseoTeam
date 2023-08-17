@@ -27,9 +27,9 @@ public class sns_followCon implements sns_Controller {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		sns_FollowDAO dao = new sns_FollowDAO();
-		sns_followDTO result = dao.followCheck(follow);
+		int result = dao.followCheck(follow);
 
-		if (result != null) {
+		if (result > 0 ) {
 			System.out.println("팔로우 돼있음!");
 			
 			int cnt = dao.unFollow(follow);

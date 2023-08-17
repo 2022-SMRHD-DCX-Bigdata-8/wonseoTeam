@@ -69,7 +69,7 @@ height : 100px;
 					board.html('');
 
 					for (let i = 0; i < res.length; i++) {
-						tr = "<div>";
+						tr = "<div id=res[i].musicSeq>";
 						tr += "<h4>" + res[i].userId + "</h4>";
 
 						tr += "<h4>" + res[i].musicTitle + "</h4>";
@@ -78,8 +78,8 @@ height : 100px;
 								+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</p>";
 
 						tr += "<p>" + res[i].musicFile + "</p>";
-
-						tr += "<p><button id='like'>좋아요</button><button id='comment'>댓글</button><button>보관함</button></p>"
+						
+						tr += "<p><button id='like'>좋아요</button><span id='likesCount'>0</span><button id='comment'>댓글</button><button id='playlist'>보관함</button></p>"
 						
 						tr += "</div>";
 						// html('code') : 덮어쓰기
@@ -97,7 +97,9 @@ height : 100px;
 	</script>
 	
 	<script type="text/javascript">
-	
+		$(document).ready(function(){
+			
+		})
 	</script>
 </body>
 </html>

@@ -18,19 +18,19 @@ public class sns_FollowDAO {
 		return cnt;
 	}
 
-	public sns_followDTO followCheck(sns_followDTO follow) {
+	public int followCheck(sns_followDTO follow) {
 		SqlSession session = factory.openSession(true);
-		sns_followDTO result = null;
+		int cnt = 0;
 
 		try {
-			result = session.selectOne("followCheck", follow);
+			cnt = session.selectOne("followCheck", follow);
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
 		session.close();
-		return result;
+		return cnt;
 	}
 
 	public int doingFollow(sns_followDTO follow) {

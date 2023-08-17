@@ -27,17 +27,10 @@ public class sns_followCheckCon implements sns_Controller {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		sns_FollowDAO dao = new sns_FollowDAO();
-		sns_followDTO result = dao.followCheck(follow);
+		int cnt = dao.followCheck(follow);
 
-		if (result != null) {
-			System.out.println("팔로우 돼있음!");
-			
-			out.print("팔로우끊기");
-		} else {
-			System.out.println("팔로우 안돼있음!");
+		out.print(cnt);
 
-			out.print("팔로우하기");
-		}
 		return null;
 	}
 

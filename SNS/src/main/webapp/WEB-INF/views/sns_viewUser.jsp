@@ -29,49 +29,34 @@ img {
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-
+	
 	<script type="text/javascript">
-		$(document).ready(function() {
-			var followerId = $
-			{
-				sessionUser.userId
+	$(document).ready(function(){
+		var followerId = ${sessionUser.userId};
+		var followingId = ${user.userId};
+		$.ajax({
+			type : 'get',
+			url : 'followCheck.do',
+			data : {
+				"followerId" : followerId,
+				"followingId" : followingId
+			},
+			success : function(res) {
+				let followerCount = $('#followerCount');
+				followerCount.html(res);
+			},
+			error : function(e) {
+				console.log("오류 발생");
 			}
-			;
-			var followingId = $
-			{
-				user.userId
-			}
-			;
-			$.ajax({
-				type : 'get',
-				url : 'followCheck.do',
-				data : {
-					"followerId" : followerId,
-					"followingId" : followingId
-				},
-				success : function(res) {
-					let fbutton = $('#fButton');
-					fbutton.html(res);
-				},
-				error : function(e) {
-					console.log(res);
-				}
-			});
-		})
+		});
+	})
 	</script>
-
+	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fButton').click(function() {
-				var followerId = $
-				{
-					sessionUser.userId
-				}
-				;
-				var followingId = $
-				{
-					user.userId
-				}
+				var followerId = ${sessionUser.userId};
+				var followingId = ${user.userId}
 				;
 				$.ajax({
 					type : 'get',
@@ -83,6 +68,24 @@ img {
 					success : function(res) {
 						let fbutton = $('#fButton');
 						fbutton.html(res);
+						var followerId = ${sessionUser.userId};
+						var followingId = ${user.userId};
+						$.ajax({
+							type : 'get',
+							url : 'followCheck.do',
+							data : {
+								"followerId" : followerId,
+								"followingId" : followingId
+							},
+							success : function(res) {
+								let followerCount = $('#followerCount');
+								followerCount.html(res);
+							},
+							error : function(e) {
+								console.log("오류 발생");
+							}
+						});
+						
 					},
 					error : function(e) {
 						console.log(res);
