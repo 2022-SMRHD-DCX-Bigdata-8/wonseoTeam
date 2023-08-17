@@ -23,10 +23,15 @@
 		select * from TB_MUSIC
 	</select>
 
-<select id="viewMusic" resultType="com.smhrd.entity.sns_musicDTO">
+	<select id="viewMusic" resultType="com.smhrd.entity.sns_musicDTO">
 		select * from TB_MUSIC
 		where
 		musicTitle=#{titlex}
+	</select>
+	
+	<select id="loadMusic" resultType="com.smhrd.entity.sns_musicDTO">
+		select * from TB_MUSIC
+		where userId=#{id}
 	</select>
 
 

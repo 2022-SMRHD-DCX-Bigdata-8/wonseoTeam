@@ -52,8 +52,8 @@
 				<!-- 프사 업로드 칸 -->
 				<div class="avatar-upload">
 					<div class="avatar-edit">
-						<input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" />
-						<label for="imageUpload"></label>
+						<input type='file' id="imageUpload" name="changeImg"
+							accept=".png, .jpg, .jpeg" /> <label for="imageUpload"></label>
 					</div>
 
 					<!-- 프사 이미지 -->
@@ -265,7 +265,7 @@
 				<br>
 				<div id="list_box">
 					<ul id="photo_list">
-						<li><a href=""><img src="img/img/1.webp" alt="photo1"></a></li>
+						<li><a href=""><img src="save/머엉맹구.PNG" alt="photo1"></a></li>
 						<li><a href=""><img src="img/img//2.png" alt="photo2"></a></li>
 						<li><a href=""><img src="img/img//3.png" alt="photo3"></a></li>
 						<li><a href=""><img src="img/img//4.PNG" alt="photo4"></a></li>
@@ -333,5 +333,50 @@
 	          })
 	        });
 		</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var changeImg = $("")
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.ajax({
+				type : 'get',
+				url : 'loadMusic.do',
+				data : {
+					"id" : ${sessionUser.userId}
+				},
+				dataType : 'json',
+				success : function(res){
+					let photo_list = $('#photo_list');
+					photo_list.html('');
+					j = 1;
+					for (let i = 0;i <res.length;i++){
+						tr = "<li>";
+						tr += "<a href=\"goViewMusic.do?titlex="
+							+ res[i].musicTitle+"\">";
+						tr += "<img src=\"save/"+ res[i].musicPhoto	+ "\" alt=\"photo"+j+"\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
+						tr += "</a></li>";
+						j++;
+						console.log(j);
+					photo_list.append(tr);
+					}
+				},
+				error : function(e){
+					console.log('요청실패');
+				}
+			});
+		})
+	</script>
+	}
+
+
+
+
+
+
+
 </body>
 </html>

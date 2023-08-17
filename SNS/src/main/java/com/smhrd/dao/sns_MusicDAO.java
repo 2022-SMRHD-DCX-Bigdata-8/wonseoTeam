@@ -1,5 +1,6 @@
 package com.smhrd.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -39,5 +40,11 @@ public class sns_MusicDAO {
 		return music;
 	}
 
+	public List<sns_musicDTO> loadMusic(String id) {
+		SqlSession session = factory.openSession(true);
+		List<sns_musicDTO> list = session.selectList("loadMusic", id);
+		session.close();
+		return list;
+	}
 
 }

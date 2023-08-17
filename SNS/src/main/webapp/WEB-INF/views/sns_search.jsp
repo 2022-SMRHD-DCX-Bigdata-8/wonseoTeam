@@ -68,11 +68,11 @@
 		</div>
 
 		<!-- 결과창 -->
-		<div id="tbd">
-			<tbody id="tbd">
+		<div>
+			<div align="center" id="tbd">
 				<%--Ex10.게시글 목록을 출력해봅시다. --%>
 				<%--예시) --%>
-			</tbody>
+			</div>
 		</div>
 
 		<div id="knu-content"></div>
@@ -81,10 +81,6 @@
 		<div id="knu-sidebar2"></div>
 
 		<!-- footer -->
-		<div id="knu-footer">
-			<h2>Footer</h2>
-			<p>Copyright</p>
-		</div>
 
 	</div>
 
@@ -126,7 +122,7 @@
 							tbody.html('');
 
 							for (let i = 0; i < res.length; i++) {
-								tr = "<tr>";
+								tr = "<div class='flex-item'>";
 								if (searchSelect === 'userId') {
 									tr += "<td><a href=\"goViewUser.do?idx="
 											+ res[i].userId + "\">"
@@ -134,9 +130,10 @@
 									tr += "<td><img src=\"save/"
 											+ res[i].userPhoto
 											+ "\" onerror=\"this.src='https://www.thechooeok.com/common/img/default_profile.png'\"</td>";
-									tr += "</tr>";
+									tr += "</div>";
 								} else {
-									tr += "<td>" + res[i].userId;
+									tr += "<div class='flex-item'>"
+											+ res[i].userId;
 									+"</td>";
 									tr += "<td><a href=\"goViewMusic.do?titlex="
 											+ res[i].musicTitle
@@ -145,7 +142,7 @@
 									tr += "<td><img src=\"save/"
 											+ res[i].musicPhoto
 											+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</td>";
-									tr += "</tr>";
+									tr += "</div>";
 								}
 
 								// html('code') : 덮어쓰기
