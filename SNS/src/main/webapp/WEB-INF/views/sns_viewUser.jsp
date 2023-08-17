@@ -7,11 +7,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
 </head>
 <body>
 	<p>${user.userId }</p>
 	<p>
-		<img src="save/${user.userPhoto }">
+		<img src="save/${user.userPhoto }"
+			onerror="this.src='https://www.thechooeok.com/common/img/default_profile.png'">
 	</p>
 	<p>
 		팔로워 수 : <span id="followerCount">0</span>
@@ -25,31 +32,47 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
-				var followerId = ${sessionUser.userId};
-				var followingId = ${user.userId};
-				$.ajax({
-					type : 'get',
-					url : 'followCheck.do',
-					data : {
-						"followerId" : followerId,
-						"followingId" : followingId
-					},
-					success : function(res) {
-						let fbutton = $('#fButton');
-						fbutton.html(res);
-					},
-					error : function(e) {
-						console.log(res);
-					}
-				});
-			})
+			var followerId = $
+			{
+				sessionUser.userId
+			}
+			;
+			var followingId = $
+			{
+				user.userId
+			}
+			;
+			$.ajax({
+				type : 'get',
+				url : 'followCheck.do',
+				data : {
+					"followerId" : followerId,
+					"followingId" : followingId
+				},
+				success : function(res) {
+					let fbutton = $('#fButton');
+					fbutton.html(res);
+				},
+				error : function(e) {
+					console.log(res);
+				}
+			});
+		})
 	</script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fButton').click(function() {
-				var followerId = ${sessionUser.userId};
-				var followingId = ${user.userId};
+				var followerId = $
+				{
+					sessionUser.userId
+				}
+				;
+				var followingId = $
+				{
+					user.userId
+				}
+				;
 				$.ajax({
 					type : 'get',
 					url : 'follow.do',

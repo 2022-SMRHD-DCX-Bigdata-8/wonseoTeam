@@ -7,6 +7,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+img {
+	width: 100px;
+	height: 100px;
+}
+</style>
 </head>
 <body>
 	<div id="search">
@@ -42,53 +48,55 @@
 		function userSearch() {
 			var searchSelect = $('#searchSelects').val();
 			var search = $('#inputText').val();
-			$.ajax({
-				url : 'search.do',
-				type : 'get',
-				data : {
-					"search" : search,
-					"searchSelect" : searchSelect
-				},
-				dataType : 'json', // 응답받는 데이터의 형식
-				success : function(res) {
-					console.log(res);
+			$
+					.ajax({
+						url : 'search.do',
+						type : 'get',
+						data : {
+							"search" : search,
+							"searchSelect" : searchSelect
+						},
+						dataType : 'json', // 응답받는 데이터의 형식
+						success : function(res) {
+							console.log(res);
 
-					let tbody = $('#tbd');
+							let tbody = $('#tbd');
 
-					tbody.html('');
+							tbody.html('');
 
-					for (let i = 0; i < res.length; i++) {
-						tr = "<tr>";
-						if (searchSelect === 'userId') {
-							tr += "<td><a href=\"goViewUser.do?idx="
-									+ res[i].userId + "\">" + res[i].userId
-									+ "</a></td>";
-							tr += "<td><img src=\"save/" + res[i].userPhoto
-									+ "\"</td>";
-							tr += "</tr>";
-						} else {
-							tr += "<td>"
-								+ res[i].userId;
-								+ "</td>";
-							tr += "<td><a href=\"goViewMusic.do?titlex="
-									+ res[i].musicTitle + "\">"
-									+ res[i].musicTitle + "</a></td>";
-							tr += "<td><img src=\"save/" + res[i].musicPhoto
-									+ "\"</td>";
-							tr += "</tr>";
+							for (let i = 0; i < res.length; i++) {
+								tr = "<tr>";
+								if (searchSelect === 'userId') {
+									tr += "<td><a href=\"goViewUser.do?idx="
+											+ res[i].userId + "\">"
+											+ res[i].userId + "</a></td>";
+									tr += "<td><img src=\"save/"
+											+ res[i].userPhoto
+											+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</td>";
+									tr += "</tr>";
+								} else {
+									tr += "<td>" + res[i].userId;
+									+"</td>";
+									tr += "<td><a href=\"goViewMusic.do?titlex="
+											+ res[i].musicTitle
+											+ "\">"
+											+ res[i].musicTitle + "</a></td>";
+									tr += "<td><img src=\"save/" + res[i].musicPhoto
+									+ "\"></td>";
+									tr += "</tr>";
+								}
+
+								// html('code') : 덮어쓰기
+								// after('code') : 닫는 태그 바로 뒤에 추가
+								// before('code') : 여는 태그 바로 앞에 추가
+								// append('code') : 자식 요소로 추가 
+								tbody.append(tr);
+							}
+						},
+						error : function(e) {
+							console.log('요청실패!!!');
 						}
-
-						// html('code') : 덮어쓰기
-						// after('code') : 닫는 태그 바로 뒤에 추가
-						// before('code') : 여는 태그 바로 앞에 추가
-						// append('code') : 자식 요소로 추가 
-						tbody.append(tr);
-					}
-				},
-				error : function(e) {
-					console.log('요청실패!!!');
-				}
-			});
+					});
 		}
 	</script>
 

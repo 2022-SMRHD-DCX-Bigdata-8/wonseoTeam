@@ -6,6 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+#board div{
+border : 1px solid black;
+}
+
+img{
+width : 100px;
+height : 100px;
+}
+</style>
 </head>
 <body>
 	<!-- 메뉴창 -->
@@ -15,7 +25,7 @@
 		<li><a href="goProfile.do">프로필</a></li>
 		<li><a href="goWrite.do">게시물올리기</a></li>
 		<li><a href="goPlaylist.do">플리</a></li>
-		<li><a href="goMessage.do">플리</a></li>
+		<li><a href="goMessage.do">메신저</a></li>
 		<li><a href="logout.do" onclick="return logout_confirm()">로그아웃</a></li>
 	</ul>
 
@@ -59,25 +69,19 @@
 					board.html('');
 
 					for (let i = 0; i < res.length; i++) {
-						tr = "<table border=\"1\">";
-						tr += "<tr>";
-						tr += "<td>" + res[i].userId + "<td>";
-						tr += "</tr>";
+						tr = "<div>";
+						tr += "<h4>" + res[i].userId + "</h4>";
 
-						tr += "<tr>";
-						tr += "<td>" + res[i].musicTitle + "<td>";
-						tr += "</tr>";
+						tr += "<h4>" + res[i].musicTitle + "</h4>";
 
-						tr += "<tr>";
-						tr += "<td><img src=\"save/" + res[i].musicPhoto
-								+ "\"</td>";
-						tr += "</tr>";
+						tr += "<p><img src=\"save/" + res[i].musicPhoto
+								+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</p>";
 
-						tr += "<tr>";
-						tr += "<td>" + res[i].musicFile + "<td>";
-						tr += "</tr>";
+						tr += "<p>" + res[i].musicFile + "</p>";
 
-						tr += "</table>";
+						tr += "<p><button id='like'>좋아요</button><button id='comment'>댓글</button><button>보관함</button></p>"
+						
+						tr += "</div>";
 						// html('code') : 덮어쓰기
 						// after('code') : 닫는 태그 바로 뒤에 추가
 						// before('code') : 여는 태그 바로 앞에 추가
@@ -90,6 +94,10 @@
 				}
 			});
 		}
+	</script>
+	
+	<script type="text/javascript">
+	
 	</script>
 </body>
 </html>

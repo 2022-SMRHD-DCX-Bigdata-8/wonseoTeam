@@ -5,11 +5,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+img{
+width : 100px;
+height : 100px;
+}
+</style>
 </head>
 <body>
 	<p>${sessionUser.userId }</p>
 	<p>
-		<img src="save/${sessionUser.userPhoto }">
+		<img src="save/${sessionUser.userPhoto }" onerror="this.src='https://www.thechooeok.com/common/img/default_profile.png'">
 	</p>
 	<p>
 		팔로워 수 : <span id="followerCount">0</span>
