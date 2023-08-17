@@ -8,94 +8,84 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="assets/css/sns_search.css">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
 
 <style type="text/css">
 </style>
 </head>
 <body>
+	<!-- 전체 감싸는 div -->
+	<div id="knu-container">
 
- 
-   <!-- Container -->
-   <div id="knu-container">
+		<!-- header div -->
+		<div id="knu-header">
 
-      <!-- Header -->
+			<img
+				src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMThfMjkg%2FMDAxNjc2NzI3MzExMzAy.umwnYxkbm5OLxYcw13diqjPlGpHmiju6v9dkzo68UHEg.3tWz4JSUwnJvByueURREKM5Q99Y1M56yT2006UM1cTEg.PNG.slalomman%2F%25C0%25CE%25BD%25BA%25C5%25B8.PNG&type=sc960_832"
+				alt="">
+		</div>
 
-      <div id="knu-header">
+		<!-- 검색창 div -->
+		<div class="sub_sps_sch">
+			<input type="hidden" name="bo_table" value="board03_01"> <input
+				type="hidden" name="sca" value=""> <input type="hidden"
+				name="sop" value="and">
+			<fieldset>
+				<legend>검색창</legend>
 
-         <img
-            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMThfMjkg%2FMDAxNjc2NzI3MzExMzAy.umwnYxkbm5OLxYcw13diqjPlGpHmiju6v9dkzo68UHEg.3tWz4JSUwnJvByueURREKM5Q99Y1M56yT2006UM1cTEg.PNG.slalomman%2F%25C0%25CE%25BD%25BA%25C5%25B8.PNG&type=sc960_832"
-            alt="">
+				<select name="searchSelects" id="searchSelects" class="select-cus">
+					<option value="userId">사용자ID</option>
+					<option value="musicTitle">노래제목</option>
+				</select>
 
-      </div>
-      <!-- Sidebar left -->
-      <div class="sub_sps_sch">
-         <form name="fsearch" method="get" id="fsearch">
-            <input type="hidden" name="bo_table" value="board03_01"> <input
-               type="hidden" name="sca" value=""> <input type="hidden"
-               name="sop" value="and">
-            <fieldset>
-               <legend>검색창</legend>
-               
-                  
-                  <select
-                     name="searchSelects" id="searchSelects" class="select-cus" >
-                     
-                     <option name="wr_subject">사용자ID</option>
-                     <option name="wr_content">노래제목</option>
-                  </select>
+				<div class="search_box">
+					<input type="text" name="stx" value="" required="" id="inputText"
+						class="frm_input required" size="20" maxlength="20"
+						placeholder="검색어를 입력하세요">
+					<button class="btn_submit" id="searchBtn" type="button">검색</button>
+				</div>
+			</fieldset>
+		</div>
 
-               
-               <div class="search_box">
-                  <input type="text" name="stx" value="" required="" id="inputText"
-                     class="frm_input required" size="20" maxlength="20"
-                     placeholder="검색어를 입력하세요">
-                  <button class="btn_submit" id="searchBtn" type="button">검색</button>
-               </div>
-            </fieldset>
-         </form>
-      </div>
-      <div id="knu-sidebar1">
-         <br>
-         <div class="menu">
-            <label for="expand-menu"></label> <input type="checkbox"
-               id="expand-menu" name="expand-menu">
-            <ul>
-               <li><a href="#" class="item"></a></li>
-               <li><a href="#" class="item"></a></li>
-               <li><a href="#" class="item"></a></li>
-               <li><a href="#" class="item"></a></li>
-               <li><a href="#" class="item"></a></li>
-               <li><a href="#" class="item"></a></li>
-               <li><a href="#" class="item"></a></li>
-            </ul>
-         </div>
+		<!-- 메뉴 바 -->
+		<div id="knu-sidebar1">
+			<br>
+			<div class="menu">
+				<label for="expand-menu"></label> <input type="checkbox"
+					id="expand-menu" name="expand-menu">
+				<ul>
+					<li><a href="#" class="item"></a></li>
+					<li><a href="#" class="item"></a></li>
+					<li><a href="#" class="item"></a></li>
+					<li><a href="#" class="item"></a></li>
+					<li><a href="#" class="item"></a></li>
+					<li><a href="#" class="item"></a></li>
+					<li><a href="#" class="item"></a></li>
+				</ul>
+			</div>
+		</div>
 
-      </div>
+		<!-- 결과창 -->
+		<div id="tbd">
+			<tbody id="tbd">
+				<%--Ex10.게시글 목록을 출력해봅시다. --%>
+				<%--예시) --%>
+			</tbody>
+		</div>
 
+		<div id="knu-content"></div>
 
+		<!-- Sidebar right-->
+		<div id="knu-sidebar2"></div>
 
+		<!-- footer -->
+		<div id="knu-footer">
+			<h2>Footer</h2>
+			<p>Copyright</p>
+		</div>
 
-      <!-- Content -->
-      <div id="tbd">
-
-      </div>
-      <div id="knu-content"></div>
-
-      <!-- Sidebar right-->
-      <div id="knu-sidebar2"></div>
-
-      <!-- Footer -->
-      <div id="knu-footer">
-         <h2>Footer</h2>
-         <p>Copyright</p>
-      </div>
-      
-
-   </div>
-
-</body>
-
+	</div>
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -131,7 +121,7 @@
 											+ res[i].userId + "</a></td>";
 									tr += "<td><img src=\"save/"
 											+ res[i].userPhoto
-											+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</td>";
+											+ "\" onerror=\"this.src='https://www.thechooeok.com/common/img/default_profile.png'\"</td>";
 									tr += "</tr>";
 								} else {
 									tr += "<td>" + res[i].userId;
@@ -141,7 +131,7 @@
 											+ "\">"
 											+ res[i].musicTitle + "</a></td>";
 									tr += "<td><img src=\"save/" + res[i].musicPhoto
-									+ "\"></td>";
+									+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</td>";
 									tr += "</tr>";
 								}
 

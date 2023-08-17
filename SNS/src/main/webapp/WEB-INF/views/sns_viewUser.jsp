@@ -15,7 +15,7 @@ img {
 </style>
 </head>
 <body>
-	<p>${user.userId }</p>
+	<p>${user.userId}</p>
 	<p>
 		<img src="save/${user.userPhoto }"
 			onerror="this.src='https://www.thechooeok.com/common/img/default_profile.png'">
@@ -27,36 +27,37 @@ img {
 	<button id="fButton">팔로우하기</button>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-	
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 	<script type="text/javascript">
-	$(document).ready(function(){
-		var followerId = ${sessionUser.userId};
-		var followingId = ${user.userId};
-		$.ajax({
-			type : 'get',
-			url : 'followCheck.do',
-			data : {
-				"followerId" : followerId,
-				"followingId" : followingId
-			},
-			success : function(res) {
-				let followerCount = $('#followerCount');
-				followerCount.html(res);
-			},
-			error : function(e) {
-				console.log("오류 발생");
-			}
-		});
-	})
+		$(document).ready(function() {
+			var followerId = `${sessionUser.userId}`;
+			var followingId = `${user.userId}`;
+			$.ajax({
+				type : 'get',
+				url : 'followCheck.do',
+				data : {
+					"followerId" : followerId,
+					"followingId" : followingId
+				},
+				success : function(res) {
+					let followerCount = $('#followerCount');
+					followerCount.html(res);
+				},
+				error : function(e) {
+					console.log("오류 발생");
+				}
+			});
+		})
 	</script>
-	
-	
+
+
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fButton').click(function() {
-				var followerId = ${sessionUser.userId};
-				var followingId = ${user.userId};
+				var followerId = `${sessionUser.userId}`;
+				var followingId = `${user.userId}`;
 				$.ajax({
 					type : 'get',
 					url : 'follow.do',
@@ -64,12 +65,11 @@ img {
 						"followerId" : followerId,
 						"followingId" : followingId
 					},
-					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 					success : function(res) {
 						let fbutton = $('#fButton');
 						fbutton.html(res);
-						var followerId = ${sessionUser.userId};
-						var followingId = ${user.userId};
+						var followerId = `${sessionUser.userId}`;
+						var followingId = `${user.userId}`;
 						$.ajax({
 							type : 'get',
 							url : 'followCheck.do',
@@ -85,7 +85,7 @@ img {
 								console.log("오류 발생");
 							}
 						});
-						
+
 					},
 					error : function(e) {
 						console.log(res);
