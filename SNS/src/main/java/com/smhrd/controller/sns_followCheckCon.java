@@ -18,7 +18,7 @@ public class sns_followCheckCon implements sns_Controller {
 		String followerId = request.getParameter("followerId");
 		String followingId = request.getParameter("followingId");
 
-		System.out.println(followerId + followingId);
+		System.out.println(followerId);
 
 		sns_followDTO follow = new sns_followDTO();
 		follow.setFollowerId(followerId);

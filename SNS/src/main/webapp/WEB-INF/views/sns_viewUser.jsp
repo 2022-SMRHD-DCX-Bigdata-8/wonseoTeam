@@ -27,8 +27,7 @@ img {
 	<button id="fButton">팔로우하기</button>
 
 
-	<script
-		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 	
 	<script type="text/javascript">
 	$(document).ready(function(){
@@ -52,12 +51,12 @@ img {
 	})
 	</script>
 	
+	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fButton').click(function() {
 				var followerId = ${sessionUser.userId};
-				var followingId = ${user.userId}
-				;
+				var followingId = ${user.userId};
 				$.ajax({
 					type : 'get',
 					url : 'follow.do',
@@ -65,6 +64,7 @@ img {
 						"followerId" : followerId,
 						"followingId" : followingId
 					},
+					contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 					success : function(res) {
 						let fbutton = $('#fButton');
 						fbutton.html(res);

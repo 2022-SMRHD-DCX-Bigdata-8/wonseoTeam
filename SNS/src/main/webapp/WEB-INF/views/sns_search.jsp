@@ -7,36 +7,95 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/sns_search.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 <style type="text/css">
-img {
-	width: 100px;
-	height: 100px;
-}
 </style>
 </head>
 <body>
-	<div id="search">
-		<h1>검색</h1>
-		<table id="list" border="1">
-			<thead>
-				<tr>
-					<td><select name="searchSelects" id="searchSelects">
-							<option value="userId">사용자ID</option>
-							<option value="musicTitle">노래제목</option>
-					</select></td>
-					<td><input id="inputText" type="text"></td>
-					<td>
-						<button id="searchBtn" type="button">검색</button>
-					</td>
-				</tr>
-			</thead>
-			<tbody id="tbd">
-				<%--Ex10.게시글 목록을 출력해봅시다. --%>
-				<%--예시) --%>
-			</tbody>
 
-		</table>
-	</div>
+ 
+   <!-- Container -->
+   <div id="knu-container">
+
+      <!-- Header -->
+
+      <div id="knu-header">
+
+         <img
+            src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMThfMjkg%2FMDAxNjc2NzI3MzExMzAy.umwnYxkbm5OLxYcw13diqjPlGpHmiju6v9dkzo68UHEg.3tWz4JSUwnJvByueURREKM5Q99Y1M56yT2006UM1cTEg.PNG.slalomman%2F%25C0%25CE%25BD%25BA%25C5%25B8.PNG&type=sc960_832"
+            alt="">
+
+      </div>
+      <!-- Sidebar left -->
+      <div class="sub_sps_sch">
+         <form name="fsearch" method="get" id="fsearch">
+            <input type="hidden" name="bo_table" value="board03_01"> <input
+               type="hidden" name="sca" value=""> <input type="hidden"
+               name="sop" value="and">
+            <fieldset>
+               <legend>검색창</legend>
+               
+                  
+                  <select
+                     name="searchSelects" id="searchSelects" class="select-cus" >
+                     
+                     <option name="wr_subject">사용자ID</option>
+                     <option name="wr_content">노래제목</option>
+                  </select>
+
+               
+               <div class="search_box">
+                  <input type="text" name="stx" value="" required="" id="inputText"
+                     class="frm_input required" size="20" maxlength="20"
+                     placeholder="검색어를 입력하세요">
+                  <button class="btn_submit" id="searchBtn" type="button">검색</button>
+               </div>
+            </fieldset>
+         </form>
+      </div>
+      <div id="knu-sidebar1">
+         <br>
+         <div class="menu">
+            <label for="expand-menu"></label> <input type="checkbox"
+               id="expand-menu" name="expand-menu">
+            <ul>
+               <li><a href="#" class="item"></a></li>
+               <li><a href="#" class="item"></a></li>
+               <li><a href="#" class="item"></a></li>
+               <li><a href="#" class="item"></a></li>
+               <li><a href="#" class="item"></a></li>
+               <li><a href="#" class="item"></a></li>
+               <li><a href="#" class="item"></a></li>
+            </ul>
+         </div>
+
+      </div>
+
+
+
+
+      <!-- Content -->
+      <div id="tbd">
+
+      </div>
+      <div id="knu-content"></div>
+
+      <!-- Sidebar right-->
+      <div id="knu-sidebar2"></div>
+
+      <!-- Footer -->
+      <div id="knu-footer">
+         <h2>Footer</h2>
+         <p>Copyright</p>
+      </div>
+      
+
+   </div>
+
+</body>
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 

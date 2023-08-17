@@ -7,13 +7,13 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <style type="text/css">
-#board div{
-border : 1px solid black;
+#board div {
+	border: 1px solid black;
 }
 
-img{
-width : 100px;
-height : 100px;
+img {
+	width: 100px;
+	height: 100px;
 }
 </style>
 </head>
@@ -33,9 +33,6 @@ height : 100px;
 
 	<!-- 게시글 보여주기 -->
 	<div id="board"></div>
-	
-	
-	
 	
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -79,7 +76,7 @@ height : 100px;
 
 						tr += "<p>" + res[i].musicFile + "</p>";
 						
-						tr += "<p><button id='like'>좋아요</button><span id='likesCount'>0</span><button id='comment'>댓글</button><button id='playlist'>보관함</button></p>"
+						tr += "<p><button id='comment'>댓글</button><button id='playlist'>보관함</button></p>"
 						
 						tr += "</div>";
 						// html('code') : 덮어쓰기
@@ -96,10 +93,5 @@ height : 100px;
 		}
 	</script>
 	
-	<script type="text/javascript">
-		$(document).ready(function(){
-			
-		})
-	</script>
 </body>
 </html>
