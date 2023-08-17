@@ -55,13 +55,14 @@
 				<label for="expand-menu"></label> <input type="checkbox"
 					id="expand-menu" name="expand-menu">
 				<ul>
-					<li><a href="#" class="item"></a></li>
-					<li><a href="#" class="item"></a></li>
-					<li><a href="#" class="item"></a></li>
-					<li><a href="#" class="item"></a></li>
-					<li><a href="#" class="item"></a></li>
-					<li><a href="#" class="item"></a></li>
-					<li><a href="#" class="item"></a></li>
+					<li><a href="goMain.do" class="item"></a></li>
+					<li><a href="goSearch.do" class="item"></a></li>
+					<li><a href="goProfile.do" class="item"></a></li>
+					<li><a href="goWrite.do" class="item"></a></li>
+					<li><a href="goPlaylist.do" class="item"></a></li>
+					<li><a href="goMessage.do" class="item"></a></li>
+					<li><a href="logout.do" onclick="return logout_confirm()"
+						class="item"></a></li>
 				</ul>
 			</div>
 		</div>
@@ -86,8 +87,19 @@
 		</div>
 
 	</div>
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function logout_confirm() {
+			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -130,8 +142,9 @@
 											+ res[i].musicTitle
 											+ "\">"
 											+ res[i].musicTitle + "</a></td>";
-									tr += "<td><img src=\"save/" + res[i].musicPhoto
-									+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</td>";
+									tr += "<td><img src=\"save/"
+											+ res[i].musicPhoto
+											+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"</td>";
 									tr += "</tr>";
 								}
 
