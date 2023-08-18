@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
 import javax.websocket.OnClose;
 import javax.websocket.OnMessage;
 import javax.websocket.OnOpen;
@@ -12,8 +13,8 @@ import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 
 import com.google.gson.Gson;
+import com.smhrd.dao.sns_ChatDAO;
 import com.smhrd.entity.sns_chatDTO;
-
 
 @ServerEndpoint("/SNS/{chatId}")
 public class sns_ChatHandler {
@@ -71,6 +72,8 @@ public class sns_ChatHandler {
 		// JSON -> java object
 		Gson gson = new Gson();
 		sns_chatDTO chat = gson.fromJson(msg, sns_chatDTO.class);
+		// sns_ChatDAO dao = new sns_ChatDAO();
+		// dao.saveChat(chat);
 		// ....
 
 		List<Session> list = users.get(chatId);

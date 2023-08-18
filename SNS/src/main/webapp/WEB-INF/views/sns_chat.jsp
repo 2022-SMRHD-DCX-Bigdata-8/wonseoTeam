@@ -48,7 +48,7 @@
 				</select>
 
 				<div class="search_box">
-					<h1>${sessionUser.userId }와 ${opponent }의채팅방</h1>
+					<h1>${sessionUser.userId }와${opponent }의채팅방</h1>
 				</div>
 			</fieldset>
 		</div>
@@ -100,10 +100,42 @@
 		src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 
 	<script type="text/javascript">
+		$(document).ready(function(){
+			var roomNo = ${roomNo};
+			var me = ${sessionUser.userId };
+			console.log("안녕");
+			$.ajax({
+				url : 'loadChat.do',
+				type : 'get',
+				data : {
+					"roomNo" : ${roomNo},
+					"me" : me
+				},
+				dataType : 'json',
+				success : function(res){
+					let chatDiv = $('#chatDiv');
+					chatDiv.html('');
+					
+					for (let i = 0;i<res.length;i++){
+						tr = `
+						<div>\${res[i].content}</div>
+						`;
+						chatDiv.append(tr);
+					}
+					
+				},
+				error : function(e){
+					console.log("요청실패");
+				}
+			});
+		
+		})
+	</script>
+
+	<script type="text/javascript">
 $(document).ready(function(){
 		
 		// 0. 비동기 통신 방식으로 DB에 저장된 내용 가져오기
-		
 		
 		// 1. WebSocket 객체 생성
 		const websocket = new WebSocket("ws://localhost:8081/SNS/SNS/${roomNo}"); // socket url
@@ -150,7 +182,7 @@ $(document).ready(function(){
 			
 			$('#chatDiv').append(c);			
 			
-			websocket.send( JSON.stringify(msg) )						
+			websocket.send(JSON.stringify(msg));			
 		});
 		
 	})

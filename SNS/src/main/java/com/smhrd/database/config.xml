@@ -30,5 +30,6 @@
 		<mapper resource="com/smhrd/dao/sns_UserMapper.xml" />
 		<mapper resource="com/smhrd/dao/sns_FollowMapper.xml" />
 		<mapper resource="com/smhrd/dao/sns_RoomMapper.xml" />
+		<mapper resource="com/smhrd/dao/sns_ChatMapper.xml" />
 	</mappers>
 </configuration>

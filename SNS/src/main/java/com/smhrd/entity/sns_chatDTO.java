@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 public class sns_chatDTO {
 	private int chatSeq; // 채팅 순번
 	private String sendId; // 보낸 사람
-	private String recvId;// 받는 사람
 	private String chatDate; // 채팅 날짜
 	private String content;// 내용
+	private int roomSeq;// 방 순번
 }
