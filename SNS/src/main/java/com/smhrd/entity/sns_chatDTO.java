@@ -8,10 +8,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class sns_chatDTO {
-	private int chatSeq;   //채팅순번
-	private String chatter;//발화자
-	private String chat;   //발화내용
-	private String chatDate;//발화시간
-	private int roomSeq;	//방순번
-
+	private int chatSeq; // 채팅 순번
+	private String sendId; // 보낸 사람
+	private String recvId;// 받는 사람
+	private String chatDate; // 채팅 날짜
+	private String content;// 내용
 }

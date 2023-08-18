@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.dao.sns_RoomDAO">
+
+	<select id="searchRoom"
+		parameterType="com.smhrd.entity.sns_roomDTO"
+		resultType="com.smhrd.entity.sns_roomDTO">
+		select roomSeq from tb_room
+		where
+		((userid1 = #{userId1}) and (userid2 = #{userId2}))
+		or
+		((userid1 = #{userId2}) and (userid2 = #{userId1}))
+	</select>
+	
+	<insert id="createRoom" parameterType="com.smhrd.entity.sns_roomDTO">
+		insert into tb_room(ROOMSEQ, USERID1, USERID2)
+		values(
+		TB_ROOM_SEQ.nextval,
+		#{userId1},
+		#{userId2}
+		)
+	</insert>
+
+
+
+
+
+
+
+</mapper>

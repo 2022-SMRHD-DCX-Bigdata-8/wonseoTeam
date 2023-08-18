@@ -8,9 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class sns_roomDTO {
-	private int roomSeq;
-	private String userId;
-	private String roomDate;
-	private String roomState;
-
+	private int roomSEQ; // 채팅 순번
+	private String userId1; // 보낸 사람
+	private String userId2;// 받는 사람
 }
