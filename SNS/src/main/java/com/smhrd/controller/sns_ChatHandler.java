@@ -15,7 +15,7 @@ import com.google.gson.Gson;
 import com.smhrd.entity.sns_chatDTO;
 
 
-@ServerEndpoint("/sns_chat/{chatId}")
+@ServerEndpoint("/SNS/{chatId}")
 public class sns_ChatHandler {
 
 	// list만큼은 사라지면 안된다 --> static

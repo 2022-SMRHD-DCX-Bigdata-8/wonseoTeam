@@ -106,7 +106,7 @@ $(document).ready(function(){
 		
 		
 		// 1. WebSocket 객체 생성
-		const websocket = new WebSocket("ws://localhost:8081/SNS/sns_chat/${roomNo}"); // socket url
+		const websocket = new WebSocket("ws://localhost:8081/SNS/SNS/${roomNo}"); // socket url
 		
 		// 2.1. 연결이 완료 되었을 떄, 무슨일을??
 		websocket.onopen = function(message){ // message --> 주고 받는 데이터가 들어있는 객체
