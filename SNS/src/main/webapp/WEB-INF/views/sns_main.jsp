@@ -16,6 +16,7 @@ img {
 	height: 100px;
 }
 </style>
+
 </head>
 <body>
 	<!-- 메뉴창 -->
@@ -32,8 +33,38 @@ img {
 	<!-- 게시글 보여주기 -->
 	<div id="board"></div>
 
+
+	<!-- 댓글 모달 -->
+	<div id="modal" class="modal-overlay">
+		<div class="modal-window">
+			<div class="title">
+				<div class="close-area">X</div>
+				<h4>댓글</h4>
+			</div>
+			<div class="content">
+				<input id = "comment" type="text">
+				<button id=btn-modal>입력</button>
+			</div>
+		</div>
+	</div>
+
+
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('btn-modal').on('click', saveCmt);
+		})
+		
+		function saveCmt() {
+			var cmt = $('#comment').val();
+			var writer = ${sessionUser.userId};
+			var musicSeq = this.val();
+			console.log("하이");
+			
+		}
+	</script>
 
 	<script type="text/javascript">
 		function logout_confirm() {
@@ -76,7 +107,7 @@ img {
 
 								tr += "<p>" + res[i].musicFile + "</p>";
 
-								tr += "<p><button id='comment'>댓글</button><button id='playlist'>보관함</button></p>"
+								tr += "<p><button id=\"btn-modal\" value=\""+res[i].musicSeq+"\">댓글</button><button id='playlist'>보관함</button></p>"
 
 								tr += "</div>";
 								// html('code') : 덮어쓰기
@@ -92,6 +123,7 @@ img {
 					});
 		}
 	</script>
+
 
 </body>
 </html>

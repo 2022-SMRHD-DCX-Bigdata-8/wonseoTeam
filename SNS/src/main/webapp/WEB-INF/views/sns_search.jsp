@@ -88,77 +88,75 @@ a {
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<script type="text/javascript">
-		function logout_confirm() {
-			if (confirm("로그아웃하시겠습니까?")) {
-				return true;
-			} else {
-				return false;
-			}
-		}
-	</script>
+      function logout_confirm() {
+         if (confirm("로그아웃하시겠습니까?")) {
+            return true;
+         } else {
+            return false;
+         }
+      }
+   </script>
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#searchBtn').on('click', userSearch);
-		})
+      $(document).ready(function() {
+         $('#searchBtn').on('click', userSearch);
+      })
 
-		function userSearch() {
-			var searchSelect = $('#searchSelects').val();
-			var search = $('#inputText').val();
-			$
-					.ajax({
-						url : 'search.do',
-						type : 'get',
-						data : {
-							"search" : search,
-							"searchSelect" : searchSelect
-						},
-						dataType : 'json', // 응답받는 데이터의 형식
-						success : function(res) {
-							console.log(res);
+      function userSearch() {
+         var searchSelect = $('#searchSelects').val();
+         var search = $('#inputText').val();
+         $
+               .ajax({
+                  url : 'search.do',
+                  type : 'get',
+                  data : {
+                     "search" : search,
+                     "searchSelect" : searchSelect
+                  },
+                  dataType : 'json', // 응답받는 데이터의 형식
+                  success : function(res) {
+                     console.log(res);
 
-							let tbody = $('#tbd');
+                     let tbody = $('#tbd');
 
-							tbody.html('');
+                     tbody.html('');
 
-							for (let i = 0; i < res.length; i++) {
-								let flexItem = document.createElement('div');
-								flexItem.classList.add('flex-item');
+                     for (let i = 0; i < res.length; i++) {
+                           let flexItem = document.createElement('div');
+                           flexItem.classList.add('flex-item');
 
-								let img = document.createElement('img');
-								img.src = "save/" + res[i].musicPhoto;
-								img.onerror = function() {
-									this.src = 'https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800';
-								};
+                           let img = document.createElement('img');
+                           img.src = "save/" + res[i].musicPhoto+"\"";
+                           img.class = "resultImg"
+                           img.onerror = function() {
+                               this.src = 'https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800';
+                           };
 
-								let a = document.createElement('a');
-								a.href = "goViewMusic.do?titlex="
-										+ res[i].musicTitle;
-								a.textContent = res[i].musicTitle;
+                           let a = document.createElement('a');
+                           a.href = "goViewMusic.do?titlex=" + res[i].musicTitle;
+                           a.textContent = res[i].musicTitle;
 
-								flexItem.appendChild(img);
-								flexItem.appendChild(a);
+                           flexItem.appendChild(img);
+                           flexItem.appendChild(a);
 
-								if (searchSelect === 'userId') {
-									let userIdLink = document
-											.createElement('a');
-									userIdLink.href = "goViewUser.do?idx="
-											+ res[i].userId;
-									userIdLink.textContent = res[i].userId;
+                           if (searchSelect === 'userId') {
+                               let userIdLink = document.createElement('a');
+                               userIdLink.href = "goViewUser.do?idx=" + res[i].userId;
+                               userIdLink.textContent = res[i].userId;
 
-									flexItem.appendChild(userIdLink);
-								}
+                               flexItem.appendChild(userIdLink);
+                           }
 
-								let tbd = document.getElementById('tbd');
-								tbd.appendChild(flexItem);
-							}
-						},
-						error : function(e) {
-							console.log('요청실패!!!');
-						}
-					});
-		}
-	</script>
+                           let tbd = document.getElementById('tbd');
+                           tbd.appendChild(flexItem);
+                       }
+                  },
+                  error : function(e) {
+                     console.log('요청실패!!!');
+                  }
+               });
+      }
+   </script>
 
 </body>
 </html>
