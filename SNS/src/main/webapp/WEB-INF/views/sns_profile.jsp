@@ -370,8 +370,16 @@
 			});
 		})
 	</script>
-	}
 
+	<script type="text/javascript">
+		function logout_confirm() {
+			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
 
 
 

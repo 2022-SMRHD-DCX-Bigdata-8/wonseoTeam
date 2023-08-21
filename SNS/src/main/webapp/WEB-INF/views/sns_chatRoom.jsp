@@ -89,6 +89,16 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<script type="text/javascript">
+		function logout_confirm() {
+			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#searchBtn').on('click', searchId);
 		})

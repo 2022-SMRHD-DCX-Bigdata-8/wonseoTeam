@@ -368,5 +368,37 @@
 			})
 		})
 	</script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$.ajax({
+				type : 'get',
+				url : 'loadMusic.do',
+				data : {
+					"id" : ${user.userId}
+				},
+				dataType : 'json',
+				success : function(res){
+					let photo_list `= $('#photo_list');
+					photo_list.html('');
+					j = 1;
+					for (let i = 0;i <res.length;i++){
+						tr = "<li>";
+						tr += "<a href=\"goViewMusic.do?titlex="
+							+ res[i].musicTitle+"\">";
+						tr += "<img src=\"save/"+ res[i].musicPhoto	+ "\" alt=\"photo"+j+"\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
+						tr += "</a></li>";
+						j++;
+						console.log(j);
+					photo_list.append(tr);
+					}
+				},
+				error : function(e){
+					console.log('요청실패');
+				}
+			});
+		})
+	</script>
 </body>
 </html>

@@ -42,7 +42,7 @@ img {
 				<h4>댓글</h4>
 			</div>
 			<div class="content">
-				<input id = "comment" type="text">
+				<input id="comment" type="text">
 				<button id=btn-modal>입력</button>
 			</div>
 		</div>
@@ -52,17 +52,22 @@ img {
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+	<!-- 댓글 만들고싶은데!!!!!!!!!!! 안만들어져.. -->
 	<script type="text/javascript">
-		$(document).ready(function(){
+		$(document).ready(function() {
 			$('btn-modal').on('click', saveCmt);
 		})
-		
+
 		function saveCmt() {
 			var cmt = $('#comment').val();
-			var writer = ${sessionUser.userId};
+			var writer = $
+			{
+				sessionUser.userId
+			}
+			;
 			var musicSeq = this.val();
 			console.log("하이");
-			
+
 		}
 	</script>
 
