@@ -1,0 +1,450 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Jua&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300&family=Gowun+Dodum&family=Jua&display=swap');
+
+body {
+    background-color: rgba(0, 0, 0, 0.1);
+    margin-top: 80px;
+  }
+
+
+#knu-container, html, body {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(212, 212, 212);
+} 
+
+/* 전체영역 틀 영역 css 끝 */
+ 
+/* 컨테이너(전체 영역) css 시작 */
+  #knu-container {
+    width: 1400px;
+    height: 1200px;
+    margin-top: 500px;
+    margin: 0px auto;
+    padding: 10px;
+    border: 1px dashed #000000;
+    background-color: rgb(255, 255, 255);
+  }
+
+/* 헤더 영역 (로고) css */
+  #knu-header {
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 40px;
+  }
+
+/* 사이드바 영역 (메뉴바) css */  
+  #knu-sidebar1 {
+    width: 80px;
+    padding: 20px;
+    margin-right: 20px;
+    position: sticky;
+    
+    float: left;
+  }
+
+/* 내용 메인 (피드, 랭킹) 영역 */  
+  #knu-content {
+    width: 920px;
+    padding: -100px;
+    margin-left: 159px;
+    margin-right: 10px;
+    float: left;
+  }
+
+/* 왼쪽 피드 영역 */ 
+  #knu-content-left {
+    width: 400px;
+    height: 470px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 25px;
+    float: left;
+  }
+
+/* 오른쪽 피드 영역 */  
+  #knu-content-right {
+    width: 400px;
+    height: 470px;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 25px;
+    float: left; 
+  }
+
+/* 팔로워 탑 랭킹 이름 */
+  h3 {
+    margin-right: 10px;
+    width: 150px;
+    font-family: 'Jua', sans-serif;
+  }
+
+/* 랭킹 내용 영역 */
+    .track-container{
+        margin-left: -45px;
+        margin-right: 50px;
+        width: 200px;
+    }
+    .like, .liked{
+        margin: 10px !important;
+    }
+    
+    .photo {
+        width: 35px;
+        height: 35px;
+    }
+
+    span.rank {
+        margin: 1px;
+        margin-left: -40px;
+        color: black;
+    }
+/* Switcher UI 디자인 
+   활성화 색상: #0f94fa
+   트랜지션 타이밍 함수: cubic-bezier(0.785, 0.135, 0.150, 0.860)
+*/
+
+.switcher {
+    margin: 1.5em 0;
+    font-size: 10px;
+  }
+  
+  /* 크기 설정 클래스 */
+  .switcher.is-xsmall { font-size: 12px; }
+  .switcher.is-small  { font-size: 14px; }
+  .switcher.is-large  { font-size: 18px; }
+  .switcher.is-xlarge { font-size: 20px; }
+  
+  
+  /* 초기 상태(Initial State) ------------------------------- */
+  
+  .switcher input[type="checkbox"] {
+    position: absolute !important;
+    z-index: 10;
+    /* 
+      [미션 1] 체크박스 컨트롤의 불투명도롤 조정해 투명하게 만들어 봅니다. 
+     */
+    opacity: 0;
+    
+  }
+  
+  .switcher label {
+    cursor: pointer;
+    user-select: none;
+    position: relative;
+    padding-left: 3.5em;  
+    font-weight: bold;
+    color: #98afc7;
+  }
+  
+  .switcher *,
+  .switcher *::before,
+  .switcher *::after {
+    box-sizing: border-box;
+    transition: all 0.35s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    /* 
+      [미션 2] 트랜지션을 설정해주세요.
+      all
+      0.35s
+      cubic-bezier(0.785, 0.135, 0.150, 0.860)
+     */
+  
+  }
+  
+  .switcher label::before {
+    content: '';
+    position: absolute;
+    top: -0.45em;
+    left: 0;
+    width: 3em;
+    height: 2em;
+    background: #e3edfa;
+    border-radius: 3em;
+    box-shadow: inset 0 0 2px 1px rgba(0,0,0,0.05);
+  }
+  
+  .switcher label::after {
+    content: '';
+    position: absolute;
+    top: -0.3em;
+    left: 0.1em;
+    width: 1.75em;
+    height: 1.75em;
+    border-radius: 3em;
+    background: #fff;
+  }
+  
+  
+  /* 종료 상태(Final State) --------------------------------- */
+  
+  .switcher input:checked + label {
+    color: #253467;
+  }
+  
+  .switcher input:checked + label::before {
+    box-shadow: inset 0 0 0 2em #0f94fa;
+  }
+  
+  .switcher input:checked + label::after {
+    /*
+      [미션 3] 스위치 인디케이터가 왼쪽으로 이동하도록 설정해봅니다.
+     */
+     transform: translateX(16px);
+    
+  }
+  
+  
+  /* 포커스 상태(Focus State) --------------------------------- */
+  
+  .switcher input:focus + label::before {
+    /*
+      [미션 4] 포커스 상태가 되면 박스 그림자를 안쪽(inset) 방향으로 
+      #d0d0d0 색상이 되도록 설정해봅니다.
+     */
+    box-shadow: inset #d0d0d0;
+  }
+  
+  .switcher input:checked:focus + label::before {
+    box-shadow: inset 0 0 0 2em #0f94fa;
+    border: 1px solid #0f64da;
+  }
+  
+  
+  
+  
+  /* ------------------------------------------------------ */
+  
+  
+  
+  
+  /* 데모 시연을 위한 레이아웃 설정 */
+  /* 피드백 댓글 스위치 옵션 */
+  body {
+    margin: 5rem;
+  }
+  
+  .size-diff {
+    margin-top: 5rem;
+    border-top: 1px solid #e3edfb;
+    padding-top: 5rem;
+  }
+  
+  .headline.is-2 {
+    font-size: 22px;
+    font-weight: normal;
+    margin-bottom: 30px;
+  }
+  .headline.is-3 {
+    margin-bottom: 0px;
+    font-size: 14px;
+    color: #a3adab;
+  }
+  
+  .size-diff .switcher {
+    margin-bottom: 30px;
+  }
+ 
+  /*댓글 쓴 위치 간격 */
+  #modal > div > div.title > div:nth-child(2) > h4 {
+    margin-top: 50px;
+  }
+  
+  /* 댓글 위치 */
+  .userCom {
+    text-align: center;
+  }
+  
+   /* 댓글 쓴 유저 이름 위치 */
+  .user {
+    margin-left: 20px;
+    clear: left;
+  }
+  
+   /*댓글 박스 */
+  #modal > div > div:nth-child(4),
+  #modal > div > div:nth-child(5) > h5 {
+    margin-bottom: 100px;
+  }
+  /* 접근성(accessibility, a11y) 감춤 */
+  .a11y-hidden {
+    overflow: hidden;
+    position: absolute !important;
+    clip:     rect(0,0,0,0);
+    width:    1px;
+    height:   1px;
+    margin:   -1px;
+    border:   0;
+    padding:  0;
+  }
+.profile-picture {
+	height:50px;
+}
+
+/* 피드 이미지 */   
+  img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin: auto;
+}
+/* 모달 팝업 창 */
+  #modal > div {
+    left: 750px;
+    position: fixed;
+}
+/* 코멘트 창 위치 */
+  #modal > div > div.content {
+    margin-top: 800px;
+    margin-left: 60px;
+    position: fixed;
+  }
+/* 피드 이름 위치 */
+ .username h4 {
+    margin-top: 10px;
+    margin-left: 10px;
+ }
+
+/* 로고 이미지 */
+
+  #knu-header > a > img {
+    width: 100px;
+    height: 100px;
+}
+
+/* 오디오 위치 */
+  #audio {
+    margin-left: 25px;
+  }
+
+  .content {
+    top: 0px;
+  }
+  
+  #modal > div {
+    z-index: 999;
+  }  
+
+/* 랭킹 위치 */  
+  #knu-content > section {
+    position: absolute;
+    margin-left: 900px;
+  }
+
+/* 랭킹 글씨체 */ 
+  #knu-content > section > div:nth-child(2) > p,
+  #knu-content > section > div:nth-child(3) > p,
+  #knu-content > section > div:nth-child(4) > p {
+    font-family: 'Jua', sans-serif;
+  }
+
+  #knu-content > section > div:nth-child(2) > span,
+  #knu-content > section > div:nth-child(3) > span,
+  #knu-content > section > div:nth-child(4) > span {
+    font-family: 'Jua', sans-serif;
+    margin-left: -10px;
+  }
+ /* 팝업 기본디자인 */
+.popup{border: 1px solid #dcdcdc;position: fixed;width: 500px;left: 50%;top: 50%;transform: translate(-50%,-50%);padding: 10px;display: none;background: #fff}
+.popup .close{background: none;border: 0;position: absolute;right: 10px;top: 10px;font-size: 20px;}
+		
+/* 쉐도우 효과*/
+.shadow{position: fixed;left: 0;top: 0;background: rgba(0, 0, 0, 0.52);width: 100%;height: 100vh;display: none} 
+
+/* 메뉴바 디자인(옵션) */
+  .menu ::before{
+    font-family: 'Material Icons';
+    font-size: 2em;
+    margin-left: 35px;
+    
+   
+}
+  .menu label::before{ content: '\e5d2'; }
+  .menu li:nth-child(1) a::before{ content: '\e88a'; }
+  .menu li:nth-child(2) a::before{ content: '\e8b6'; }
+  .menu li:nth-child(3) a::before{ content: '\e853'; }
+  .menu li:nth-child(4) a::before{ content: '\e3c9'; }
+  .menu li:nth-child(5) a::before{ content: '\f01f'; }
+  .menu li:nth-child(6) a::before{ content: '\e0bf'; }
+  .menu li:nth-child(7) a::before{ content: '\e9ba'; }
+
+  #expand-menu { /* 체크박스 폼 요소 감춤 */
+    display: none;
+}
+  #expand-menu:checked ~ ul { /* 체크박스 체크되었으면 메뉴 목록 표시 - 반응형 표시용 */
+    display: block;
+    height: auto;
+}
+
+#expand-menu:checked ~ ul {
+    display: none;
+    }
+    
+    #expand-menu:not(:checked) ~ ul {
+    display: block;
+    height: auto;
+    }
+
+.menu {
+    display: inline;
+    color: #000000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow: hidden; /* 반응형 애니메이션용 */
+    transition: all 0.5s ease; /* 반응형 애니메이션 */
+    position: absolute;
+    
+}
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  .menu a, .menu > label {
+    display: block;
+    height: 60px;
+    padding: 20px;
+    cursor: pointer;
+    color: #000000;
+    text-decoration: none;
+}
+
+  .menu a:hover {
+    color: #000;
+}
+  .menu ul li:hover, .menu > label:hover {
+    color: #000;
+    border-radius: 10px;
+}
+
+  @media screen and (max-width:1023px) {
+    .menu { 
+        width: 60px;
+    }
+}
+
+/* 메뉴바 디자인(옵션) 끝 */
+
+
+
+/* 윈도우 사이즈 영역 */
+  @media screen and (max-width:480px) {
+    #knu-container {
+      width: auto;
+    }
+    #knu-sidebar1 {
+        float: none;
+        width: auto;
+      }
+    #knu-content {
+      float: none;
+      width: auto;
+    }
+    #knu-sidebar2 {
+      float: none;
+      width: auto;
+    }
+  }

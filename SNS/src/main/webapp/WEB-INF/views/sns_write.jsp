@@ -7,44 +7,117 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+<!-- 메뉴바 아이콘 불러오기 -->
+
+
+<link rel="stylesheet" type="text/css" href="assets/css/sns_write.css">
+<link rel="stylesheet" type="text/css" href="assets/css/posts.css">
+<link rel="stylesheet" type="text/css" href="assets/css/ranking.css">
+<script src="sns_write.js"></script>
 </head>
 <body>
-	<div id="board">
-		<h1>게시글 작성페이지</h1>
-		<%--게시글 작성 form태그 --%>
-		<%--데이터 전송에 필요한 form태그 3요소!! --%>
 
-		<!--
-		http 규약 파일/이미지 -> text 사용
-		데이터 전송시 인코딩으로 인하여 제대로된 파일 전송이 불가능하기 때문에
-		이를 해결하기 위한 enctype속성을 사용해야 한다!	
-		-->
-		<%
-		%>
-		<form action="write.do" method="post" enctype="multipart/form-data">
-			<table id="list">
-				<tr>
-					<td>노래제목</td>
-					<td><input name="title" type="text"></td>
-				</tr>
-				<tr>
-					<td>ID</td>
-					<td><input name="id" type="text" value="${sessionUser.userId }" readonly></td>
-				</tr>
-				<tr>
-					<td>앨범사진</td>
-					<td><input name="img" type="file"></td>
-				</tr>
-				<tr>
-					<td>음원파일</td>
-					<td><input name="file" type="file"></td>
-				</tr>
-				<tr>
-					<td colspan="2"><input type="reset" value="초기화"> <input
-						type="submit" value="작성하기"></td>
-				</tr>
-			</table>
-		</form>
+	<!-- Container -->
+
+	<div id="knu-container">
+		<!-- 전체 영역 -->
+
+
+		<!-- Header -->
+		<div id="knu-header">
+
+			<!-- 로고 이미지 -->
+			<a><img src="https://ifh.cc/g/l4n2xR.png" alt=""></a>
+		</div>
+
+		<!-- Sidebar left -->
+		<!-- 메뉴바 시작 -->
+		<div id="knu-sidebar1">
+			<div class="menu">
+				<label for="expand-menu"></label> <input type="checkbox"
+					id="expand-menu" name="expand-menu">
+				<ul>
+					<li><a href="goMain.do" class="item"></a></li>
+					<li><a href="goSearch.do" class="item"></a></li>
+					<li><a href="goProfile.do" class="item"></a></li>
+					<li><a href="goWrite.do" class="item"></a></li>
+					<li><a href="goPlaylist.do" class="item"></a></li>
+					<li><a href="goMessage.do" class="item"></a></li>
+					<li><a href="Logout.do" onclick="return logout_confirm()"
+						class="item"></a></li>
+			</div>
+		</div>
+		<!-- 메뉴바 끝 -->
+
+		<!-- Content -->
+		<!-- 내용 시작 (랭킹), 피드 부분 -->
+
+		<div id="knu-content">
+			<!-- 전체 내용 영역 -->
+			<section class="track-list">
+				<!-- 랭킹 리스트 내용 -->
+				<h3>⭐ Follower Top</h3>
+				<div class="track-container">
+					<img src="https://picsum.photos/60/60/?random=1" class="photo"
+						alt=""> <span class="rank">1</span>
+					<svg class="like liked" viewBox="0 0 23 23" width="15" height="15"
+						stroke="currentColor" stroke-width="2" fill="none"
+						stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+            <path
+							d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+					<p class="song-name">손원서</p>
+				</div>
+
+				<div class="track-container">
+					<img src="https://picsum.photos/50/50/?random=2" class="photo"
+						alt=""> <span class="rank">2</span>
+					<svg class="like liked" viewBox="0 0 23 23" width="15" height="15"
+						stroke="currentColor" stroke-width="2" fill="none"
+						stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+            <path
+							d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+					<p class="song-name">박필수</p>
+
+				</div>
+				<div class="track-container">
+					<img src="https://picsum.photos/60/60/?random=2" class="photo"
+						alt=""> <span class="rank">3</span>
+					<svg class="like liked" viewBox="0 0 23 23" width="15" height="15"
+						stroke="currentColor" stroke-width="2" fill="none"
+						stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+            <path
+							d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+					<p class="song-name">김다영</p>
+
+				</div>
+
+			</section>
+			<!-- 랭킹 리스트 내용 끝 -->
+
+
+			<!-- 첫번째 피드 내용 끝 -->
+			<br>
+			<!-- 두번째 피드 내용 시작 -->
+
+			<div id="ccard">
+				<div class="card">
+
+					<form action="write.do" method="post" enctype="multipart/form-data">
+						노래제목<input name="title" type="text"> ID<input name="id"
+							type="text" value="${sessionUser.userId }" readonly> <br>
+						앨범사진<input name="img" type="file"> <br> 음원파일<input
+							name="file" type="file"> <br> <input type="reset"
+							value="초기화"> <input type="submit" value="작성하기">
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 </html>

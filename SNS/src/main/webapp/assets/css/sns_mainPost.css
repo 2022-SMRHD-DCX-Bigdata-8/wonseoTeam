@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    
+    border: 1px solid #000000;
+  
+    margin-inline: auto;
+    box-sizing: border-box;
+    width: 100%;
+    height: 450px;
+    max-width: 50ch;
+  
+    background: white;
+    padding: 1em;
+    border-radius: 5px;
+  
+  }
+  
+  .header {
+    display: grid;
+    grid-template-columns: 3em auto 1fr;
+    column-gap: 0.5em;
+  
+    grid-template-areas:
+      "profile-picture username more"
+      "profile-picture placeholder more";
+  }
+  
+  .profile-picture {
+    grid-area: profile-picture;
+  }
+  .profile-picture {
+    border-radius: 50%;
+    width: 100%;
+    object-fit: cover;
+    align-self: center;
+  }
+  .main-image {
+   width: 200px;
+   height: 200px;
+  }
+  .username {
+    grid-area: username;
+    margin-top: 13px;
+  }
+  
+  .placeholder {
+    grid-area: placeholder;
+  }
+  
+  .more {
+    grid-area: more;
+  
+    align-self: center;
+    justify-self: end;
+  
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+  
+    aspect-ratio: 1/1;
+  
+    width: 2.5em;
+    border-radius: 50%;
+  
+    transition: transform 50ms ease-in-out, background 50ms ease-in-out;
+  
+    cursor: pointer;
+ 
+  }
+  
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0.5em;
+  }
+  
+  .first-actions {
+    display: flex;
+  }
+
+  
+  .last-actions {
+    justify-self: end;
+  }
+  
+  .action {
+    background: none;
+    border: none;
+    margin: none;
+    padding: none;
+    font-size: 1.1rem;
+    aspect-ratio: 1/1;
+    margin-top: 15px;
+    margin-left: 58px;
+  
+    border-radius: 50%;
+    cursor: pointer;
+  
+  }

@@ -55,6 +55,7 @@ public class sns_FrontController extends HttpServlet {
 		handler.put("/goChat.do", new sns_goChatCon());
 		handler.put("/loadChat.do", new sns_loadChatCon());
 		handler.put("/goPlaylist.do", new sns_goPlaylistCon());
+		handler.put("/likeCount.do", new sns_likeCountCon());
 
 	}
 
