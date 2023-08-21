@@ -16,10 +16,7 @@
 
 		<!-- header div -->
 		<div id="knu-header">
-
-			<img
-				src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAyMThfMjkg%2FMDAxNjc2NzI3MzExMzAy.umwnYxkbm5OLxYcw13diqjPlGpHmiju6v9dkzo68UHEg.3tWz4JSUwnJvByueURREKM5Q99Y1M56yT2006UM1cTEg.PNG.slalomman%2F%25C0%25CE%25BD%25BA%25C5%25B8.PNG&type=sc960_832"
-				alt="">
+			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
 		</div>
 
 		<!-- 검색창 div -->

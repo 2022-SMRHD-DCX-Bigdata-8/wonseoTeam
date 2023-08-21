@@ -71,7 +71,7 @@
             <br>
 
             <!-- 버튼은 숨겨둠 -->
-            <div class="profile-userbuttons">
+            <div style="display:none;" class="profile-userbuttons">
                <button style="visibility: hidden;" type="button"
                   class="btn btn-success btn-sm">Follow</button>
                <button style="visibility: hidden;" type="button"
@@ -80,7 +80,7 @@
             <br>
 
             <!-- 가운데 게시물이랑 뜨는 공간 -->
-            <div class="portlet light bordered">
+            <div style="display:none;"class="portlet light bordered">
                <div class="row list-separated profile-stat">
                   <div style="border: 1px; float: left; width: 33%;"
                      class="col-md-4 col-sm-4 col-xs-6">
@@ -281,11 +281,11 @@
             <div id="list_button">
                <div>
                   <button name="next_button" onclick="getData()"></button>
-                  <img src="img/Logo/fornt.png" alt="사진 앞으로">
+                  <img src="assets/img/왼쪽.png" alt="사진 뒤로">
                </div>
                <div>
                   <button name="next_button" onclick="getData()"></button>
-                  <img src="img/Logo/back.png" alt="사진 앞으로">
+                  <img src="assets/img/오른쪽.png" alt="사진 앞으로">
                </div>
             </div>
 

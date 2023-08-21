@@ -43,8 +43,8 @@
                <li><a href="goMain.do" class="item"></a></li>
                <li><a href="goSearch.do" class="item"></a></li>
                <li><a href="goProfile.do" class="item"></a></li>
+               <li><a href="goUpdate.do" class="item"></a></li>
                <li><a href="goWrite.do" class="item"></a></li>
-               <li><a href="goPlaylist.do" class="item"></a></li>
                <li><a href="goMessage.do" class="item"></a></li>
                <li><a href="Logout.do" onclick="return logout_confirm()"
                   class="item"></a></li>
