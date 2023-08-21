@@ -64,9 +64,9 @@ public class sns_ChatHandler {
 	}
 
 	@OnMessage
-	public void isMessage(String msg, Session session, @PathParam("chatId") String chatId) {
+	public void isMessage(String msg, Session session, @PathParam("chatId") String roomSeq) {
 
-		System.out.println(chatId + " : " + msg);
+		System.out.println(roomSeq + " : " + msg);
 
 		// 메세지 내역을 DB에 저장
 		// JSON -> java object
@@ -75,8 +75,15 @@ public class sns_ChatHandler {
 		// sns_ChatDAO dao = new sns_ChatDAO();
 		// dao.saveChat(chat);
 		// ....
-
-		List<Session> list = users.get(chatId);
+		System.out.println(chat.getContent());
+		System.out.println(chat.getRoomSeq());
+		System.out.println(chat.getSendId());
+		
+		sns_ChatDAO dao = new sns_ChatDAO();
+		int cnt = dao.saveChat(chat);
+		
+		
+		List<Session> list = users.get(roomSeq);
 
 		// 같은 채팅방 사람들 모두에게 메세지 전달
 		for (Session s : list) {

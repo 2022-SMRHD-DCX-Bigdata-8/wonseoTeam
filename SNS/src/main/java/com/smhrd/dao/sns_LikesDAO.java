@@ -17,10 +17,36 @@ public class sns_LikesDAO {
 			cnt = session.selectOne("count", likes);
 			System.out.println(cnt);
 		} catch (Exception e) {
-			System.out.println("아마 좋아요가 없나봐");
 		}
 		session.close();
 
+		return cnt;
+	}
+
+	public int likesCheck(sns_likesDTO likes) {
+		SqlSession session = factory.openSession(true);
+		int cnt = 0;
+		try {
+			cnt = session.selectOne("likesCheck", likes);
+		} catch (Exception e) {
+			e.printStackTrace();
+			cnt = 0;
+		}
+		session.close();
+		return cnt;
+	}
+
+	public int unLikes(sns_likesDTO likes) {
+		SqlSession session = factory.openSession(true);
+		int cnt = session.delete("unLikes", likes);
+		session.close();
+		return cnt;
+	}
+
+	public int doingLikes(sns_likesDTO likes) {
+		SqlSession session = factory.openSession(true);
+		int cnt = session.insert("doingLikes", likes);
+		session.close();
 		return cnt;
 	}
 

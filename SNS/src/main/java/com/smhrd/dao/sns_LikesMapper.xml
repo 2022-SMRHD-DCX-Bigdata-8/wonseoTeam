@@ -2,12 +2,36 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.smhrd.dao.sns_LikesDAO">
 
-	<select id="count" parameterType="com.smhrd.entity.sns_likesDTO" resultType="int">
+	<select id="count" parameterType="com.smhrd.entity.sns_likesDTO"
+		resultType="int">
 		select count(*) from TB_LIKES
 		where
 		musicSeq = #{musicSeq}
 	</select>
 
+	<select id="likesCheck"
+		parameterType="com.smhrd.entity.sns_likesDTO" resultType="int">
+		select count(*) from tb_likes
+		where musicSeq =
+		#{musicSeq}
+		and userId = #{userId}
+	</select>
+
+	<delete id="unLikes"
+		parameterType="com.smhrd.entity.sns_likesDTO">
+		delete from tb_likes
+		where userId = #{userId}
+		and musicSeq = #{musicSeq}
+
+	</delete>
+
+	<insert id="doingLikes"
+		parameterType="com.smhrd.entity.sns_likesDTO">
+		insert into tb_likes
+		(LIKESSEQ, USERID, MUSICSEQ) values(
+		TB_LIKES_SEQ.nextval, #{userId}, #{musicSeq}
+		)
+	</insert>
 
 
 </mapper>

@@ -10,8 +10,15 @@ body {
   padding: 20px;
 }
 
+.titleimg {
+  width: 500px;
+  height: 500px;
+  display: block;
+  margin: auto;
+}
+
 #knu-header {
-  padding-top: 700px;
+  padding-top: 100%;
   margin-bottom: 20px;
 }
 
@@ -21,6 +28,8 @@ body {
   margin-right: 20px;
   margin-bottom: 20px;
   float: left;
+  padding-top:150px;
+  padding-bottom:150px;
   /* 컨텐츠의 위치 left */
 }
 
@@ -55,7 +64,8 @@ img {
 
 .menu ::before {
   font-family: "Material Icons";
-  font-size: 1.5em;
+  font-size: 2em;
+  margin-left: 35px;
 }
 
 .menu label::before {
@@ -131,8 +141,8 @@ img {
 .menu a,
 .menu > label {
   display: block;
-  height: 25px;
-  padding: 8px;
+  height: 60px;
+  padding: 20px;
   cursor: pointer;
   color: #000000;
   text-decoration: none;
@@ -144,7 +154,6 @@ img {
 
 .menu ul li:hover,
 .menu > label:hover {
-  background-color: #fff;
   color: #000;
   border-radius: 10px;
 }
@@ -195,6 +204,8 @@ h1 {
   font-size: 20px;
   text-align: center;
   margin: 20px 0 20px;
+  color: black;
+  font-family: 'IAMAPLAYER';
 }
 h1 small {
   display: block;
@@ -1213,7 +1224,7 @@ a.more-on-ssu {
 }
 
 .profile-stat-text {
-  color: #5b9bd1;
+  color: black;
   font-size: 10px;
   font-weight: 600;
   text-align: center;
@@ -1381,7 +1392,7 @@ a {
   width: 85%;
   height: 85%;
   border-radius: 100%;
-  border: solid black 1px;
+  border: solid whitesmoke 5px;
 }
 
 #list_button {
@@ -1419,6 +1430,9 @@ a {
   font-style: normal;
 }
 h2 {
-  color: #5b9bd1;
+  color: black;
   font-family: "IAMAPLAYER";
+}
+body{
+   background-color:ghostwhite;
 }

@@ -301,7 +301,6 @@ img {
 
 							for (let i = 0; i < res.length; i++) {
 								tr = "<div class=\"header\">";
-								tr += "<input type=\"hidden\" value=\""+res[i].musicSeq+"\">";
 								
 								tr += "<img src=\"save/"
 									+ res[i].musicPhoto
@@ -323,8 +322,10 @@ img {
 								tr += "<div class='actions'>";
 								tr += "<div class='first-actions'>";
 								
+								tr += "<input type='hidden' value='"+res[i].musicSeq+"'>";
+								
 								tr += "<button class='btn-likes' id='likeBtn'>🎵</button>";
-								tr += "<span>좋아요수</span>";
+								tr += "<span></span>";
 								tr += "<button class='btn-comment' id='btn-modal'>💬</button>";
 								tr += "<button id='btn-playlist'>🎧</button>";
 
@@ -339,8 +340,26 @@ img {
 								board.append(tr);
 
 							}
+							<!-- 좋아요 수 출력 -->
+							let idx = $('.btn-likes').parent().children('input[type=hidden]').val();
+							let userid = `${sessionUser.userId}`;
+							console.log(idx);
+							$.ajax({
+								type : 'get',
+								url : 'likeCount.do',
+								data : {
+									"musicSeq" : idx,
+									"id" : userid
+								},
+								success : function(res) {
+									let spantag = $('span');
+									spantag.html(res);
+								}
+
+							});
+							
 							$('.btn-comment').on('click', saveCmt);
-							$('.btn-likes').on('click', likesCount)
+							$('.btn-likes').on('click', doLikes);
 
 						},
 						error : function(e) {
@@ -351,14 +370,16 @@ img {
 
 		function saveCmt() {
 			let idx = $(this).parent().children('input[type=hidden]').val();
+			console.log(idx);
 		}
 
-		function likesCount() {
+		function doLikes() {
 			let idx = $(this).parent().children('input[type=hidden]').val();
 			let userid = `${sessionUser.userId}`;
+			console.log(userid);
 			$.ajax({
 				type : 'get',
-				url : 'likeCount.do',
+				url : 'doLikes.do',
 				data : {
 					"musicSeq" : idx,
 					"id" : userid

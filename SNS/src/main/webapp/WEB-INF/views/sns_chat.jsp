@@ -128,7 +128,9 @@
 					
 					for (let i = 0;i<res.length;i++){
 						tr = `
-						<div>\${res[i].content}</div>
+						<p>\${res[i].sendId}</p>
+						<p>\${res[i].content}</p>
+						<p>\${res[i].chatDate}</p>
 						`;
 						chatDiv.append(tr);
 					}
@@ -144,7 +146,7 @@
 
 	<script type="text/javascript">
 $(document).ready(function(){
-		
+		var me = ${sessionUser.userId };
 		// 0. 비동기 통신 방식으로 DB에 저장된 내용 가져오기
 		
 		// 1. WebSocket 객체 생성
@@ -169,7 +171,7 @@ $(document).ready(function(){
 			// 채팅이 가시화
 			let c = `
 				<p class="other">	
-					: \${chatJson.msg}
+					\${chatJson.sendId}	: \${chatJson.comment}
 				</p>
 			`;
 			
@@ -180,13 +182,14 @@ $(document).ready(function(){
 			
 			// 사용자의 이름과, 채팅 등 여러 정보를 한번에??
 			msg = {
-					'id' : $('#user').val(),
-					'msg' : $('#chat').val()
+					'sendId' : me,
+					'content' : $('#chat').val(),
+					'roomSeq' : ${roomNo}
 			}
 			
 			let c = `
 				<p class="me">	
-					: \${msg.msg}
+					\${msg.sendId} : \${msg.content}
 				</p>
 			`;
 			

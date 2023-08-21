@@ -6,17 +6,21 @@ body {
 }
 
 #knu-container {
-   margin: 0px auto;
-   padding: 20px;
+    width: 1400px;
+    margin-bottom: 200px;
+    margin: 0px auto;
+    padding: 10px;
+    background-color: ghostwhite;
 }
 
 #knu-header {
-   padding: 20px;
-   margin-bottom: 20px;
+    padding: 20px;
+    margin-bottom: 10px;
+    margin-top: 40px;
 }
 
 #knu-sidebar1 {
-   width: 160px;
+   width: 80px;
    padding: 20px;
    margin-right: 20px;
    margin-bottom: 20px;
@@ -24,9 +28,13 @@ body {
 }
 
 #knu-content {
-   width: 715px;
-   padding: 20px;
-   margin-bottom: 20px;
+    width: 920px;
+    padding: 20px;
+    margin: 50px;
+    margin-left: 135px;
+    margin-right: 10px;
+    margin-bottom: 100px;
+    background-color: ghostwhite;;
    float: left; /* 컨텐츠의 위치 right */
 }
 
@@ -52,7 +60,7 @@ body {
    box-sizing: border-box;
    flex-basis: calc(33.3% - 20px);
    padding: 10px;
-   border: 1px solid black;
+   border: 5px solid white;
    position: relative;
    justify-content: center;
    align-items: center;
@@ -140,7 +148,7 @@ div.select-box select {
    width: 85px;
    height: 36px;
    display: inline-block;
-   border: 2px solid black;
+   border: 5px solid black;
    vertical-align: middle;
 }
 
@@ -171,7 +179,7 @@ div.select-box select {
    padding: 10px 20px;
    width: 80px;
    line-height: 40px;
-   background-color: #0080ff;
+   background-color: black;
    color: #fff;
    text-align: center;
    border: none;
@@ -181,7 +189,7 @@ div.select-box select {
 }
 
 .btn_submit:hover {
-   background-color: #0056b3;
+   background-color: gray;
 }
 
 body {
@@ -248,11 +256,13 @@ img {
    text-decoration: none;
    font-weight: bold;
    font-family: inherit;
+   font-color:black;
 }
 
 .menu ::before {
    font-family: 'Material Icons';
-   font-size: 1.5em;
+   font-size: 2em;
+   margin-left:35px;
 }
 
 .menu label::before {
@@ -323,8 +333,8 @@ img {
 
 .menu a, .menu>label {
    display: block;
-   height: 25px;
-   padding: 8px;
+   height: 60px;
+   padding: 20px;
    cursor: pointer;
    color: #000000;
    text-decoration: none;
@@ -335,7 +345,6 @@ img {
 }
 
 .menu ul li:hover, .menu>label:hover {
-   background-color: #fff;
    color: #000;
    border-radius: 10px;
 }
@@ -386,4 +395,15 @@ img {
       float: none;
       width: auto;
    }
+}
+.titleimg{
+  width:500px;
+  height:500px;
+  display:block;
+  margin:auto;
+}
+
+
+body{
+   background-color:ghostwhite;
 }

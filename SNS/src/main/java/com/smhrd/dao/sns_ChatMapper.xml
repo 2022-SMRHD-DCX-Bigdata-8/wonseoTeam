@@ -6,8 +6,7 @@
 		resultType="com.smhrd.entity.sns_chatDTO">
 		select * from tb_chat
 		where roomSeq = #{roomSeq}
-		and sendId =
-		#{sendId}
+		order by chatDate
 	</select>
 
 	<insert id="saveChat"
