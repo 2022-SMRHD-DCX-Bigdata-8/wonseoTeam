@@ -43,6 +43,12 @@
 		userId=#{idx}
 	</select>
 	
+	<update id="updateUser" parameterType="com.smhrd.entity.sns_userDTO">
+		update tb_user
+		set userPw = #{userPw},
+		userPhoto = #{userPhoto}
+		where userId = #{userId}
+	</update>
 	
 
 </mapper>

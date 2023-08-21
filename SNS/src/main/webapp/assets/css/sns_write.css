@@ -3,7 +3,7 @@
 /* 전체영역 틀 영역 css 시작 */
 body {
     background-color: rgba(0, 0, 0, 0.1);
-    margin-top: 80px;
+    margin: 0px;
   }
 
   #ccard{
@@ -15,22 +15,17 @@ body {
   }
 
 
-#knu-container, html, body {
-    width: 100%;
-    height: 100%;
-    background-color: rgb(212, 212, 212);
-} 
 
 /* 전체영역 틀 영역 css 끝 */
  
 /* 컨테이너(전체 영역) css 시작 */
   #knu-container {
-    width: 1400px;
+    width: 100%;
     height: 1200px;
     margin-top: 500px;
     margin: 0px auto;
     padding: 10px;
-    border: 1px dashed #000000;
+    
     background-color: ghostwhite;
     /* 뷧배경 색깔 */
   }
@@ -134,8 +129,8 @@ body {
 /* 로고 이미지 */
 
   #knu-header > a > img {
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
 }
 
 /* 오디오 위치 */

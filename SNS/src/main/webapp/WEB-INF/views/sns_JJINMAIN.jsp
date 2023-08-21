@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="height=device-height, initial-scale=1">
+<meta http-equiv="refresh" content="3; url=goLogin.do">
 <title>Insert title here</title>
 <style>
         body {
@@ -57,7 +58,7 @@
 </head>
 <body>
 	<div class="wrapper">
-		<img class="slide-out-bck-center" src="assets/img/3.css">
+		<img class="slide-out-bck-center" src="assets/img/3.png">
 	</div>
 </body>
 

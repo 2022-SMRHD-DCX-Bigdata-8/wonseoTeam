@@ -23,8 +23,7 @@ a {
 
       <!-- header div -->
       <div id="knu-header">
-
-         <img class="titleimg" src="">
+         <img class="titleimg"src="https://ifh.cc/g/l4n2xR.png">
       </div>
 
       <!-- 검색창 div -->
@@ -59,8 +58,8 @@ a {
                <li><a href="goMain.do" class="item"></a></li>
                <li><a href="goSearch.do" class="item"></a></li>
                <li><a href="goProfile.do" class="item"></a></li>
+               <li><a href="goUpdate.do" class="item"></a></li>
                <li><a href="goWrite.do" class="item"></a></li>
-               <li><a href="goPlaylist.do" class="item"></a></li>
                <li><a href="goMessage.do" class="item"></a></li>
                <li><a href="logout.do" onclick="return logout_confirm()"
                   class="item"></a></li>
@@ -127,7 +126,7 @@ a {
                            img.src = "save/" + res[i].musicPhoto+"\"";
                            img.class = "resultImg"
                            img.onerror = function() {
-                               this.src = 'https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800';
+                               this.src = 'https://grayround.com/common/img/default_profile.png';
                            };
 
                            let a = document.createElement('a');

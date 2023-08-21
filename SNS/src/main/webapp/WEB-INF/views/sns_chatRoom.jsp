@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="assets/css/sns_chatRoom.css">
+<link rel="stylesheet" href="assets/css/sns_search.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 </head>
@@ -55,8 +55,8 @@
 					<li><a href="goMain.do" class="item"></a></li>
 					<li><a href="goSearch.do" class="item"></a></li>
 					<li><a href="goProfile.do" class="item"></a></li>
+					<li><a href="goUpdate.do" class="item"></a></li>
 					<li><a href="goWrite.do" class="item"></a></li>
-					<li><a href="goPlaylist.do" class="item"></a></li>
 					<li><a href="goMessage.do" class="item"></a></li>
 					<li><a href="logout.do" onclick="return logout_confirm()"
 						class="item"></a></li>

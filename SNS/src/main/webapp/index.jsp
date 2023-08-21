@@ -9,6 +9,6 @@
 <body>
 	<!-- 실행하자마자 열리는 페이지 -->
 	<h1>Welcome Page!!</h1>
-	<jsp:forward page="goLogin.do"></jsp:forward>
+	<jsp:forward page="goJJin.do"></jsp:forward>
 </body>
 </html>

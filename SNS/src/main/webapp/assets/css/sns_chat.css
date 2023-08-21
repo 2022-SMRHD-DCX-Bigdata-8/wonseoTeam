@@ -1,6 +1,14 @@
 body {
 	background-color: rgba(0, 0, 0, 0.1);
-	margin-top: 80px;
+	margin-top: 0px;
+}
+
+
+.titleimg {
+  width: 120px;
+  height: 120px;
+  display: block;
+  margin: auto;
 }
 
 html, body {
@@ -21,9 +29,9 @@ html, body {
 }
 
 #knu-header {
-	padding: 20px;
-	margin-bottom: 10%;
-	margin-top: 40px;
+	padding: 0px;
+	margin-bottom: 0px;
+	margin-top: 0px;
 }
 
 #knu-sidebar1 {
@@ -36,9 +44,8 @@ html, body {
 #knu-content {
 	width: 920px;
 	padding: 20px;
-	margin: 50px;
-	margin-left: 135px;
-	margin-right: 10px;
+	margin: 20px;
+	margin-left: 40%;
 	margin-bottom: 100px;
 	float: left; /* 컨텐츠의 위치 right */
 }
@@ -378,3 +385,21 @@ Messages
 	background: #1D7745;
 }
 
+#chatDiv {
+	margin-left: 20%;
+	margin-right: 20%;
+	border: solid 1px black;
+	border-radius: 20px;
+	background-color: white;
+	height:700px;
+	overflow:auto;
+}
+
+.me {
+	margin-left: 5%;
+	margin-top: 100%;
+}
+
+body {
+	background-color: ghostwhite;
+}

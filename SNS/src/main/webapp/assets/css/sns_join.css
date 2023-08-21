@@ -3,13 +3,13 @@
 
 #knu-header {
   padding: 0px;
-  margin-top: 0px;
+  margin-bottom: 130px;
   background-color: black;
 }
 
 #knu-header > img {
-  width: auto;
-  height: auto;
+  width: 380px;
+  height: 380px;
   margin: 0px;
   display:block;
   padding-bottom:0px;
@@ -21,8 +21,8 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 .wrapper {
   width: 100%;

@@ -68,4 +68,11 @@ public class sns_UserDAO {
 		return user;
 	}
 
+	public int updateUser(sns_userDTO dto) {
+		SqlSession session = factory.openSession(true);
+		int cnt = session.update("updateUser", dto);
+		session.close();
+		return cnt;
+	}
+
 }

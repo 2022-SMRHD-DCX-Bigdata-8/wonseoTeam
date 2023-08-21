@@ -20,7 +20,7 @@
       <!-- Header -->
       <div id="knu-header">
 
-         <img class="titleimg"src="C:\Users\smhrd\Desktop\JSP\nonol\src\main\webapp\assets\img\로고3.png">
+         <img class="titleimg"src="https://ifh.cc/g/l4n2xR.png">
 
       </div>
 
@@ -34,8 +34,8 @@
                <li><a href="goMain.do" class="item"></a></li>
                <li><a href="goSearch.do" class="item"></a></li>
                <li><a href="goProfile.do" class="item"></a></li>
+               <li><a href="goUpdate.do" class="item"></a></li>
                <li><a href="goWrite.do" class="item"></a></li>
-               <li><a href="goPlaylist.do" class="item"></a></li>
                <li><a href="goMessage.do" class="item"></a></li>
                <li><a href="logout.do" onclick="return logout_confirm()"
                   class="item"></a></li>
@@ -49,7 +49,7 @@
 
             <!-- 프사 업로드 칸 -->
             <div class="avatar-upload">
-               <div class="avatar-edit">
+               <div style="visibility: hidden;"class="avatar-edit">
                   <input type='file' id="imageUpload" name="changeImg"
                      accept=".png, .jpg, .jpeg" /> <label for="imageUpload"></label>
                </div>

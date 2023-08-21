@@ -2,17 +2,17 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css");
 
 #knu-header {
-  padding: 0px;
-  margin-top: 0px;
+  padding: 150px;
+  margin-top: 40px;
   background-color: black;
 }
 
 #knu-header > img {
   width: auto;
   height: auto;
-  margin: 0px;
+  margin: auto;
   display:block;
-  padding-bottom:0px;
+  padding-bottom:20px;
 }
 
 * {
@@ -21,8 +21,8 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  margin: 0px;
-  padding: 0px;
+  margin: 0;
+  padding: 0;
 }
 .wrapper {
   width: 100%;
