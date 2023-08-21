@@ -9,10 +9,9 @@ import com.smhrd.entity.sns_followDTO;
 public class sns_FollowDAO {
 	private SqlSessionFactory factory = SqlSessionManager.getSqlSessionFactory();
 
-	public int count(String id) {
+	public int countFollow(String id) {
 		SqlSession session = factory.openSession(true);
-
-		int cnt = session.selectOne("count", id);
+		int cnt = session.selectOne("countFollow", id);
 		System.out.println(cnt);
 		session.close();
 		return cnt;

@@ -63,7 +63,7 @@
                   <h1>${sessionUser.userId }</h1>
                   <hr>
                   <h1>
-                     <small>user tag</small>
+                     <small style="visibility: hidden;">user tag</small>
                   </h1>
                </div>
                <br>

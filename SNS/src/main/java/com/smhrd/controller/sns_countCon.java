@@ -15,10 +15,10 @@ public class sns_countCon implements sns_Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String id = request.getParameter("id");
-
+		
 		sns_FollowDAO follow = new sns_FollowDAO();
-
-		int cnt = follow.count(id);
+		System.out.println("됐냐?");
+		int cnt = follow.countFollow(id);
 
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
