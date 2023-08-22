@@ -8,15 +8,6 @@
 <link rel="stylesheet" href="assets/css/sns_chat.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
-<style type="text/css">
-.other {
-	color: blue;
-}
-
-.me {
-	color: green;
-}
-</style>
 </head>
 <body>
 
@@ -123,9 +114,10 @@
 					
 					for (let i = 0;i<res.length;i++){
 						tr = `
-						<p>\${res[i].sendId}</p>
-						<p>\${res[i].content}</p>
+						<div class="balloon2">
+						<p>\${res[i].sendId} : \${res[i].content}</p>
 						<p>\${res[i].chatDate}</p>
+						</div>
 						`;
 						chatDiv.append(tr);
 					}
@@ -165,9 +157,9 @@ $(document).ready(function(){
 			// { 'id' : 'asdf', 'msg' : '123'}
 			// 채팅이 가시화
 			let c = `
-				<p class="other">	
+				<div class="other">	
 					\${chatJson.sendId}	: \${chatJson.comment}
-				</p>
+				</div>
 			`;
 			
 			$('#chatDiv').append(c);
@@ -183,9 +175,9 @@ $(document).ready(function(){
 			}
 			
 			let c = `
-				<p class="me">	
+				<div class="me">	
 					\${msg.sendId} : \${msg.content}
-				</p>
+				</div>
 			`;
 			
 			$('#chatDiv').append(c);			

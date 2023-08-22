@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="height=device-height, initial-scale=1">
-<meta http-equiv="refresh" content="3; url=goLogin.do">
+<meta http-equiv="refresh" content="1; url=goLogin.do">
 <title>Insert title here</title>
 <style>
         body {
