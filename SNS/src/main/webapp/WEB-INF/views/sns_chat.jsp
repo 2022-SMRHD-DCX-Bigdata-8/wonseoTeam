@@ -19,24 +19,22 @@
 		<!-- header div -->
 		<div id="knu-header">
 
-			 <img class="titleimg"src="https://ifh.cc/g/l4n2xR.png">
+			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
 		</div>
 
 		<!-- 검색창 div -->
 		<div class="sub_sps_sch">
 			<input type="hidden" name="bo_table" value="board03_01"> <input
 				type="hidden" name="sca" value=""> <input type="hidden"
-				name="sop" value="and">
+				name="sop" value="and"> <select style="visibility: hidden;"
+				name="searchSelects" id="searchSelects" class="select-cus">
+				<option value="userId">사용자ID</option>
+				<option value="musicTitle">노래제목</option>
+			</select>
 
-				<select style="visibility: hidden;" name="searchSelects"
-					id="searchSelects" class="select-cus">
-					<option value="userId">사용자ID</option>
-					<option value="musicTitle">노래제목</option>
-				</select>
-
-				<div align="center" class="search_box">
-					<h1>${sessionUser.userId }와${opponent }의채팅방</h1>
-				</div>
+			<div align="center" class="search_box">
+				<h1>${sessionUser.userId }와${opponent }의채팅방</h1>
+			</div>
 		</div>
 
 		<!-- 메뉴 바 -->
@@ -116,7 +114,6 @@
 						tr = `
 						<div class="balloon2">
 						<p>\${res[i].sendId} : \${res[i].content}</p>
-						<p>\${res[i].chatDate}</p>
 						</div>
 						`;
 						chatDiv.append(tr);
@@ -157,8 +154,8 @@ $(document).ready(function(){
 			// { 'id' : 'asdf', 'msg' : '123'}
 			// 채팅이 가시화
 			let c = `
-				<div class="other">	
-					\${chatJson.sendId}	: \${chatJson.comment}
+				<div class="balloon2">	
+					<p>\${chatJson.sendId}	: \${chatJson.comment}</p>
 				</div>
 			`;
 			
@@ -175,8 +172,8 @@ $(document).ready(function(){
 			}
 			
 			let c = `
-				<div class="me">	
-					\${msg.sendId} : \${msg.content}
+				<div class="balloon2">	
+					<p> \${msg.sendId} : \${msg.content} </p>
 				</div>
 			`;
 			

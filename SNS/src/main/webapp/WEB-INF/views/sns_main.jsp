@@ -24,7 +24,7 @@
 		</div>
 
 		<!-- 검색창 div -->
-		<div style="visibility:hidden;" class="sub_sps_sch">
+		<div style="visibility: hidden;" class="sub_sps_sch">
 			<input type="hidden" name="bo_table" value="board03_01"> <input
 				type="hidden" name="sca" value=""> <input type="hidden"
 				name="sop" value="and">
@@ -84,58 +84,6 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<script type="text/javascript">
-      function showPopup() {
-         window
-               .open("comment2.html",
-                     "width=50, height=50, left=10, top=10");
-      }
-   </script>
-
-
-	<script type="text/javascript">
-   const modal = document.getElementById("modal");
-    function modalOn() {
-        modal.style.display = "flex"
-      }
-    function isModalOn() {
-      return modal.style.display === "flex"
-      }
-    function modalOff() {
-      modal.style.display = "none"
-      }
-    const btnModal = document.getElementById("btn-modal")
-    btnModal.addEventListener("click", e => {
-    modalOn()
-      })
-    const closeBtn = modal.querySelector(".close-area")
-    closeBtn.addEventListener("click", e => {
-    modalOff()
-      })
-    modal.addEventListener("click", e => {
-    const evTarget = e.target
-   if(evTarget.classList.contains("modal-overlay")) {
-    modalOff()
-  }
-})
-    window.addEventListener("keyup", e => {
-    if(isModalOn() && e.key === "Escape") {
-    modalOff()
-  }
-})    
-   </script>
-
-	<script type="text/javascript">
-      function logout_confirm() {
-         if (confirm("로그아웃하시겠습니까?")) {
-            return true;
-         } else {
-            return false;
-         }
-      }
-   </script>
-
-
-	<script type="text/javascript">
       $(document).ready(function() {
          loadPost();
       })
@@ -160,14 +108,13 @@
                         
                         tr += "<img class='main-image' src=\"save/"
                               + res[i].musicPhoto
-                              + "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"";
+                              + "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
                         
                         tr += "<input type='hidden' value='"+res[i].musicSeq+"'>";
                         
                         tr += "<button class='btn-likes' id='likeBtn'>🎵</button>";
                         tr += "<span></span>";
                         tr += "<button class='btn-comment' id='btn-modal'>💬</button>";
-                        tr += "<button id='btn-playlist'>🎧</button>";
 
                         tr += "<br>";
                         
