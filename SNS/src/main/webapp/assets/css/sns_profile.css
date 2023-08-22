@@ -69,35 +69,35 @@ img {
 }
 
 .menu label::before {
-  content: "";
+   content: '\e5d2';
 }
 
 .menu li:nth-child(1) a::before {
-  content: "";
+   content: '\e88a';
 }
 
 .menu li:nth-child(2) a::before {
-  content: "";
+   content: '\e8b6';
 }
 
 .menu li:nth-child(3) a::before {
-  content: "";
+   content: '\e853';
 }
 
 .menu li:nth-child(4) a::before {
-  content: "";
+	content: '\f02e';
 }
 
 .menu li:nth-child(5) a::before {
-  content: "";
+	content: '\e3c9';
 }
 
 .menu li:nth-child(6) a::before {
-  content: "";
+   content: '\e0bf';
 }
 
 .menu li:nth-child(7) a::before {
-  content: "";
+   content: '\e9ba';
 }
 
 #expand-menu {

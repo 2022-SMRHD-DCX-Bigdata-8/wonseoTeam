@@ -3,6 +3,26 @@ body {
 	margin-top: 0px;
 }
 
+.balloon2 {
+   background-color: #F8F8FF;
+   
+   border-radius: 5px;
+   color: black;
+   
+   font-size: 12px;
+   font-weight: bold;
+   height: auto;
+   letter-spacing: -0.25px;
+   margin-top: 6.8px;
+   padding: 5px 11px;
+   position: relative;
+   width: fit-content;
+   z-index: 100;
+   margin-left: 15px;
+   margin-top: 15px;
+   word-break:break-all;
+}
+
 .chat_wrap .header {
 	font-size: 14px;
 	padding: 15px 0;
@@ -235,11 +255,11 @@ img {
 }
 
 .menu li:nth-child(4) a::before {
-	content: '\e3c9';
+	content: '\f02e';
 }
 
 .menu li:nth-child(5) a::before {
-	content: '\f01f';
+	content: '\e3c9';
 }
 
 .menu li:nth-child(6) a::before {

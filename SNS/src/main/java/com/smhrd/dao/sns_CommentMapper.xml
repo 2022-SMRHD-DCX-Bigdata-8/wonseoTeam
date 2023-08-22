@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.smhrd.dao.sns_CommentDAO">
+	<insert id="saveCmt"
+		parameterType="com.smhrd.entity.sns_commentDTO">
+		insert into tb_comment(MUSICSEQ, CMTCONTENT, CMTDATE,
+		USERID)
+		values(
+		#{musicSeq},
+		#{cmtContent},
+		sysdate,
+		#{userId}
+		)
+	</insert>
+
+	<select id="loadCmt"
+		parameterType="com.smhrd.entity.sns_commentDTO"
+		resultType="com.smhrd.entity.sns_commentDTO">
+		select * from tb_comment
+		where musicSeq = #{musicSeq}
+		order by cmtdate
+	</select>
+
+</mapper>

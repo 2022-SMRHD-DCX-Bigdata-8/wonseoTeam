@@ -285,11 +285,11 @@ img {
 }
 
 .menu li:nth-child(4) a::before {
-	content: '\e3c9';
+	content: '\f02e';
 }
 
 .menu li:nth-child(5) a::before {
-	content: '\f01f';
+	content: '\e3c9';
 }
 
 .menu li:nth-child(6) a::before {

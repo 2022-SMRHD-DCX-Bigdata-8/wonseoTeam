@@ -18,87 +18,178 @@
 
 </head>
 <body>
-	<main>
+	<!-- 전체 감싸는 div -->
+	<div id="knu-container">
 
-		<!-- 헤더 -->
-		<header>
-			<div id="knu-header">
+		<!-- header div -->
+		<div id="knu-header">
+			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
+		</div>
 
-				<!-- 로고 이미지 -->
-				<img src="https://ifh.cc/g/l4n2xR.png"
-					alt="Kakao-Talk-20230818-160012450"></a>
+		<!-- 검색창 div -->
+		<div style="visibility: hidden;" class="sub_sps_sch">
+			<input type="hidden" name="bo_table" value="board03_01"> <input
+				type="hidden" name="sca" value=""> <input type="hidden"
+				name="sop" value="and">
+			<fieldset>
+				<legend>검색창</legend>
 
-			</div>
-		</header>
+				<select name="searchSelects" id="searchSelects" class="select-cus">
+					<option value="userId">사용자ID</option>
+					<option value="musicTitle">노래제목</option>
+				</select>
 
-		<!-- 인스타그램 피드 & 스토리  -->
-		<nav id="knu-sidebar1">
+				<div class="search_box">
+					<input type="text" name="stx" value="" required="" id="inputText"
+						class="frm_input required" size="20" maxlength="20"
+						placeholder="검색어를 입력하세요">
+					<button class="btn_submit" id="searchBtn" type="button">Search</button>
+				</div>
+			</fieldset>
+		</div>
 
+		<!-- 메뉴 바 -->
+		<div id="knu-sidebar1">
+			<br>
 			<div class="menu">
 				<label for="expand-menu"></label> <input type="checkbox"
 					id="expand-menu" name="expand-menu">
 				<ul>
-					<li><a href="goMain.do"></a></li>
-					<li><a href="goSearch.do"></a></li>
-					<li><a href="goProfile.do"></a></li>
-					<li><a href="goWrite.do"></a></li>
-					<li><a href="goPlaylist.do"></a></li>
-					<li><a href="goMessage.do"></a></li>
-					<li><a href="logout.do" onclick="return logout_confirm()"></a></li>
+					<li><a href="goMain.do" class="item"></a></li>
+					<li><a href="goSearch.do" class="item"></a></li>
+					<li><a href="goProfile.do" class="item"></a></li>
+					<li><a href="goUpdate.do" class="item"></a></li>
+					<li><a href="goWrite.do" class="item"></a></li>
+					<li><a href="goMessage.do" class="item"></a></li>
+					<li><a href="logout.do" onclick="return logout_confirm()"
+						class="item"></a></li>
+				</ul>
 			</div>
-		</nav>
-		<!-- 메뉴바 끝 -->
-		<article>
-			<!-- 인스타그램 피드 -->
+		</div>
 
-			<section class="peedLeft">
-				<div align="center" class="card">
-					<!-- 첫번째 피드 내용 -->
-					<div class="header" align="center">
-						<!-- 피드 헤더 -->
-						<div align="center" class="username">
-							<h4 class="user">${music.userId }</h4>
-						</div>
-
-					</div>
-					<div class="viewMusic" align="center">
-						<img
-							src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ4EPqmj0C4QaxvPcdzJ89Qo7y3sIiTnEgGhg&usqp=CAU"
-							alt="duper cool image" class="main-image"><br>
-						<div class="footer">
-							<!-- 피드 푸터 -->
-							<div class="actions">
-								<div class="first-actions">
-									<button class="action" id="likeBtn">🎵</button>
-									<span class='spantag'></span>
-									<button class="action" id="btn-modal">💬</button>
-								</div>
-							</div>
-
-							<div class="songTitle">
-								<h4>${music.musicTitle }</h4>
-							</div>
-
-							<audio id="audio" controls>
-								<!-- 오디오 영역 시작 -->
-								<source
-									src="https://ia800905.us.archive.org/19/items/FREE_background_music_dhalius/backsound.mp3"
-									type="audio/mp3">
-							</audio>
-							<!-- 오디오 영역 끝 -->
-						</div>
-					</div>
+		<!-- 결과창 -->
+		<div id="knu-container">
+			<div id="tbd">
+				<div class='flex-item'>
+					<h4>${music.userId }-${music.musicTitle }</h4>
+					<img class='main-image' src="save/${music.musicPhoto }"
+						onerror="this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'">
+					<input type="hidden">
+					<button style="visibility: hidden;"></button>
+					<span style="visibility: hidden;"></span>
+					<button style="visibility: hidden;"></button>
+					<br>
+					<audio id='audio' controls>
+						<source src="save/${music.musicFile }" type="audio/mp3">
+					</audio>
 				</div>
 
-				<!-- 첫번째 피드 내용 끝 -->
-			</section>
+				<div class='flex-item'>
+					<h3>COMMENT</h3>
+					<div id="send-content">
+						<div id="center">
+							<div>
+								<p>안녕 ㅋㅋ</p>
+							</div>
+						</div>
+						<input type="text" id="content">
+						<button id="sendBtn">SEND</button>
+					</div>
 
-		</article>
-	</main>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Sidebar right-->
+		<div id="knu-sidebar2"></div>
+
+		<!-- footer -->
+
+	</div>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<script type="text/javascript">
+		function logout_confirm() {
+			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
 	</script>
 	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var musicSeq = ${music.musicSeq};
+			var me = ${sessionUser.userId };
+			console.log(musicSeq + ":" + me);
+			$.ajax({
+				url : 'loadCmt.do',
+				type : 'get',
+				data : {
+					"musicSeq" : musicSeq,
+					"me" : me
+				},
+				dataType : 'json',
+				success : function(res){
+					let cmtDiv = $('#center');
+					cmtDiv.html('');
+					
+					for (let i = 0;i<res.length;i++){
+						tr=`
+						<div class="baloon2">
+						<p> \${res[i].userId} : \${res[i].cmtContent}</p>
+						</div>
+						`;
+						cmtDiv.append(tr);
+					}
+				},
+				error : function(e){
+					console.log("불러오기 실패");
+				}
+			})
+		})
+	</script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#sendBtn').on('click', saveCmt);
+		})
+		
+		function saveCmt(){
+			var musicSeq = ${music.musicSeq};
+			var me = ${sessionUser.userId };
+			var cmt = $('#content').val();
+			console.log(musicSeq+":"+me);
+			let cmtDiv = $('#center');
+			tr2=`
+			<div class="baloon2">
+			<p> \${me} : \${cmt}</p>
+			</div>
+			`;
+			cmtDiv.append(tr2);
+			$.ajax({
+				url : 'saveCmt.do',
+				type : 'get',
+				data : {
+					"musicSeq" : musicSeq,
+					"me" : me,
+					"cmt" : cmt
+				},
+				dataType : 'json',
+				success : function(res){
+					console.log("저장 성공");
+				},
+				error : function(e){
+					console.log('저장 실패');
+				}
+			});
+		}
+	</script>
+
 
 </body>
 </html>

@@ -32,5 +32,6 @@
 		<mapper resource="com/smhrd/dao/sns_RoomMapper.xml" />
 		<mapper resource="com/smhrd/dao/sns_ChatMapper.xml" />
 		<mapper resource="com/smhrd/dao/sns_LikesMapper.xml" />
+		<mapper resource="com/smhrd/dao/sns_CommentMapper.xml" />
 	</mappers>
 </configuration>
