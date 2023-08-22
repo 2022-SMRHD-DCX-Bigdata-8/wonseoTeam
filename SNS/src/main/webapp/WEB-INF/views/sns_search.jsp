@@ -131,7 +131,7 @@
 											+ res[i].musicPhoto
 											+ "\" onerror=\"this.src='https://www.thechooeok.com/common/img/default_profile.png'\"</td>";
 									tr += "<td><a href=\"goViewMusic.do?titlex="
-											+ res[i].musicTitle
+											+ res[i].musicSeq
 											+ "\">"
 											+ res[i].musicTitle + "</a></td>";
 									tr += "</div>";

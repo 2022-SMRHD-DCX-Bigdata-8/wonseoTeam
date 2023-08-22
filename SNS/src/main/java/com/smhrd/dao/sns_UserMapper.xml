@@ -12,7 +12,7 @@
 		#{userTel},
 		#{userEmail},
 		sysdate,
-		#{userPhoto}
+		#{userPhoto, jdbcType=VARCHAR}
 		)
 	</insert>
 

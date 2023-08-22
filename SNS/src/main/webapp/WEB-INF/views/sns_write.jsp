@@ -90,7 +90,7 @@
          <div id="knu-sidebar2">
         <form action="#">
           
-          <section class="track-list">
+          <section  style="visibility:hidden;" class="track-list">
             <h3>⭐ Follower Top</h3>
             <div class="track-container">
               <img src="https://picsum.photos/60/60/?random=1" class="photo" alt="">

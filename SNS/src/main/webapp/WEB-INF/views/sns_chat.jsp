@@ -59,10 +59,6 @@
 		<!-- 메시지가 보이는 칸 -->
 		<div id="knu-container">
 			<div id="chatDiv">
-				<div>안녕!</div>
-				<div>안녕!2</div>
-				<div>안녕!3</div>
-				<div>안녕!4</div>
 			</div>
 		</div>
 

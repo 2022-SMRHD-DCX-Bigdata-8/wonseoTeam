@@ -34,13 +34,13 @@ public class sns_followCon implements sns_Controller {
 			
 			int cnt = dao.unFollow(follow);
 			
-			out.print("팔로우하기");
+			out.print("FOLLOW");
 		} else {
 			System.out.println("팔로우 안돼있음!");
 
 			int cnt = dao.doingFollow(follow);
 
-			out.print("팔로우끊기");
+			out.print("UNFOLLOW");
 		}
 		return null;
 	}

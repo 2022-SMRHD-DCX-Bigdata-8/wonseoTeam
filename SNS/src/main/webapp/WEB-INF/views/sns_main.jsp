@@ -84,118 +84,112 @@
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 	<script type="text/javascript">
-      $(document).ready(function() {
-         loadPost();
-      })
+		function logout_confirm() {
+			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
 
-      function loadPost() {
-         $
-               .ajax({
-                  url : 'post.do',
-                  type : 'get',
-                  dataType : 'json', // 응답받는 데이터의 형식
-                  success : function(res) {
-                     console.log(res);
+	<script type="text/javascript">
+		$(document).ready(function() {
+			loadPost();
+		})
 
-                     let board = $('#tbd');
+		function loadPost() {
+			$
+					.ajax({
+						url : 'post.do',
+						type : 'get',
+						dataType : 'json', // 응답받는 데이터의 형식
+						success : function(res) {
+							console.log(res);
 
-                     board.html('');
+							let board = $('#tbd');
 
-                     for (let i = 0; i < res.length; i++) {
-                        tr = "<div class='flex-item'>";
-                        
-                        tr += "<h4>" + res[i].userId + " - " + res[i].musicTitle + "</h4>";
-                        
-                        tr += "<img class='main-image' src=\"save/"
-                              + res[i].musicPhoto
-                              + "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
-                        
-                        tr += "<input type='hidden' value='"+res[i].musicSeq+"'>";
-                        
-                        tr += "<button class='btn-likes' id='likeBtn'>🎵</button>";
-                        tr += "<span class='spantag'></span>";
-                        tr += "<button class='btn-comment' id='btn-modal'>💬</button>";
+							board.html('');
 
-                        tr += "<br>";
-                        
-                        tr += "<audio id='audio' controls>";
-                        
-                        tr += "<source src='save/"+res[i].musicFile+"' type='audio/mp3'>";
-                        
-                        tr += "</audio></div>";
-                        
-                        board.append(tr);
+							for (let i = 0; i < res.length; i++) {
+								tr = "<div class='flex-item'>";
 
-                     }
-                     <!-- 좋아요 수 출력 -->
-                     let idx = $('.btn-likes').parent().children('input[type=hidden]').val();
-                     let userid = `${sessionUser.userId}`;
-                     console.log(idx);
-                     $.ajax({
-                        type : 'get',
-                        url : 'likeCount.do',
-                        data : {
-                           "musicSeq" : idx,
-                           "id" : userid
-                        },
-                        success : function(res) {
-                           let spantag = $('span');
-                           spantag.html(res);
-                        }
+								tr += "<h4>" + res[i].userId + " - "
+										+ res[i].musicTitle + "</h4>";
 
-                     });
-                     
-                     $('.btn-comment').on('click', saveCmt);
-                     $('.btn-likes').on('click', doLikes);
+								tr += "<img class='main-image' src=\"save/"
+										+ res[i].musicPhoto
+										+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
 
-                  },
-                  error : function(e) {
-                     console.log('요청실패!!!');
-                  }
-               });
-      }
+								tr += "<input type='hidden' value='"+res[i].musicSeq+"'>";
 
-      function saveCmt() {
-         let idx = $(this).parent().children('input[type=hidden]').val();
-         console.log(idx);
-      }
+								tr += "<button class='btn-likes' id='likeBtn'>🎵</button>";
+								tr += "<span class='spantag'></span>";
+								tr += "<button class='btn-comment' id='btn-modal'>💬</button>";
 
-      function doLikes() {
-         let idx = $(this).parent().children('input[type=hidden]').val();
-         let userid = `${sessionUser.userId}`;
-         console.log(idx);
-         $.ajax({
-            type : 'get',
-            url : 'doLikes.do',
-            data : {
-               "musicSeq" : idx,
-               "id" : userid
-            },
-            success : function(res) {
-               $(this).html(res);
-               
-               let idx = $('.btn-likes').parent().children('input[type=hidden]').val();
-               let userid = `${sessionUser.userId}`;
-               $.ajax({
-                   type : 'get',
-                   url : 'likeCount.do',
-                   data : {
-                      "musicSeq" : idx,
-                      "id" : userid
-                   },
-                   success : function(res) {
-                      let spantag = $('span');
-                      spantag.html(res);
-                   }
+								tr += "<br>";
 
-                });
-               
-            }
+								tr += "<audio id='audio' controls>";
 
-         });
+								tr += "<source src='save/"+res[i].musicFile+"' type='audio/mp3'>";
 
-      }
-   </script>
+								tr += "</audio></div>";
+
+								board.append(tr);
+
+							}
+
+							$('.btn-comment').on('click', saveCmt);
+							$('.btn-likes').on('click', doLikes);
+
+						},
+						error : function(e) {
+							console.log('요청실패!!!');
+						}
+					});
+		}
+
+		function saveCmt() {
+			let idx = $(this).parent().children('input[type=hidden]').val();
+			console.log(idx);
+		}
+
+		function doLikes() {
+			let idx = $(this).parent().children('input[type=hidden]').val();
+			let userid = `${sessionUser.userId}`;
+			console.log(idx);
+			$.ajax({
+				type : 'get',
+				url : 'doLikes.do',
+				data : {
+					"musicSeq" : idx,
+					"id" : userid
+				},
+				success : function(res) {
+					console.log("성공");
+					let idx = $(this).parent().children('input[type=hidden]').val();
+					let userid = `${sessionUser.userId}`;
+					console.log(idx+":"+userid);
+					$.ajax({
+						type : 'get',
+						url : 'likeCount.do',
+						data : {
+							"musicSeq" : idx,
+							"id" : userid
+						},
+						success : function(res) {
+							let spantag = $('span');
+							spantag.html(res);
+						}
+
+					});
+
+				}
+
+			});
+
+		}
+	</script>
 
 </body>
 </html>
