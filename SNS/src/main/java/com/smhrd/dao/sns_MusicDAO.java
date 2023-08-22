@@ -33,9 +33,9 @@ public class sns_MusicDAO {
 		return list;
 	}
 
-	public sns_musicDTO viewMusic(String titlex) {
+	public sns_musicDTO viewMusic(String musicSeq) {
 		SqlSession session = factory.openSession(true);
-		sns_musicDTO music = session.selectOne("viewMusic", titlex);
+		sns_musicDTO music = session.selectOne("viewMusic", musicSeq);
 		session.close();
 		return music;
 	}

@@ -113,7 +113,7 @@
                         tr += "<input type='hidden' value='"+res[i].musicSeq+"'>";
                         
                         tr += "<button class='btn-likes' id='likeBtn'>🎵</button>";
-                        tr += "<span></span>";
+                        tr += "<span class='spantag'></span>";
                         tr += "<button class='btn-comment' id='btn-modal'>💬</button>";
 
                         tr += "<br>";
@@ -163,7 +163,7 @@
       function doLikes() {
          let idx = $(this).parent().children('input[type=hidden]').val();
          let userid = `${sessionUser.userId}`;
-         console.log(userid);
+         console.log(idx);
          $.ajax({
             type : 'get',
             url : 'doLikes.do',
@@ -172,8 +172,24 @@
                "id" : userid
             },
             success : function(res) {
-               let spantag = $('span');
-               spantag.html(res);
+               $(this).html(res);
+               
+               let idx = $('.btn-likes').parent().children('input[type=hidden]').val();
+               let userid = `${sessionUser.userId}`;
+               $.ajax({
+                   type : 'get',
+                   url : 'likeCount.do',
+                   data : {
+                      "musicSeq" : idx,
+                      "id" : userid
+                   },
+                   success : function(res) {
+                      let spantag = $('span');
+                      spantag.html(res);
+                   }
+
+                });
+               
             }
 
          });

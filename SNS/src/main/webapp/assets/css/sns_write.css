@@ -1,90 +1,86 @@
-@charset "UTF-8";
 
-/* 전체영역 틀 영역 css 시작 */
 body {
     background-color: rgba(0, 0, 0, 0.1);
-    margin: 0px;
+    margin-top: 80px;
   }
 
-  #ccard{
-    margin-right: 70px;
-    font-size: 19px
-    background-color ghostwhite;
-    
-    
+html, body {
+    height: 100%;
+} 
+  .wrap {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 100px;
   }
 
-
-
-/* 전체영역 틀 영역 css 끝 */
- 
-/* 컨테이너(전체 영역) css 시작 */
   #knu-container {
-    width: 100%;
-    height: 1200px;
-    margin-top: 500px;
+    width: 1400px;
+    margin-bottom: 200px;
     margin: 0px auto;
     padding: 10px;
     
-    background-color: ghostwhite;
-    /* 뷧배경 색깔 */
   }
-
-/* 헤더 영역 (로고) css */
   #knu-header {
     padding: 20px;
     margin-bottom: 10px;
     margin-top: 40px;
+  
+    
   }
-
-/* 사이드바 영역 (메뉴바) css */  
   #knu-sidebar1 {
     width: 80px;
     padding: 20px;
     margin-right: 20px;
-    position: sticky;
+   
     
-    float: left;
+    float: left; /* 컨텐츠의 위치 left */
+    
+    
   }
-
-/* 내용 메인 (피드, 랭킹) 영역 */  
   #knu-content {
     width: 920px;
-    padding: -100px;
-    margin-left: 159px;
+    padding: 20px;
+    margin: 50px;
+    margin-left: 135px;
     margin-right: 10px;
-    float: left;
+    margin-bottom: 100px;
+ 
+    
+    float: left; /* 컨텐츠의 위치 right */
   }
 
-/* 왼쪽 피드 영역 */ 
-  #knu-content-left {
-    width: 400px;
-    height: 470px;
-    padding: 10px;
+
+
+  #knu-sidebar2 {
+    width: 200px;
     margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 25px;
-    float: left;
+    float: right; /* 컨텐츠의 위치 left */
+    overflow: visible;
+    position: sticky;
+    top: 0dvh;
+  }
+  .scroll-area {
+    width: 100%;
+    max-height: 23vh;
+    overflow-y: scroll;
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+    scroll-behavior: smooth;
+  }
+  
+  .scroll-area::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
+  
+  tbody td {
+    font-size: 1.5vmin;
+    height: 2.5vh;
   }
 
-/* 오른쪽 피드 영역 */  
-  #knu-content-right {
-    width: 400px;
-    height: 470px;
-    padding: 10px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    margin-right: 25px;
-    float: left; 
-  }
-
-/* 팔로워 탑 랭킹 이름 */
   h3 {
     margin-left: 10px;
-    width: 300px;
   }
-
-/* 랭킹 내용 영역 */
+    /*  */
     .track-container{
         margin-left: -45px;
         margin-right: 50px;
@@ -93,6 +89,8 @@ body {
     .like, .liked{
         margin: 10px !important;
     }
+    
+    /*  */
     
     .photo {
         width: 35px;
@@ -105,61 +103,28 @@ body {
         color: black;
     }
 
-/* 피드 이미지 */   
+  
+    
+  #knu-footer {
+    clear: both;
+    height: 100px;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    
+    
+  }
+
   img {
     width: 50px;
     height: 50px;
     display: block;
     margin: auto;
-}
-/* 모달 팝업 창 */
-  #modal > div {
-    left: 750px;
-    position: fixed;
-}
-/* 코멘트 창 위치 */
-  #modal > div > div.content {
-    margin-top: 800px;
-    margin-left: 60px;
-    position: fixed;
   }
-
- 
-
-/* 로고 이미지 */
-
-  #knu-header > a > img {
-    width: 120px;
-    height: 120px;
-}
-
-/* 오디오 위치 */
   #audio {
     margin-left: 25px;
   }
-
-  .content {
-    top: 0px;
-  }
   
-  #modal > div {
-    z-index: 999;
-  }  
-
-/* 랭킹 위치 */  
-  #knu-content > section {
-    position: absolute;
-    margin-left: 900px;
-  }
-
- /* 팝업 기본디자인 */
-.popup{border: 1px solid #dcdcdc;position: fixed;width: 500px;left: 50%;top: 50%;transform: translate(-50%,-50%);padding: 10px;display: none;background: #fff}
-.popup .close{background: none;border: 0;position: absolute;right: 10px;top: 10px;font-size: 20px;}
-      
-/* 쉐도우 효과*/
-.shadow{position: fixed;left: 0;top: 0;background: rgba(0, 0, 0, 0.52);width: 100%;height: 100vh;display: none} 
-
-/* 메뉴바 디자인(옵션) */
   .menu ::before{
     font-family: 'Material Icons';
     font-size: 2em;
@@ -225,17 +190,13 @@ body {
     border-radius: 10px;
 }
 
+
   @media screen and (max-width:1023px) {
-    .menu { 
+    .menu { /* 1단계 */
         width: 60px;
     }
 }
-
-/* 메뉴바 디자인(옵션) 끝 */
-
-
-
-/* 윈도우 사이즈 영역 */
+  /* 사이즈 정의 */
   @media screen and (max-width:480px) {
     #knu-container {
       width: auto;
@@ -253,3 +214,75 @@ body {
       width: auto;
     }
   }
+  .titleimg {
+    width: 120px;
+    height: 120px;
+    display: block;
+    margin: auto;
+  }
+  #ccard{
+    width:500px;
+    height: 500px;
+    border-radius:8px;
+    overflow:hidden;
+    margin: 50px auto;
+    transition:all 0.3s cubic-bezier(0.42,0.0,0.58,1.0);
+
+  }
+  #ccard * {
+    padding: 10px;
+  }
+  #ccard .card{
+    background-color: ghostwhite;
+    color:black;
+    text-align: center;
+    border: solid 1px ghostwhite; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  h5{
+    margin:0px;
+    font-family: 'IAMAPLAYER';
+    
+  }
+  #button{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    background: var(--button-bg-color);
+    color: var(--button-color);
+    
+    margin: 0;
+    padding: 0.5rem 1rem;
+    
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    text-decoration: none;
+    
+    border: none;
+    border-radius: 4px;
+    
+    display: inline-block;
+    width: auto;
+    
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    
+    cursor: pointer;
+    
+    transition: 0.5s;
+    font-size: 15px;
+    font-family: 'IAMAPLAYER';
+
+  }
+ @font-face {
+    font-family: 'IAMAPLAYER';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/IAMAPLAYER.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body{
+  background-color:ghostwhite;
+}

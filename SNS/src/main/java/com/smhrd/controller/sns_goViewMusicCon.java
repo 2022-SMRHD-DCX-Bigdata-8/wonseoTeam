@@ -14,11 +14,11 @@ public class sns_goViewMusicCon implements sns_Controller {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String titlex = request.getParameter("titlex");
+		String musicSeq = request.getParameter("titlex");
 
 		// BoardDAO 접근
 		sns_MusicDAO dao = new sns_MusicDAO();
-		sns_musicDTO music = dao.viewMusic(titlex);
+		sns_musicDTO music = dao.viewMusic(musicSeq);
 		// 게시판 세부 내역 가져오기
 		// 이동할 페이지에 전달
 		request.setAttribute("music", music);

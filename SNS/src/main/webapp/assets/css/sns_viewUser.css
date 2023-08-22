@@ -11,8 +11,6 @@ body {
 }
 
 #knu-header {
-  padding-top: 700px;
-  margin-bottom: 20px;
 }
 
 
@@ -192,7 +190,6 @@ body {
 
 .container {
   max-width: 960px;
-  margin: 30px auto;
   padding: 20px;
 }
 
