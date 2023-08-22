@@ -20,7 +20,7 @@ body {
    width: 120px;
    height: 120px;
    display: block;
-   margin: auto;
+   margin-left: 49%;
 }
 
 #knu-sidebar1 {
@@ -54,25 +54,7 @@ body {
    text-align: center;
 }
 
-.flex-item {
-   text-align: center;
-   font-size: 24px;
-   font-weight: bold;
-   width: 600px;
-   height: 450px;
-   margin: 30px;
-   box-sizing: border-box;
-   flex-basis: calc(33.3% - 20px);
-   padding: 10px;
-   justify-content: center;
-   align-items: center;
-   margin-left: 50px;
-   right: 40px;
-   background-color: #ffffff;
-   border-radius: 5px;
-   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   z-index: 1;
-}
+
 
 
 fieldset {
@@ -233,13 +215,34 @@ body {
 }
 
 
+.flex-item {
+   text-align: center;
+   font-size: 24px;
+   font-weight: bold;
+   width:800px;
+   height: 500px;
+   margin: 80px;
+   box-sizing:border-box;
+   border:9px solid white;
+   flex-basis: calc(33.3% - 20px);
+   padding: 30px;
+   justify-content: center;
+   align-items: center;
+   margin-left: 30px;
+   right: 40px;
+   background-color: #eadbe4;
+   border-radius: 20px;
+   box-shadow: 0 20px 15px rgba(0, 0, 0, 0.1);
+   z-index: 1;
+}
 .flex-item img {
    width: 200px;
    height: 200px;
    position: relative;
-   left: 42px;
+   left: 40px;
    bottom: 20px;
-   
+   border:9px solid white;
+   border-radius: 20px;
 }
 
 .flex-item a {
@@ -273,11 +276,11 @@ body {
 }
 
 .menu li:nth-child(4) a::before {
-	content: '\f02e';
+   content: '\e3c9';
 }
 
 .menu li:nth-child(5) a::before {
-	content: '\e3c9';
+   content: '\f01f';
 }
 
 .menu li:nth-child(6) a::before {
@@ -354,12 +357,13 @@ body {
    margin: 0 -10px;
    justify-content: flex-start;
    width: 1000px;
-   height: 450.91px;
+   height: 460px;
    position: relative;
    text-align: center;
    font-size: 24px;
    font-weight: bold;
-   right: 40px;
+   right: 45px;
+   
 }
 
 .tbd {
@@ -388,8 +392,8 @@ span {
    right: 100px;
 }
 #audio {
-   
    margin-top: 60px;
+   
 }
 @media screen and (max-width:1023px) {
    .menu { /* 1단계 */
@@ -416,6 +420,8 @@ span {
    height: 120px;
    display: block;
    margin: auto;
+   
+  
 }
 
 body {

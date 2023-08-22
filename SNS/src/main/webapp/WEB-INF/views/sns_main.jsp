@@ -117,17 +117,14 @@
 								tr += "<h4>" + res[i].userId + " - "
 										+ res[i].musicTitle + "</h4>";
 
-								tr += "<img class='main-image' src=\"save/"
+								tr += "<a href=\"goViewMusic.do?titlex="
+									+ res[i].musicSeq
+									+ "\">"+"<img class='main-image' src=\"save/"
 										+ res[i].musicPhoto
-										+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
+										+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"></a>";
 
 								tr += "<input type='hidden' value='"+res[i].musicSeq+"'>";
 
-								tr += "<button class='btn-likes' id='likeBtn'>🎵</button>";
-								tr += "<span class='spantag'></span>";
-								tr += "<button class='btn-comment' id='btn-modal'>💬</button>";
-
-								tr += "<br>";
 
 								tr += "<audio id='audio' controls>";
 

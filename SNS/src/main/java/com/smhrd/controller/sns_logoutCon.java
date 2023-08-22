@@ -14,7 +14,7 @@ public class sns_logoutCon implements sns_Controller {
 			throws ServletException, IOException {
 		HttpSession session = request.getSession();
 
-		session.removeAttribute("user");
+		session.removeAttribute("sessionUser");
 
 		return "redirect:/goLogin.do";
 	}

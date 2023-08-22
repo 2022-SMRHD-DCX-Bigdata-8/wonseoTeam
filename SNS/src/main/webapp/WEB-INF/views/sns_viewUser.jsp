@@ -28,7 +28,7 @@
 		<!-- Header -->
 		<div id="knu-header">
 
-			 <img class="titleimg"src="https://ifh.cc/g/l4n2xR.png">
+			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
 
 		</div>
 
@@ -88,7 +88,40 @@
 			<br>
 
 			<!-- 가운데 게시물이랑 뜨는 공간 -->
-			<div style="display:none;" class="portlet light bordered">
+			<div class="portlet light bordered">
+				<div class="row list-separated profile-stat">
+					<div style="border: 1px; float: left; width: 33%;"
+						class="col-md-4 col-sm-4 col-xs-6">
+						<div style="visibility: hidden;"
+							class="uppercase profile-stat-title">37</div>
+						<div style="visibility: hidden;"
+							class="uppercase profile-stat-text">Projects</div>
+					</div>
+					<div style="border: 1px; float: left; width: 33%;"
+						class="col-md-4 col-sm-4 col-xs-6">
+						<div class="uppercase profile-stat-title" id="followerCount">51</div>
+						<div class="uppercase profile-stat-text">Follow</div>
+					</div>
+					<div style="border: 1px; float: left; width: 33%;"
+						class="col-md-4 col-sm-4 col-xs-6">
+						<div style="visibility: hidden;"
+							class="uppercase profile-stat-title">61</div>
+						<div style="visibility: hidden;"
+							class="uppercase profile-stat-text">Uploads</div>
+					</div>
+					<div style="display: none;"
+						style="border: 1px; float: left; width: 50%;">
+						<h2 align="center">Title Music</h2>
+					</div>
+					<div style="display: none;"
+						style="border: 1px; float: left; width: 0%;">
+						<h2></h2>
+					</div>
+					<div style="display: none;"
+						style="border: 1px; float: left; width: 50%;">
+						<h2 align="center">Music List</h2>
+					</div>
+				</div>
 			</div>
 			<br>
 			<h2 align="center">musiclist</h2>
@@ -114,6 +147,16 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function logout_confirm() {
+			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
 
 	<script type="text/javascript">
 		$(document).ready(function() {
@@ -179,38 +222,46 @@
 			})
 		})
 	</script>
-	
+
 	<script type="text/javascript">
-		$(document).ready(function(){
-			var postId = `${user.userId}`;
-			console.log(postId);
-			$.ajax({
-				type : 'get',
-				url : 'loadMusic.do',
-				data : {
-					"id" : postId
-				},
-				dataType : 'json',
-				success : function(res){
-					let photo_list = $('#photo_list');
-					photo_list.html('');
-					j = 1;
-					for (let i = 0;i <res.length;i++){
-						tr = "<li>";
-						tr += "<a href=\"goViewMusic.do?titlex="
-							+ res[i].musicSeq+"\">";
-						tr += "<img src=\"save/"+ res[i].musicPhoto	+ "\" alt=\"photo"+j+"\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
-						tr += "</a></li>";
-						j++;
-						console.log(j);
-					photo_list.append(tr);
-					}
-				},
-				error : function(e){
-					console.log('요청실패');
-				}
-			});
-		})
+		$(document)
+				.ready(
+						function() {
+							var postId = `${user.userId}`;
+							console.log(postId);
+							$
+									.ajax({
+										type : 'get',
+										url : 'loadMusic.do',
+										data : {
+											"id" : postId
+										},
+										dataType : 'json',
+										success : function(res) {
+											let photo_list = $('#photo_list');
+											photo_list.html('');
+											j = 1;
+											for (let i = 0; i < res.length; i++) {
+												tr = "<li>";
+												tr += "<a href=\"goViewMusic.do?titlex="
+														+ res[i].musicSeq
+														+ "\">";
+												tr += "<img src=\"save/"
+														+ res[i].musicPhoto
+														+ "\" alt=\"photo"
+														+ j
+														+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\">";
+												tr += "</a></li>";
+												j++;
+												console.log(j);
+												photo_list.append(tr);
+											}
+										},
+										error : function(e) {
+											console.log('요청실패');
+										}
+									});
+						})
 	</script>
 </body>
 </html>

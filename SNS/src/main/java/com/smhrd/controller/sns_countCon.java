@@ -23,7 +23,7 @@ public class sns_countCon implements sns_Controller {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 
-		out.print(cnt+"명");
+		out.print(cnt);
 
 		return null;
 	}
