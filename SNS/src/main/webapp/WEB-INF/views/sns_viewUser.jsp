@@ -181,7 +181,7 @@
 					"followingId" : followingId
 				},
 				success : function(res) {
-					let followerCount = $('#followerCount');
+					let fButton = $('#fButton');
 					followerCount.html(res);
 				},
 				error : function(e) {
@@ -227,7 +227,7 @@
 
 					},
 					error : function(e) {
-						console.log(res);
+						console.log(e);
 					}
 				});
 			})

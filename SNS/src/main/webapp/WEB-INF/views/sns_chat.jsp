@@ -103,7 +103,7 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var roomNo = ${roomNo};
-			var me = ${sessionUser.userId };
+			var me = `${sessionUser.userId }`;
 			console.log("안녕");
 			$.ajax({
 				url : 'loadChat.do',
@@ -137,7 +137,7 @@
 
 	<script type="text/javascript">
 $(document).ready(function(){
-		var me = ${sessionUser.userId };
+		var me = `${sessionUser.userId }`;
 		// 0. 비동기 통신 방식으로 DB에 저장된 내용 가져오기
 		
 		// 1. WebSocket 객체 생성
