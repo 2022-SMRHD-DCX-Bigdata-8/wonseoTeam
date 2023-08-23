@@ -63,9 +63,6 @@
 						</div>
 						<h1>${sessionUser.userId }</h1>
 						<hr>
-						<h1>
-							<small style="visibility: hidden;">user tag</small>
-						</h1>
 					</div>
 					<br>
 				</div>
@@ -125,11 +122,13 @@
 				</div>
 				<div id="list_button">
 					<div>
-						<button name="next_button" onclick="getData()"></button>
+						<button style="visibility: hidden;" name="next_button"
+							onclick="getData()"></button>
 						<img src="assets/img/왼쪽.png" alt="사진 뒤로">
 					</div>
 					<div>
-						<button name="next_button" onclick="getData()"></button>
+						<button style="visibility: hidden;" name="next_button"
+							onclick="getData()"></button>
 						<img src="assets/img/오른쪽.png" alt="사진 앞으로">
 					</div>
 				</div>

@@ -23,8 +23,6 @@ body {
   padding: 20px;
 }
 
-#knu-header {
-}
 
 
 .titleimg{
@@ -194,8 +192,13 @@ img {
 /* 프로필 사진 업로드 */
 
 .container {
-  max-width: 960px;
-  padding: 20px;
+	max-width: 960px;
+	margin: 0px auto;
+	padding: 20px;
+	background-color: #DADDE2;
+	height: 850px;
+	border: 6px solid #43655A;
+	border-radius: 7%;
 }
 
 h1 {
@@ -1202,7 +1205,6 @@ a.more-on-ssu {
 
 .profile-stat {
   padding-bottom: 20px;
-  border-bottom: 1px solid #f0f4f7;
 }
 
 .profile-stat-title {

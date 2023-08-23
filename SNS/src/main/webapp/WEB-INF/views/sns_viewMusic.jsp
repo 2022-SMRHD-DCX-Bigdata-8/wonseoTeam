@@ -16,6 +16,11 @@
 <link rel="stylesheet" href="assets/css/sns_audio.css">
 <link rel="stylesheet" href="assets/js/sns_audio.js">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap"
+	rel="stylesheet">
+
 </head>
 <body>
 	<!-- 전체 감싸는 div -->

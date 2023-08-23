@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="assets/css/sns_viewUser.css">
+<link rel="stylesheet" href="assets/css/sns_profile.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
 <link
@@ -70,84 +70,99 @@
 							style="background-image: url(save/${user.userPhoto });"></div>
 						<h1>${user.userId }</h1>
 						<hr>
-						<h1>
-							<small style="visibility: hidden;">user tag</small>
 					</div>
-					</h1>
+					<br>
 				</div>
 				<br>
-			</div>
-			<br>
 
-			<!-- 버튼은 숨겨둠 -->
-			<div class="profile-userbuttons">
-				<button type="button" id="fButton"
-					class="btn btn-success btn-sm move-right" align="center">Follow</button>
-				<button style="visibility: hidden;" type="button"
-					class="btn btn-danger btn-sm">Message</button>
-			</div>
-			<br>
+				<!-- 버튼은 숨겨둠 -->
+				<div class="profile-userbuttons">
+					<button type="button" id="fButton"
+						class="btn btn-success btn-sm move-right" align="center">Follow</button>
+					<button style="visibility: hidden;" type="button"
+						class="btn btn-danger btn-sm">Message</button>
+				</div>
+				<br>
 
-			<!-- 가운데 게시물이랑 뜨는 공간 -->
-			<div class="portlet light bordered">
-				<div class="row list-separated profile-stat">
-					<div style="border: 1px; float: left; width: 33%;"
-						class="col-md-4 col-sm-4 col-xs-6">
-						<div style="visibility: hidden;"
-							class="uppercase profile-stat-title">37</div>
-						<div style="visibility: hidden;"
-							class="uppercase profile-stat-text">Projects</div>
+				<!-- 가운데 게시물이랑 뜨는 공간 -->
+				<div class="portlet light bordered">
+					<div class="row list-separated profile-stat">
+						<div style="border: 1px; float: left; width: 33%;"
+							class="col-md-4 col-sm-4 col-xs-6">
+							<div style="visibility: hidden;"
+								class="uppercase profile-stat-title">37</div>
+							<div style="visibility: hidden;"
+								class="uppercase profile-stat-text">Projects</div>
+						</div>
+						<div style="border: 1px; float: left; width: 33%;"
+							class="col-md-4 col-sm-4 col-xs-6">
+							<div class="uppercase profile-stat-title" id="followerCount">51</div>
+							<div class="uppercase profile-stat-text">Follow</div>
+						</div>
+						<div style="border: 1px; float: left; width: 33%;"
+							class="col-md-4 col-sm-4 col-xs-6">
+							<div style="visibility: hidden;"
+								class="uppercase profile-stat-title">61</div>
+							<div style="visibility: hidden;"
+								class="uppercase profile-stat-text">Uploads</div>
+						</div>
+						<div style="display: none;"
+							style="border: 1px; float: left; width: 50%;">
+							<h2 align="center">Title Music</h2>
+						</div>
+						<div style="display: none;"
+							style="border: 1px; float: left; width: 0%;">
+							<h2></h2>
+						</div>
+						<div style="display: none;"
+							style="border: 1px; float: left; width: 50%;">
+							<h2 align="center">Music List</h2>
+						</div>
 					</div>
-					<div style="border: 1px; float: left; width: 33%;"
-						class="col-md-4 col-sm-4 col-xs-6">
-						<div class="uppercase profile-stat-title" id="followerCount">51</div>
-						<div class="uppercase profile-stat-text">Follow</div>
+				</div>
+				<br>
+				<h2 align="center">musiclist</h2>
+				<br>
+				<div id="list_box">
+					<ul id="photo_list">
+					</ul>
+				</div>
+				<div id="list_button">
+					<div>
+						<button style="visibility: hidden;" name="next_button"
+							onclick="getData()"></button>
+						<img src="assets/img/왼쪽.png" alt="사진 뒤로">
 					</div>
-					<div style="border: 1px; float: left; width: 33%;"
-						class="col-md-4 col-sm-4 col-xs-6">
-						<div style="visibility: hidden;"
-							class="uppercase profile-stat-title">61</div>
-						<div style="visibility: hidden;"
-							class="uppercase profile-stat-text">Uploads</div>
-					</div>
-					<div style="display: none;"
-						style="border: 1px; float: left; width: 50%;">
-						<h2 align="center">Title Music</h2>
-					</div>
-					<div style="display: none;"
-						style="border: 1px; float: left; width: 0%;">
-						<h2></h2>
-					</div>
-					<div style="display: none;"
-						style="border: 1px; float: left; width: 50%;">
-						<h2 align="center">Music List</h2>
+					<div>
+						<button style="visibility: hidden;" name="next_button"
+							onclick="getData()"></button>
+						<img src="assets/img/오른쪽.png" alt="사진 앞으로">
 					</div>
 				</div>
 			</div>
-			<br>
-			<h2 align="center">musiclist</h2>
-			<br>
-			<div id="list_box">
-				<ul id="photo_list">
-				</ul>
-			</div>
-			<div id="list_button">
-				<div>
-					<button name="next_button" onclick="getData()"></button>
-					<img src="assets/img/왼쪽.png" alt="사진 앞으로">
-				</div>
-				<div>
-					<button name="next_button" onclick="getData()"></button>
-					<img src="assets/img/오른쪽.png" alt="사진 앞으로">
-				</div>
-			</div>
-
 		</div>
-	</div>
 	</div>
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var front_btn = $("#list_button >:first-child");
+			var back_btn = $("#list_button >:last-child");
+
+			front_btn.on("click", function(e) {
+				$("#photo_list").animate({
+					"left" : "+=675px"
+				})
+			})
+			back_btn.on("click", function(e) {
+				$("#photo_list").animate({
+					"left" : "-=675px"
+				})
+			})
+		});
+	</script>
 
 	<script type="text/javascript">
 		function logout_confirm() {

@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="assets/css/sns_chat.css">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
 	rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbit&display=swap"
+	rel="stylesheet">
 </head>
 <body>
 
@@ -33,7 +38,7 @@
 			</select>
 
 			<div align="center" class="search_box">
-				<h1>${sessionUser.userId } and ${opponent }의 채팅방</h1>
+				<h1>${sessionUser.userId }and ${opponent }의 채팅방</h1>
 			</div>
 		</div>
 
