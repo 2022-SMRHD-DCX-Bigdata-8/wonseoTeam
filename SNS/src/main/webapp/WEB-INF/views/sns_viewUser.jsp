@@ -42,7 +42,8 @@
 					<li><a href="goMain.do" class="item"></a></li>
 					<li><a href="goSearch.do" class="item"></a></li>
 					<li><a href="goProfile.do" class="item"></a></li>
-					<li><a href="goUpdate.do" class="item"></a></li>
+					<li><a href="goUpdate.do" onclick="return update_confirm()"
+						class="item"></a></li>
 					<li><a href="goWrite.do" class="item"></a></li>
 					<li><a href="goMessage.do" class="item"></a></li>
 					<li><a href="logout.do" onclick="return logout_confirm()"
@@ -151,6 +152,16 @@
 	<script type="text/javascript">
 		function logout_confirm() {
 			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+	
+	<script type="text/javascript">
+		function update_confirm() {
+			if (confirm("회원정보를 수정하시겠습니까?")) {
 				return true;
 			} else {
 				return false;

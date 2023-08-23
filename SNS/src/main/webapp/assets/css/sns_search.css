@@ -8,7 +8,7 @@ body {
 	width: 1200px;
 	margin: 0px auto;
 	padding: 20px;
-	background-color: ghostwhite;
+	background-color: #E2E8FB;
 }
 
 #knu-header {
@@ -37,7 +37,7 @@ body {
 	width: 715px;
 	padding: 20px;
 	margin-bottom: 20px;
-	background-color: ghostwhite;;
+	background-color: #E2E8FB;;
 	float: left; /* 컨텐츠의 위치 right */
 }
 
@@ -175,14 +175,14 @@ div.select-box select {
 	width: 500px;
 	padding-right: 20px;
 	background: none !important;
-	border: 2px solid black;
+	border: 2px solid #8C3E94;
 }
 
 .sub_sps_sch .btn_submit {
 	padding: 10px 20px;
 	width: 80px;
 	line-height: 40px;
-	background-color: black;
+	background-color: #8C3E94;
 	color: #fff;
 	text-align: center;
 	border: none;
@@ -406,5 +406,5 @@ img {
 }
 
 body {
-	background-color: ghostwhite;
+	background-color: #E2E8FB;
 }

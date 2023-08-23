@@ -21,6 +21,7 @@
 
 	<select id="post" resultType="com.smhrd.entity.sns_musicDTO">
 		select * from TB_MUSIC
+		order by musicdate desc
 	</select>
 
 	<select id="viewMusic" resultType="com.smhrd.entity.sns_musicDTO">

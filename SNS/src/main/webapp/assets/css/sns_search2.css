@@ -8,7 +8,7 @@ body {
    width: 1200px;
    margin: 0px auto;
    padding: 20px;
-   background-color: ghostwhite;
+   background-color: #DADDE2;
 }
 
 #knu-header {
@@ -20,7 +20,7 @@ body {
    width: 120px;
    height: 120px;
    display: block;
-   margin-left: 49%;
+   
 }
 
 #knu-sidebar1 {
@@ -37,7 +37,7 @@ body {
    width: 715px;
    padding: 20px;
    margin-bottom: 20px;
-   background-color: ghostwhite;;
+   background-color: #DADDE2;;
    float: left; /* 컨텐츠의 위치 right */
 }
 
@@ -230,7 +230,7 @@ body {
    align-items: center;
    margin-left: 30px;
    right: 40px;
-   background-color: #eadbe4;
+   background-color: #B1BDC5;
    border-radius: 20px;
    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.1);
    z-index: 1;
@@ -239,10 +239,11 @@ body {
    width: 200px;
    height: 200px;
    position: relative;
-   left: 40px;
+   left: -25px;
    bottom: 20px;
    border:9px solid white;
    border-radius: 20px;
+  
 }
 
 .flex-item a {
@@ -425,5 +426,5 @@ span {
 }
 
 body {
-   background-color: ghostwhite;
+   background-color: #DADDE2;
 }

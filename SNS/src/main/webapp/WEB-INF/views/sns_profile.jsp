@@ -34,7 +34,8 @@
 					<li><a href="goMain.do" class="item"></a></li>
 					<li><a href="goSearch.do" class="item"></a></li>
 					<li><a href="goProfile.do" class="item"></a></li>
-					<li><a href="goUpdate.do" class="item"></a></li>
+					<li><a href="goUpdate.do" onclick="return update_confirm()"
+						class="item"></a></li>
 					<li><a href="goWrite.do" class="item"></a></li>
 					<li><a href="goMessage.do" class="item"></a></li>
 					<li><a href="logout.do" onclick="return logout_confirm()"
@@ -91,23 +92,26 @@
 						</div>
 						<div style="border: 1px; float: left; width: 33%;"
 							class="col-md-4 col-sm-4 col-xs-6">
-							<div class="uppercase profile-stat-title"  id="followerCount">51</div>
+							<div class="uppercase profile-stat-title" id="followerCount">51</div>
 							<div class="uppercase profile-stat-text">Follow</div>
 						</div>
-						<div  style="border: 1px; float: left; width: 33%;"
+						<div style="border: 1px; float: left; width: 33%;"
 							class="col-md-4 col-sm-4 col-xs-6">
 							<div style="visibility: hidden;"
 								class="uppercase profile-stat-title">61</div>
 							<div style="visibility: hidden;"
 								class="uppercase profile-stat-text">Uploads</div>
 						</div>
-						<div style="display: none;" style="border: 1px; float: left; width: 50%;">
+						<div style="display: none;"
+							style="border: 1px; float: left; width: 50%;">
 							<h2 align="center">Title Music</h2>
 						</div>
-						<div style="display: none;" style="border: 1px; float: left; width: 0%;">
+						<div style="display: none;"
+							style="border: 1px; float: left; width: 0%;">
 							<h2></h2>
 						</div>
-						<div  style="display: none;" style="border: 1px; float: left; width: 50%;">
+						<div style="display: none;"
+							style="border: 1px; float: left; width: 50%;">
 							<h2 align="center">Music List</h2>
 						</div>
 					</div>
@@ -137,6 +141,26 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<script type="text/javascript">
+		function logout_confirm() {
+			if (confirm("로그아웃하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
+		function update_confirm() {
+			if (confirm("회원정보를 수정하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
 
 	<!-- 팔로워수 세는 js -->
 	<script type="text/javascript">

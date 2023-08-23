@@ -55,7 +55,8 @@
 					<li><a href="goMain.do" class="item"></a></li>
 					<li><a href="goSearch.do" class="item"></a></li>
 					<li><a href="goProfile.do" class="item"></a></li>
-					<li><a href="goUpdate.do" class="item"></a></li>
+					<li><a href="goUpdate.do" onclick="return update_confirm()"
+						class="item"></a></li>
 					<li><a href="goWrite.do" class="item"></a></li>
 					<li><a href="goMessage.do" class="item"></a></li>
 					<li><a href="logout.do" onclick="return logout_confirm()"
@@ -94,6 +95,16 @@
 	</script>
 
 	<script type="text/javascript">
+		function update_confirm() {
+			if (confirm("회원정보를 수정하시겠습니까?")) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+	</script>
+
+	<script type="text/javascript">
 		$(document).ready(function() {
 			loadPost();
 		})
@@ -118,13 +129,13 @@
 										+ res[i].musicTitle + "</h4>";
 
 								tr += "<a href=\"goViewMusic.do?titlex="
-									+ res[i].musicSeq
-									+ "\">"+"<img class='main-image' src=\"save/"
+										+ res[i].musicSeq
+										+ "\">"
+										+ "<img class='main-image' src=\"save/"
 										+ res[i].musicPhoto
 										+ "\" onerror=\"this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'\"></a>";
 
 								tr += "<input type='hidden' value='"+res[i].musicSeq+"'>";
-
 
 								tr += "<audio id='audio' controls>";
 
@@ -164,9 +175,10 @@
 				},
 				success : function(res) {
 					console.log("성공");
-					let idx = $(this).parent().children('input[type=hidden]').val();
+					let idx = $(this).parent().children('input[type=hidden]')
+							.val();
 					let userid = `${sessionUser.userId}`;
-					console.log(idx+":"+userid);
+					console.log(idx + ":" + userid);
 					$.ajax({
 						type : 'get',
 						url : 'likeCount.do',

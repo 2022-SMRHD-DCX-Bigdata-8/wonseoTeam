@@ -8,6 +8,7 @@ body {
   width: 1200px;
   margin: 0px auto;
   padding: 20px;
+  background-color:#E2E8FB;
 }
 
 .titleimg {
@@ -1434,5 +1435,5 @@ h2 {
   font-family: "IAMAPLAYER";
 }
 body{
-   background-color:ghostwhite;
+   background-color:#E2E8FB;
 }
