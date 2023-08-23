@@ -1,5 +1,9 @@
 @charset "UTF-8";
 
+#formform{
+	text-align:center;
+}
+
 body {
 	background-color: #B1BDC5;
 	margin-top: 0px;
@@ -207,7 +211,7 @@ img {
 }
 
 h1 {
-	font-size: 20px;
+	font-size: 40px;
 	text-align: center;
 	margin: 20px 0 20px;
 	color: black;

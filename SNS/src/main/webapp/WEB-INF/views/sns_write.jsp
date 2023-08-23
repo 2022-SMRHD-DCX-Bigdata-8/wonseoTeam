@@ -46,19 +46,25 @@
 		<!-- content -->
 		<div id="knu-content">
 			<div class="container">
-				<form action="write.do" method="post" enctype="multipart/form-data">
-					<h5>Music Title</h5>
-					<input name="title" type="text">
-
-					<h5>User Id</h5>
+				<form id="formform" action="write.do" method="post"
+					enctype="multipart/form-data">
+					<br><br>
+					<h1>Music Title</h1>
+					<input name="title" type="text"> <br>
+					<br>
+					<br>
+					<h1>User Id</h1>
 					<input name="id" type="text" value="${sessionUser.userId }"
 						readonly> <br> <br>
-					<h5>album art</h5>
+					<br>
+					<h1>album art</h1>
 					<input name="img" type="file"> <br>
-					<h5>music file</h5>
-					<input name="file" type="file"> <br> <br> <input
-						id="button" type="reset" value="reset"><input id="button"
-						type="submit" value="submit"> <br> <br>
+					<br>
+					<br>
+					<h1>music file</h1>
+					<input name="file" type="file"> <br> <br><br><br>
+					<br> <input id="button" type="reset" value="reset"><input
+						id="button" type="submit" value="submit">
 				</form>
 
 			</div>
