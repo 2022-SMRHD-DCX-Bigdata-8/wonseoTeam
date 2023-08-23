@@ -11,9 +11,11 @@ body {
 #center {
 	width: 300px;
 	height: 300px;
-	background-color: #FFEFEF;
+	background-color: #889FA5;
 	margin: 0 auto;
 	overflow: auto;
+	border: 6px solid #43655A;
+	border-radius: 20px;
 }
 
 .post1 {
@@ -85,8 +87,9 @@ body {
 	align-items: center;
 	margin-left: 50px;
 	right: 40px;
-	background-color: #ffffff;
-	border-radius: 5px;
+	background: #DADDE2;
+	border-radius: 20px;
+	border: 6px solid #43655A;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 	z-index: 1;
 }
@@ -252,8 +255,9 @@ body {
 	width: 250px;
 	height: 250px;
 	position: relative;
-	left: 22px;
-	bottom: 5px;
+	top: -20px;
+	border: 6px solid #43655A;
+	border-radius: 20px;
 }
 
 .flex-item a {
@@ -328,6 +332,8 @@ body {
 	overflow: hidden; /* 반응형 애니메이션용 */
 	transition: all 0.5s ease; /* 반응형 애니메이션 */
 	position: fixed;
+	top: 20%;
+	left: 0%;
 }
 
 .menu ul {
@@ -383,7 +389,7 @@ body {
 .btn-likes {
 	position: relative;
 	top: 30px;
-	right: 150px;
+	right: 70px;
 }
 
 .btn-comment {
@@ -395,7 +401,8 @@ body {
 h4 {
 	display: inline-block;
 	position: relative;
-	bottom: 10px;
+	top: -15px;
+	align: "center";
 }
 
 span {
@@ -407,7 +414,9 @@ span {
 
 #audio {
 	position: relative;
-	top: 20px;
+	width: 280px;
+	height: 54px;
+	right: 20px;
 }
 
 @media screen and (max-width:1023px) {
@@ -443,15 +452,30 @@ body {
 
 #content {
 	position: relative;
-	top: 19px;
-	width: 200px;
+	top: 10px px;
+	width: 228px;
+	height: 35px;
 	left: 5px;
+	border-radius: 15px;
 }
 
 #sendBtn {
 	position: relative;
-	top: 21px;
-	left: 10px;
+	top: 11px;
+	left: 4px;
+	width: 60px;
+	height: 40px;
+}
+
+#LikeBtn {
+	background-color: transparent;
+	border: none;
+	font-size: 40px;
+	width: 40px;
+	height: 30px;
+	position: relative;
+	bottom: 65px;
+	left: 130px;
 }
 
 p {

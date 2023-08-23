@@ -42,7 +42,7 @@
 					<input type="text" name="stx" value="" required="" id="inputText"
 						class="frm_input required" size="20" maxlength="20"
 						placeholder="채팅하고 싶은 상대방 Id를 입력하세요">
-					<button class="btn_submit" id="searchBtn" type="button">검색</button>
+					<button class="btn_submit" id="searchBtn" type="button">SEARCH</button>
 				</div>
 			</fieldset>
 		</div>

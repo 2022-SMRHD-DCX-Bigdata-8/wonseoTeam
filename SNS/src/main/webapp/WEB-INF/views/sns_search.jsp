@@ -42,7 +42,7 @@
 					<input type="text" name="stx" value="" required="" id="inputText"
 						class="frm_input required" size="20" maxlength="20"
 						placeholder="검색어를 입력하세요">
-					<button class="btn_submit" id="searchBtn" type="button">Search</button>
+					<button class="btn_submit" id="searchBtn" type="button">SEARCH</button>
 				</div>
 			</fieldset>
 		</div>

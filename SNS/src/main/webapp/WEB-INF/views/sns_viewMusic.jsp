@@ -77,27 +77,22 @@
 		<div id="knu-container">
 			<div id="tbd">
 				<div class='flex-item'>
-					<h4>${music.userId }-${music.musicTitle }</h4>
+					<h4>${music.userId }<br><b>${music.musicTitle }</b></h4>
 					<img class='main-image' src="save/${music.musicPhoto }"
 						onerror="this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'">
-					<input type="hidden">
-					<button style="visibility: hidden;"></button>
-					<span style="visibility: hidden;"></span>
-					<button style="visibility: hidden;"></button>
-					<br>
 					<audio id='audio' controls>
 						<source src="save/${music.musicFile }" type="audio/mp3">
 					</audio>
+					<button id="LikeBtn">🤍</button>
 				</div>
 
 				<div class='flex-item'>
 					<h3>COMMENT</h3>
 					<div id="send-content">
 						<div id="center">
-							<div>
-							</div>
+							<div></div>
 						</div>
-						<input type="text"  placeholder="댓글 달기..." id="content">
+						<input type="text" placeholder="댓글 달기" id="content">
 						<button id="sendBtn">등록</button>
 					</div>
 
@@ -125,7 +120,7 @@
 			}
 		}
 	</script>
-	
+
 	<script type="text/javascript">
 		function update_confirm() {
 			if (confirm("회원정보를 수정하시겠습니까?")) {
@@ -135,7 +130,7 @@
 			}
 		}
 	</script>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			var musicSeq = ${music.musicSeq};
@@ -168,7 +163,7 @@
 			})
 		})
 	</script>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#sendBtn').on('click', saveCmt);

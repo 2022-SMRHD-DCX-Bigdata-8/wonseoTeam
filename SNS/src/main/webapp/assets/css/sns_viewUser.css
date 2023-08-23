@@ -129,7 +129,9 @@ img {
   /* 반응형 애니메이션용 */
   transition: all 0.5s ease;
   /* 반응형 애니메이션 */
-      position: fixed;;
+      position: fixed;
+      top: 20%;
+    left: 0%;
 }
 
 .menu ul {

@@ -249,7 +249,7 @@ div.select-box select {
 }
 
 .menu ::before {
-	font-family: 'Material Icons';
+	font-family: "Material Icons";
 	font-size: 2em;
 	margin-left: 35px;
 }
@@ -271,11 +271,11 @@ div.select-box select {
 }
 
 .menu li:nth-child(4) a::before {
-	content: '\e3c9';
+	content: '\f02e';
 }
 
 .menu li:nth-child(5) a::before {
-	content: '\f01f';
+	content: '\e3c9';
 }
 
 .menu li:nth-child(6) a::before {
@@ -312,6 +312,8 @@ div.select-box select {
 	overflow: hidden; /* 반응형 애니메이션용 */
 	transition: all 0.5s ease; /* 반응형 애니메이션 */
 	position: fixed;
+	top: 20%;
+    left: 0%;
 }
 
 .menu ul {
