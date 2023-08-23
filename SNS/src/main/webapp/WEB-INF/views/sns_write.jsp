@@ -50,11 +50,11 @@
 					enctype="multipart/form-data">
 					<br><br>
 					<h1>Music Title</h1>
-					<input name="title" type="text"> <br>
+					<input class="change" name="title" type="text"> <br>
 					<br>
 					<br>
 					<h1>User Id</h1>
-					<input name="id" type="text" value="${sessionUser.userId }"
+					<input class="change" name="id" type="text" value="${sessionUser.userId }"
 						readonly> <br> <br>
 					<br>
 					<h1>album art</h1>

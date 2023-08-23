@@ -2,6 +2,35 @@
 	font-family: 'Orbit', sans-serif !important;
 }
 
+b {
+	font-weight: lighter;
+}
+
+#likeBtn {
+	display: inline-block;
+	position: relative;
+	bottom: 500px;
+}
+
+#LikeBtn {
+	background-color: transparent;
+	border: none;
+	font-size: 40px;
+	width: 40px;
+	height: 30px;
+	position: relative;
+	bottom: 170px;
+	left: 150px;
+}
+
+#likeN {
+	position: relative;
+	left: 137px;
+	top: -123px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
 body {
 	font-family: monospace, sans-serif;
 	background-color: rgba(0, 0, 0, 0.1);
@@ -417,7 +446,7 @@ span {
 	width: 280px;
 	height: 54px;
 	right: 20px;
-	top: -10px;
+	bottom: 12px;
 }
 
 @media screen and (max-width:1023px) {
@@ -453,7 +482,7 @@ body {
 
 #content {
 	position: relative;
-	top: 10px px;
+	top: 5px;
 	width: 228px;
 	height: 35px;
 	left: 5px;
@@ -462,10 +491,13 @@ body {
 
 #sendBtn {
 	position: relative;
-	top: 11px;
+	top: 5px;
 	left: 4px;
 	width: 60px;
 	height: 40px;
+	color:white;
+	border-radius: 15px;
+	background: #43655A;
 }
 
 #LikeBtn {
@@ -475,16 +507,16 @@ body {
 	width: 40px;
 	height: 30px;
 	position: relative;
-	bottom: 77px;
+	bottom: 200px;
 	left: 130px;
 }
 
 p {
 	font-size: 14px;
+	padding-left: 10px;
 }
 
 .baloon2 {
-	position: relative;
 	text-align: left;
 	left: 15px;
 }

@@ -2,6 +2,9 @@
 	font-family: 'Orbit', sans-serif !important;
 }
 
+b{
+	font-weight:lighter;
+}
 body {
 	font-family: monospace, sans-serif;
 	background-color: #B1BDC5;
@@ -360,6 +363,7 @@ div.select-box select {
 	font-size: 24px;
 	font-weight: bold;
 	right: 45px;
+	bottom: 125px;
 }
 
 .tbd {

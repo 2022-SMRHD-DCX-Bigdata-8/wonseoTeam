@@ -77,12 +77,18 @@
 		<div id="knu-container">
 			<div id="tbd">
 				<div class='flex-item'>
-					<h4>${music.userId }<br><b>${music.musicTitle }</b></h4>
+					<h4>${music.musicTitle }<br>
+						<b>${music.userId }</b>
+					</h4>
 					<img class='main-image' src="save/${music.musicPhoto }"
 						onerror="this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'">
 					<audio id='audio' controls>
 						<source src="save/${music.musicFile }" type="audio/mp3">
 					</audio>
+					<br>
+					<p id="likeN">1000</p>
+					<!-- 좋아요 수 -->
+					<br>
 					<button id="LikeBtn">🤍</button>
 				</div>
 
@@ -95,8 +101,8 @@
 						<input type="text" placeholder="댓글 달기" id="content">
 						<button id="sendBtn">등록</button>
 					</div>
-
 				</div>
+
 			</div>
 		</div>
 
@@ -200,6 +206,7 @@
 			});
 		}
 	</script>
+
 
 
 </body>

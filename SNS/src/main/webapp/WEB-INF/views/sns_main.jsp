@@ -129,8 +129,8 @@
 							for (let i = 0; i < res.length; i++) {
 								tr = "<div class='flex-item'>";
 
-								tr += "<h4>" + res[i].userId + " <br><b> "
-										+ res[i].musicTitle + "</b></h4>";
+								tr += "<h4>" + res[i].musicTitle + "<br><b> "
+										+ res[i].userId + "</b></h4>";
 
 								tr += "<a href=\"goViewMusic.do?titlex="
 										+ res[i].musicSeq

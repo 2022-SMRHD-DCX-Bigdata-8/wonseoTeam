@@ -4,6 +4,19 @@
 	text-align:center;
 }
 
+#button{
+	border-radius: 10px;
+    width: 80px;
+    height: 55px;
+    margin: 20px;
+    font-size: 18px;
+    border: 4px solid #628281;
+}
+
+.change{
+	font-size:30px;
+}
+
 body {
 	background-color: #B1BDC5;
 	margin-top: 0px;
