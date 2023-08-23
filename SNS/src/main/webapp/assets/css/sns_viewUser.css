@@ -1,7 +1,20 @@
 @charset "UTF-8";
+
+
 body {
-  background-color: rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  
+  font-family: "Open Sans", sans-serif;
+  background-color:#B1BDC5;
   margin-top: 80px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  font-size: 16px 
 }
 
 #knu-container {
@@ -15,8 +28,8 @@ body {
 
 
 .titleimg{
-	width:150px;
-	height:150px;
+   width:150px;
+   height:150px;
 }
 #knu-sidebar1 {
   width: 160px;
@@ -74,11 +87,11 @@ img {
 }
 
 .menu li:nth-child(4) a::before {
-	content: '\f02e';
+   content: '\f02e';
 }
 
 .menu li:nth-child(5) a::before {
-	content: '\e3c9';
+   content: '\e3c9';
 }
 
 .menu li:nth-child(6) a::before {
@@ -179,10 +192,6 @@ img {
   }
 }
 /* 프로필 사진 업로드 */
-body {
-  background: whitesmoke;
-  font-family: "Open Sans", sans-serif;
-}
 
 .container {
   max-width: 960px;
@@ -221,8 +230,8 @@ h1 small {
   height: 34px;
   margin-bottom: 0;
   border-radius: 100%;
-  background: #FFFFFF;
-  border: 1px solid transparent;
+  background:#43655A;
+  border: 6px solid #43655A;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
   cursor: pointer;
   font-weight: normal;
@@ -248,7 +257,7 @@ h1 small {
   height: 192px;
   position: relative;
   border-radius: 100%;
-  border: 6px solid #F8F8F8;
+  border: 6px solid #43655A;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 .avatar-upload .avatar-id > div {
@@ -889,6 +898,7 @@ div.white-player-playlist-controls div.playlist-controls div.playlist-control-wr
 
 div.white-player-playlist-controls div.playlist-controls div.playlist-control-wrapper div#playlist-next {
   display: inline-block;
+
   height: 32px;
   width: 32px;
   cursor: pointer;
@@ -943,11 +953,6 @@ div.song-to-add a.add-to-playlist-button {
 /*
   3. Layout
 */
-body {
-  -webkit-font-smoothing: antialiased;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  line-height: 1.5;
-}
 
 body div.example-container {
   width: 100%;
@@ -1228,16 +1233,7 @@ a.more-on-ssu {
   font-size: 14px;
 }
 
-body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: 100vh;
-  font: 16px Roboto, sans-serif;
-  background: #f9f9f9;
-}
+
 
 a {
   text-decoration: none;

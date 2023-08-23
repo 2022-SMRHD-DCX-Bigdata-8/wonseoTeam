@@ -33,7 +33,7 @@
 			</select>
 
 			<div align="center" class="search_box">
-				<h1>${sessionUser.userId }와${opponent }의채팅방</h1>
+				<h1>${sessionUser.userId } and ${opponent }의 채팅방</h1>
 			</div>
 		</div>
 
@@ -59,8 +59,7 @@
 
 		<!-- 메시지가 보이는 칸 -->
 		<div id="knu-container">
-			<div id="chatDiv">
-			</div>
+			<div id="chatDiv"></div>
 		</div>
 
 
@@ -89,8 +88,8 @@
          }
       }
    </script>
-   
-   <script type="text/javascript">
+
+	<script type="text/javascript">
 		function update_confirm() {
 			if (confirm("회원정보를 수정하시겠습니까?")) {
 				return true;
@@ -120,7 +119,7 @@
 					for (let i = 0;i<res.length;i++){
 						tr = `
 						<div class="balloon2">
-						<p>\${res[i].sendId} : \${res[i].content}</p>
+						<p><b>\${res[i].sendId}</b> : \${res[i].content}</p>
 						</div>
 						`;
 						chatDiv.append(tr);
@@ -180,7 +179,7 @@ $(document).ready(function(){
 			
 			let c = `
 				<div class="balloon2">	
-					<p> \${msg.sendId} : \${msg.content} </p>
+					<p> <b>\${msg.sendId}</b> : \${msg.content} </p>
 				</div>
 			`;
 			

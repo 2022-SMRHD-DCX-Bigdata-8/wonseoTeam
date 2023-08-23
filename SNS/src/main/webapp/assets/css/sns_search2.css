@@ -1,6 +1,8 @@
+
+
 body {
    font-family: monospace, sans-serif;
-   background-color: rgba(0, 0, 0, 0.1);
+   background-color: #B1BDC5;
    margin-top: 0px;
 }
 
@@ -8,7 +10,7 @@ body {
    width: 1200px;
    margin: 0px auto;
    padding: 20px;
-   background-color: #DADDE2;
+   background-color: #B1BDC5;
 }
 
 #knu-header {
@@ -37,7 +39,7 @@ body {
    width: 715px;
    padding: 20px;
    margin-bottom: 20px;
-   background-color: #DADDE2;;
+   background-color:#B1BDC5;
    float: left; /* 컨텐츠의 위치 right */
 }
 
@@ -170,11 +172,6 @@ div.select-box select {
    background-color: gray;
 }
 
-body {
-   background-color: rgba(0, 0, 0, 0.1);
-   margin-top: 0px;
-}
-
 #knu-container {
    width: 1200px;
    margin: 0px auto;
@@ -223,14 +220,14 @@ body {
    height: 500px;
    margin: 80px;
    box-sizing:border-box;
-   border:9px solid white;
+   border:6px solid #43655A;
    flex-basis: calc(33.3% - 20px);
    padding: 30px;
    justify-content: center;
    align-items: center;
    margin-left: 30px;
    right: 40px;
-   background-color: #B1BDC5;
+   background-color: #DADDE2;
    border-radius: 20px;
    box-shadow: 0 20px 15px rgba(0, 0, 0, 0.1);
    z-index: 1;
@@ -241,7 +238,7 @@ body {
    position: relative;
    left: -25px;
    bottom: 20px;
-   border:9px solid white;
+   border:6px solid #43655A;
    border-radius: 20px;
   
 }
@@ -423,8 +420,4 @@ span {
    margin: auto;
    
   
-}
-
-body {
-   background-color: #DADDE2;
 }

@@ -1,14 +1,23 @@
 @charset "UTF-8";
+
 body {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: #B1BDC5;
   margin-top: 0px;
+  font-family: "Open Sans", sans-serif;
 }
+body {
+  -webkit-font-smoothing: antialiased;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+
 
 #knu-container {
   width: 1200px;
   margin: 0px auto;
   padding: 20px;
-  background-color:#E2E8FB;
+  background-color:#B1BDC5;
 }
 
 .titleimg {
@@ -86,11 +95,11 @@ img {
 }
 
 .menu li:nth-child(4) a::before {
-	content: '\f02e';
+   content: '\f02e';
 }
 
 .menu li:nth-child(5) a::before {
-	content: '\e3c9';
+   content: '\e3c9';
 }
 
 .menu li:nth-child(6) a::before {
@@ -190,10 +199,6 @@ img {
   }
 }
 /* 프로필 사진 업로드 */
-body {
-  background: whitesmoke;
-  font-family: "Open Sans", sans-serif;
-}
 
 .container {
   max-width: 960px;
@@ -262,7 +267,7 @@ h1 small {
   height: 192px;
   position: relative;
   border-radius: 100%;
-  border: 6px solid #F8F8F8;
+  border: 6px solid #43655A;
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
 }
 .avatar-upload .avatar-id > div {
@@ -949,6 +954,7 @@ div.song-to-add a.add-to-playlist-button {
 
 /* Medium only */
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+
   div.song-to-add {
     width: 45%;
     padding: 5px;
@@ -957,11 +963,7 @@ div.song-to-add a.add-to-playlist-button {
 /*
   3. Layout
 */
-body {
-  -webkit-font-smoothing: antialiased;
-  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-  line-height: 1.5;
-}
+
 
 body div.example-container {
   width: 100%;
@@ -1064,6 +1066,7 @@ body div.example-container div.right {
  * animation slide-out-top
  * ----------------------------------------
  */
+
 @-webkit-keyframes slide-out-top {
   0% {
     -webkit-transform: translateY(0);
@@ -1215,7 +1218,7 @@ a.more-on-ssu {
 }
 
 .profile-stat-title {
-  color: #7f90a4;
+  color: #43655A;
   font-size: 25px;
   text-align: center;
 }
@@ -1242,16 +1245,6 @@ a.more-on-ssu {
   font-size: 14px;
 }
 
-body {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  align-content: center;
-  height: 100vh;
-  font: 16px Roboto, sans-serif;
-  background: #f9f9f9;
-}
 
 a {
   text-decoration: none;
@@ -1393,7 +1386,7 @@ a {
   width: 85%;
   height: 85%;
   /*border-radius: 100%;*/
-  border: solid black 3px;
+  border: solid #43655A 3px;
 }
 
 #list_button {
@@ -1433,7 +1426,4 @@ a {
 h2 {
   color: black;
   font-family: "IAMAPLAYER";
-}
-body{
-   background-color:#E2E8FB;
 }

@@ -22,7 +22,7 @@ body {
 	width: 1200px;
 	margin: 0px auto;
 	padding: 20px;
-	background-color: ghostwhite;
+	background-color: B1BDC5;
 }
 
 #knu-header {
@@ -51,7 +51,7 @@ body {
 	width: 715px;
 	padding: 20px;
 	margin-bottom: 20px;
-	background-color: ghostwhite;;
+	background-color: #B1BDC5;;
 	float: left; /* 컨텐츠의 위치 right */
 }
 
@@ -434,7 +434,7 @@ span {
 }
 
 body {
-	background-color: ghostwhite;
+	background-color: #B1BDC5;
 }
 
 #content {
