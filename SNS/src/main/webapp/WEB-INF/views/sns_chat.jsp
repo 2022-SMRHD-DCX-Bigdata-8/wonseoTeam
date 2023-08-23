@@ -184,7 +184,8 @@ $(document).ready(function(){
 				</div>
 			`;
 			
-			$('#chatDiv').append(c);			
+			$('#chatDiv').append(c);
+			$('#chat').val('');
 			
 			websocket.send(JSON.stringify(msg));			
 		});

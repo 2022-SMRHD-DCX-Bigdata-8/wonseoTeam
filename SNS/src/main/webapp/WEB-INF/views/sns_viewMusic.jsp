@@ -90,11 +90,10 @@
 					<div id="send-content">
 						<div id="center">
 							<div>
-								<p>안녕 ㅋㅋ</p>
 							</div>
 						</div>
-						<input type="text" id="content">
-						<button id="sendBtn">SEND</button>
+						<input type="text"  placeholder="댓글 달기..." id="content">
+						<button id="sendBtn">등록</button>
 					</div>
 
 				</div>
@@ -182,6 +181,7 @@
 			</div>
 			`;
 			cmtDiv.append(tr2);
+			$('#content').val('');
 			$.ajax({
 				url : 'saveCmt.do',
 				type : 'get',
