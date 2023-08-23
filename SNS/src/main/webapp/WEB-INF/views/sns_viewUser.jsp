@@ -158,7 +158,7 @@
 			}
 		}
 	</script>
-	
+
 	<script type="text/javascript">
 		function update_confirm() {
 			if (confirm("회원정보를 수정하시겠습니까?")) {
@@ -171,18 +171,39 @@
 
 	<script type="text/javascript">
 		$(document).ready(function() {
+			var id = `${user.userId}`;
+			$.ajax({
+				type : 'get',
+				url : 'count.do',
+				data : {
+					"id" : id
+				},
+				success : function(res) {
+					let followerCount = $('#followerCount');
+					followerCount.html(res)
+				},
+				error : function(e) {
+					console.log("오류 생김");
+				}
+			});
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
 			var followerId = `${sessionUser.userId}`;
 			var followingId = `${user.userId}`;
 			$.ajax({
 				type : 'get',
-				url : 'followCheck.do',
+				url : 'firstFollowCheck.do',
 				data : {
 					"followerId" : followerId,
 					"followingId" : followingId
 				},
 				success : function(res) {
 					let fButton = $('#fButton');
-					followerCount.html(res);
+					fButton.html(res);
+					console.log(res);
 				},
 				error : function(e) {
 					console.log("오류 발생");
@@ -193,45 +214,75 @@
 
 
 	<script type="text/javascript">
-		$(document).ready(function() {
-			$('#fButton').click(function() {
-				var followerId = `${sessionUser.userId}`;
-				var followingId = `${user.userId}`;
-				$.ajax({
-					type : 'get',
-					url : 'follow.do',
-					data : {
-						"followerId" : followerId,
-						"followingId" : followingId
-					},
-					success : function(res) {
-						let fbutton = $('#fButton');
-						fbutton.html(res);
-						var followerId = `${sessionUser.userId}`;
-						var followingId = `${user.userId}`;
-						$.ajax({
-							type : 'get',
-							url : 'followCheck.do',
-							data : {
-								"followerId" : followerId,
-								"followingId" : followingId
-							},
-							success : function(res) {
-								let followerCount = $('#followerCount');
-								followerCount.html(res);
-							},
-							error : function(e) {
-								console.log("오류 발생");
-							}
-						});
+		$(document)
+				.ready(
+						function() {
+							$('#fButton')
+									.click(
+											function() {
+												var followerId = `${sessionUser.userId}`;
+												var followingId = `${user.userId}`;
+												$
+														.ajax({
+															type : 'get',
+															url : 'follow.do',
+															data : {
+																"followerId" : followerId,
+																"followingId" : followingId
+															},
+															success : function(
+																	res) {
+																let fbutton = $('#fButton');
+																fbutton
+																		.html(res);
+																var followerId = `${sessionUser.userId}`;
+																var followingId = `${user.userId}`;
+																$
+																		.ajax({
+																			type : 'get',
+																			url : 'followCheck.do',
+																			data : {
+																				"followerId" : followerId,
+																				"followingId" : followingId
+																			},
+																			success : function(
+																					res) {
+																				var id = `${user.userId}`;
+																				$
+																						.ajax({
+																							type : 'get',
+																							url : 'count.do',
+																							data : {
+																								"id" : id
+																							},
+																							success : function(
+																									res) {
+																								let followerCount = $('#followerCount');
+																								followerCount
+																										.html(res)
+																							},
+																							error : function(
+																									e) {
+																								console
+																										.log("오류 생김");
+																							}
+																						});
 
-					},
-					error : function(e) {
-						console.log(e);
-					}
-				});
-			})
-		})
+																			},
+																			error : function(
+																					e) {
+																				console
+																						.log("오류 발생");
+																			}
+																		});
+
+															},
+															error : function(e) {
+																console.log(e);
+															}
+														});
+											})
+						})
 	</script>
 
 	<script type="text/javascript">
