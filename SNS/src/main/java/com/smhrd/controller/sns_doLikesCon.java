@@ -16,7 +16,7 @@ public class sns_doLikesCon implements sns_Controller {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		String id = request.getParameter("id");
+		String id = request.getParameter("userId");
 		int musicSeq = Integer.parseInt(request.getParameter("musicSeq"));
 		
 		System.out.println(id+musicSeq);
@@ -36,10 +36,10 @@ public class sns_doLikesCon implements sns_Controller {
 		
 		if (result > 0) {
 			int cnt = dao.unLikes(likes);
-			out.print("좋아요누르기");
+			out.print("🤍");
 		} else {
 			int cnt = dao.doingLikes(likes);
-			out.print("좋아요 취소하기");
+			out.print("❤️");
 		}
 		
 		return null;

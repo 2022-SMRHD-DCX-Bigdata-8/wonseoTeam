@@ -62,6 +62,7 @@ public class sns_FrontController extends HttpServlet {
 		handler.put("/saveCmt.do", new sns_saveCmtCon());
 		handler.put("/loadCmt.do", new sns_loadCmtCon());
 		handler.put("/firstFollowCheck.do", new sns_firstFollowCheckCon());
+		handler.put("/firstLikeCheck.do", new sns_firstLikeCheckCon());
 
 	}
 

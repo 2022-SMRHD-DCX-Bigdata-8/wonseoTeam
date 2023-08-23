@@ -77,8 +77,7 @@
 		<div id="knu-container">
 			<div id="tbd">
 				<div class='flex-item'>
-					<h4>${music.musicTitle }<br>
-						<b>${music.userId }</b>
+					<h4>${music.musicTitle }<br> <b>${music.userId }</b>
 					</h4>
 					<img class='main-image' src="save/${music.musicPhoto }"
 						onerror="this.src='https://mblogthumb-phinf.pstatic.net/MjAxOTA1MDFfMTk5/MDAxNTU2Njg0Njc2MDY3.874mdI9L0xUogVhSIQDyJreothUGGf2lMEZZfGmSiO0g.LxwELVh6mgsBxmOSMdl5_MTgzOYQLRzCoc2NC7q1jb0g.JPEG.strifeopfi/1556637710459.jpg?type=w800'">
@@ -139,8 +138,90 @@
 
 	<script type="text/javascript">
 		$(document).ready(function(){
+			var musicSeq = ${music.musicSeq };
+			$.ajax({
+				type : 'get',
+				url : 'likeCount.do',
+				data : {
+					"musicSeq" : musicSeq
+				},
+				success : function(res){
+					let likeN = $('#likeN');
+					likeN.html(res);
+				},
+				error : function(e){
+					console.log("좋아요수불러오기 오류");
+				}
+			});
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var userId = `${sessionUser.userId}`;
+			var musicSeq = ${music.musicSeq };
+			$.ajax({
+				type : 'get',
+				url : 'firstLikeCheck.do',
+				data : {
+					"userId" : userId,
+					"musicSeq" : musicSeq
+				},
+				success : function(res){
+					let LikeBtn = $('#LikeBtn');
+					LikeBtn.html(res);
+				},
+				error : function(res){
+					console.log("좋아요 색칠하기 오류");
+				}
+			});
+		})
+	</script>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('#LikeBtn').click(function(){
+				var userId = `${sessionUser.userId}`;
+				var musicSeq = ${music.musicSeq };
+				$.ajax({
+					type : 'get',
+					url : 'doLikes.do',
+					data : {
+						"userId" : userId,
+						"musicSeq" : musicSeq
+					},
+					success : function(res){
+						let LikeBtn = $('#LikeBtn');
+						LikeBtn.html(res);
+						var musicSeq = ${music.musicSeq };
+						$.ajax({
+							type : 'get',
+							url : 'likeCount.do',
+							data : {
+								"musicSeq" : musicSeq
+							},
+							success : function(res){
+								let likeN = $('#likeN');
+								likeN.html(res);
+							},
+							error : function(e){
+								console.log("좋아요수불러오기 오류");
+							}
+						});
+						
+					},
+					error : function(res){
+						console.log("좋아요 누르기 오류")
+					}
+				});
+			})
+		})
+	</script>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
 			var musicSeq = ${music.musicSeq};
-			var me = ${sessionUser.userId };
+			var me = `${sessionUser.userId }`;
 			console.log(musicSeq + ":" + me);
 			$.ajax({
 				url : 'loadCmt.do',
@@ -177,7 +258,7 @@
 		
 		function saveCmt(){
 			var musicSeq = ${music.musicSeq};
-			var me = ${sessionUser.userId };
+			var me = `${sessionUser.userId }`;
 			var cmt = $('#content').val();
 			console.log(musicSeq+":"+me);
 			let cmtDiv = $('#center');
