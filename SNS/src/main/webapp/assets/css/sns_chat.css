@@ -7,6 +7,12 @@ body {
 	margin-top: 0px;
 }
 
+#chat{
+	font-size:30px;
+	width:710px;
+	border-radius:5px;
+}
+
 .balloon2 {
    background-color: #889FA5;
    
@@ -138,10 +144,14 @@ html, body {
 #knu-content {
 	width: 920px;
 	padding: 20px;
-	margin: 20px;
-	margin-left: 40%;
+	margin-left: 20%;
 	margin-bottom: 100px;
 	float: left; /* 컨텐츠의 위치 right */
+}
+
+button{
+	font-size:30px;
+	border-radius:5px;
 }
 
 #knu-content-left {
@@ -484,7 +494,7 @@ Messages
 #chatDiv {
 	margin-left: 20%;
 	margin-right: 20%;
-	border: solid 1px #43655A;
+	border: solid 5px #43655A;
 	border-radius: 20px;
 	background-color: #DADDE2;
 	height: 700px;

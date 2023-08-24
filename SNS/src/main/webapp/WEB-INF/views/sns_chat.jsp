@@ -38,7 +38,7 @@
 			</select>
 
 			<div align="center" class="search_box">
-				<h1>${sessionUser.userId }and ${opponent }의 채팅방</h1>
+				<h1>${opponent }님과의 채팅방</h1>
 			</div>
 		</div>
 

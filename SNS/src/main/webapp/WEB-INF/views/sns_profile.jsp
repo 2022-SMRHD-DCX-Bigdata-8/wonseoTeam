@@ -168,7 +168,7 @@
             type : 'get',
             url : 'count.do',
             data : {
-               "id" : ${sessionUser.userId}
+               "id" : `${sessionUser.userId}`
             },
             success : function(res){
                let fCount = $('#followerCount');
