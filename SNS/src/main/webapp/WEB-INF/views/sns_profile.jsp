@@ -20,7 +20,7 @@
 		<!-- Header -->
 		<div id="knu-header">
 
-			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
+			<img class="titleimg" src="assets/img/로고.png">
 
 		</div>
 
@@ -71,7 +71,7 @@
 				<!-- 버튼은 숨겨둠 -->
 				<div style="display: none;" class="profile-userbuttons">
 					<button style="visibility: hidden;" type="button"
-						class="btn btn-success btn-sm">Follow</button>
+						class="btn btn-success btn-sm">Follower</button>
 					<button style="visibility: hidden;" type="button"
 						class="btn btn-danger btn-sm">Message</button>
 				</div>
@@ -90,7 +90,7 @@
 						<div style="border: 1px; float: left; width: 33%;"
 							class="col-md-4 col-sm-4 col-xs-6">
 							<div class="uppercase profile-stat-title" id="followerCount">51</div>
-							<div class="uppercase profile-stat-text">Follow</div>
+							<div class="uppercase profile-stat-text">FOLLOWER</div>
 						</div>
 						<div style="border: 1px; float: left; width: 33%;"
 							class="col-md-4 col-sm-4 col-xs-6">
@@ -140,6 +140,15 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<script>
+		$(".menu").mouseenter(function() {
+			$(this).children("ul").stop().slideDown(400);
+		});
+		$(".menu").mouseleave(function() {
+			$(this).children("ul").stop().slideUp(100);
+		});
+	</script>
 
 	<script type="text/javascript">
 		function logout_confirm() {
@@ -208,7 +217,7 @@
             type : 'get',
             url : 'loadMusic.do',
             data : {
-               "id" : ${sessionUser.userId}
+               "id" : `${sessionUser.userId}`
             },
             dataType : 'json',
             success : function(res){

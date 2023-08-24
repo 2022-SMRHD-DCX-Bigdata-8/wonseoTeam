@@ -1,4 +1,4 @@
-*{
+* {
 	font-family: 'Orbit', sans-serif !important;
 }
 
@@ -7,30 +7,29 @@ body {
 	margin-top: 0px;
 }
 
-#chat{
-	font-size:30px;
-	width:710px;
-	border-radius:5px;
+#chat {
+	font-size: 30px;
+	width: 710px;
+	border-radius: 5px;
 }
 
 .balloon2 {
-   background-color: #889FA5;
-   
-   border-radius: 5px;
-   color: black;
-   
-   font-size: 14px;
-   font-weight: bold;
-   height: auto;
-   letter-spacing: -0.25px;
-   margin-top: 6.8px;
-   padding: 5px 11px;
-   position: relative;
-   width: fit-content;
-   z-index: 100;
-   margin-left: 15px;
-   margin-top: 15px;
-   word-break:break-all;
+	background-color: #889FA5;
+	border-radius: 15px;
+	color: black;
+	font-size: 14px;
+	font-weight: bold;
+	height: auto;
+	letter-spacing: -0.25px;
+	margin-top: 6.8px;
+	padding: 5px 11px;
+	position: relative;
+	width: fit-content;
+	z-index: 100;
+	margin-left: 15px;
+	margin-top: 15px;
+	word-break: break-all;
+	box-shadow: 0 0 4px black;
 }
 
 .chat_wrap .header {
@@ -132,6 +131,8 @@ html, body {
 	padding: 0px;
 	margin-bottom: 0px;
 	margin-top: 0px;
+	position: fixed;
+	left: -10px;
 }
 
 #knu-sidebar1 {
@@ -149,9 +150,9 @@ html, body {
 	float: left; /* 컨텐츠의 위치 right */
 }
 
-button{
-	font-size:30px;
-	border-radius:5px;
+button {
+	font-size: 30px;
+	border-radius: 5px;
 }
 
 #knu-content-left {
@@ -311,7 +312,7 @@ img {
 	transition: all 0.5s ease; /* 반응형 애니메이션 */
 	position: fixed;
 	top: 20%;
-    left: 0%;
+	left: 0%;
 }
 
 .menu ul {
@@ -325,7 +326,7 @@ img {
 	height: 60px;
 	padding: 20px;
 	cursor: pointer;
-	color: #000000;
+	color: white;
 	text-decoration: none;
 }
 
@@ -494,11 +495,12 @@ Messages
 #chatDiv {
 	margin-left: 20%;
 	margin-right: 20%;
-	border: solid 5px #43655A;
 	border-radius: 20px;
-	background-color: #DADDE2;
+	background-color: #F1F3F4;
 	height: 700px;
 	overflow: auto;
+	box-shadow: 0 0 1px #F66CE5, 0 0 30px #F66CE5, 0 0 1px #F66CE5, 0 0 1px
+		#F66CE5;
 }
 
 .me {
@@ -507,5 +509,5 @@ Messages
 }
 
 body {
-	background-color: #B1BDC5;
+	background-color: black;
 }

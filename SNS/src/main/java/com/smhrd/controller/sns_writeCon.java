@@ -33,7 +33,7 @@ public class sns_writeCon implements sns_Controller {
 		System.out.println(savePath);
 
 		// 1mb
-		int maxSize = 1024 * 1024 * 5;// 5mb
+		int maxSize = 1024 * 1024 * 8;// 5mb
 
 		String encoding = "UTF-8";
 

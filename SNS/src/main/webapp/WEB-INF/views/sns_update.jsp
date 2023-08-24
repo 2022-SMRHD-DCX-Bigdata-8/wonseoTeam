@@ -9,7 +9,7 @@
 </head>
 <body>
 	<div align="center" id="knu-header">
-		<img src="assets/img/3.png">
+		<img src="assets/img/로고.png">
 	</div>
 	<div class="wrapper">
 		<div class="container">

@@ -24,11 +24,11 @@ b {
 }
 
 #likeN {
-	position: relative;
-	left: 137px;
-	top: -123px;
-	font-size: 25px;
-	font-weight: bold;
+	    position: relative;
+    left: 126px;
+    top: -80px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 body {
@@ -40,10 +40,10 @@ body {
 #center {
 	width: 300px;
 	height: 300px;
-	background-color: #889FA5;
+	background-color: ghostwhite;
 	margin: 0 auto;
 	overflow: auto;
-	border: 6px solid #43655A;
+	border: 3px solid black;
 	border-radius: 20px;
 }
 
@@ -63,6 +63,8 @@ body {
 #knu-header {
 	padding: 800px;
 	margin-bottom: 20px;
+	position:fixed;
+	left:-10px;
 }
 
 #knu-header img {
@@ -86,7 +88,7 @@ body {
 	width: 715px;
 	padding: 20px;
 	margin-bottom: 20px;
-	background-color: #B1BDC5;;
+	background-color: black;
 	float: left; /* 컨텐츠의 위치 right */
 }
 
@@ -107,19 +109,18 @@ body {
 	text-align: center;
 	font-size: 24px;
 	font-weight: bold;
-	width: 600px;
-	height: 450px;
-	margin: 30px;
+	width: 800px;
+	height: 500px;
+	margin: 80px;
 	flex-basis: calc(33.3% - 20px);
-	padding: 10px;
+	padding: 5px;
 	justify-content: center;
 	align-items: center;
-	margin-left: 50px;
+	margin-left: 30px;
 	right: 40px;
-	background: #DADDE2;
+	background: #F1F3F4;
 	border-radius: 20px;
-	border: 6px solid #43655A;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0 1px #F66CE5, 0 0 30px #F66CE5, 0 0 1px #F66CE5, 0 0 1px #F66CE5;
 	z-index: 1;
 }
 
@@ -251,6 +252,8 @@ body {
 #knu-header {
 	padding: 20px;
 	margin-bottom: 20px;
+	position:fixed;
+	left:-10px;
 }
 
 #knu-sidebar1 {
@@ -281,11 +284,10 @@ body {
 }
 
 .flex-item img {
-	width: 250px;
-	height: 250px;
+	width: 260px;
+	height: 260px;
 	position: relative;
 	top: -20px;
-	border: 6px solid #43655A;
 	border-radius: 20px;
 }
 
@@ -376,7 +378,7 @@ body {
 	height: 60px;
 	padding: 20px;
 	cursor: pointer;
-	color: #000000;
+	color: white;
 	text-decoration: none;
 }
 
@@ -446,7 +448,7 @@ span {
 	width: 280px;
 	height: 54px;
 	right: 20px;
-	bottom: 12px;
+	bottom: -20px;
 }
 
 @media screen and (max-width:1023px) {
@@ -477,38 +479,38 @@ span {
 }
 
 body {
-	background-color: #B1BDC5;
+	background-color: black;
 }
 
 #content {
-	position: relative;
-	top: 5px;
-	width: 228px;
-	height: 35px;
-	left: 5px;
-	border-radius: 15px;
+	    position: relative;
+    top: 27px;
+    width: 228px;
+    height: 35px;
+    left: 5px;
+    border-radius: 15px;
 }
 
 #sendBtn {
-	position: relative;
-	top: 5px;
-	left: 4px;
-	width: 60px;
-	height: 40px;
-	color:white;
-	border-radius: 15px;
-	background: #43655A;
+	    position: relative;
+    top: 26px;
+    left: 0px;
+    width: 60px;
+    height: 40px;
+    color: white;
+    border-radius: 15px;
+    background: black;
 }
 
 #LikeBtn {
-	background-color: transparent;
-	border: none;
-	font-size: 40px;
-	width: 40px;
-	height: 30px;
-	position: relative;
-	bottom: 200px;
-	left: 130px;
+	    background-color: transparent;
+    border: none;
+    font-size: 30px;
+    width: 40px;
+    height: 30px;
+    position: relative;
+    bottom: 140px;
+    left: 125px;
 }
 
 p {

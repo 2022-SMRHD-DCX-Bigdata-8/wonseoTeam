@@ -93,6 +93,15 @@
          }
       }
    </script>
+   
+   <script>
+		$(".menu").mouseenter(function() {
+			$(this).children("ul").stop().slideDown(400);
+		});
+		$(".menu").mouseleave(function() {
+			$(this).children("ul").stop().slideUp(100);
+		});
+	</script>
 
 	<script type="text/javascript">
 		function update_confirm() {

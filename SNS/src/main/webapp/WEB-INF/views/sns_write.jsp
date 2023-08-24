@@ -19,7 +19,7 @@
 		<!-- Header -->
 		<div id="knu-header">
 
-			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
+			<img class="titleimg" src="assets/img/로고.png">
 
 		</div>
 
@@ -48,22 +48,21 @@
 			<div class="container">
 				<form id="formform" action="write.do" method="post"
 					enctype="multipart/form-data">
-					<br><br>
-					<h1>Music Title</h1>
-					<input class="change" name="title" type="text"> <br>
 					<br>
+					<br>
+					<h1>Music Title</h1>
+					<input class="change" name="title" type="text"> <br> <br>
 					<br>
 					<h1>User Id</h1>
-					<input class="change" name="id" type="text" value="${sessionUser.userId }"
-						readonly> <br> <br>
+					<input class="change" name="id" type="text"
+						value="${sessionUser.userId }" readonly> <br> <br>
 					<br>
 					<h1>album art</h1>
-					<input name="img" type="file"> <br>
-					<br>
-					<br>
+					<input name="img" type="file"> <br> <br> <br>
 					<h1>music file</h1>
-					<input name="file" type="file"> <br> <br><br><br>
-					<br> <input id="button" type="reset" value="reset"><input
+					<input name="file" type="file"> <br> <br>
+					<br>
+					<br> <br> <input id="button" type="reset" value="reset"><input
 						id="button" type="submit" value="submit">
 				</form>
 
@@ -74,6 +73,15 @@
 
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+	<script>
+		$(".menu").mouseenter(function() {
+			$(this).children("ul").stop().slideDown(400);
+		});
+		$(".menu").mouseleave(function() {
+			$(this).children("ul").stop().slideUp(100);
+		});
+	</script>
 
 	<script type="text/javascript">
 		function logout_confirm() {

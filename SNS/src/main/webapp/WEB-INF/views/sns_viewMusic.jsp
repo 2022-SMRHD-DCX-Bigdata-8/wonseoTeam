@@ -28,7 +28,7 @@
 
 		<!-- header div -->
 		<div id="knu-header">
-			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
+			<img class="titleimg" src="assets/img/로고.png">
 		</div>
 
 		<!-- 검색창 div -->
@@ -116,6 +116,15 @@
 	<script
 		src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
+	<script>
+		$(".menu").mouseenter(function() {
+			$(this).children("ul").stop().slideDown(400);
+		});
+		$(".menu").mouseleave(function() {
+			$(this).children("ul").stop().slideUp(100);
+		});
+	</script>
+
 	<script type="text/javascript">
 		function logout_confirm() {
 			if (confirm("로그아웃하시겠습니까?")) {
@@ -177,7 +186,7 @@
 			});
 		})
 	</script>
-	
+
 	<script type="text/javascript">
 		$(document).ready(function(){
 			$('#LikeBtn').click(function(){
