@@ -24,7 +24,7 @@
 		<!-- header div -->
 		<div id="knu-header">
 
-			<img class="titleimg" src="https://ifh.cc/g/l4n2xR.png">
+			<img class="titleimg" src="assets/img/로고.png">
 		</div>
 
 		<!-- 검색창 div -->
@@ -38,7 +38,7 @@
 			</select>
 
 			<div align="center" class="search_box">
-				<h1>${opponent }님과의 채팅방</h1>
+				<h1 style="color:white;">${opponent }님과의 채팅방</h1>
 			</div>
 		</div>
 
